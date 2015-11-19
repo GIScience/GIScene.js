@@ -1,0 +1,13 @@
+Stanford Bunny (bunny.ply)
+
+This model was downloaded from the "Large Geometric Models Archive at Georgia Institute of Technology" http://www-static.cc.gatech.edu/data_files/large_models/bunny.ply.gz on 2015-11-19.
+
+The original model can be obtained at "The Stanford 3D Scanning Repository" http://graphics.stanford.edu/data/3Dscanrep/
+Credits:
+Source: Stanford University Computer Graphics Laboratory
+Scanner: Cyberware 3030 MS
+Number of scans: 10
+Total size of scans: 362,272 points (about 725,000 triangles)
+Reconstruction: zipper
+Size of reconstruction: 35947 vertices, 69451 triangles
+Comments: contains 5 holes in the bottom 
