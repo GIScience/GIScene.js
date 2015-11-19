@@ -19,6 +19,7 @@ You can use it for georeferenced 3D data, but it takes a lot of work from you no
 		<h1>GIScene.js example - Basic Usage</h1>
 		<div id="scene"></div>
 		<script>
+		
 			//create a new scene
 			var scene = new GIScene.Scene('scene');
 			
