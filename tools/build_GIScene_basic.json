@@ -1,0 +1,54 @@
+[
+	"../lib/GIScene.js",
+	"../lib/THREE/loader/ctm/CTMLoader_Integrated.js",
+	"../lib/THREE/loader/SceneLoader_r63.js",
+	"../lib/THREE/loader/XHRLoader_r63.js",
+	"../lib/THREE/loader/BinaryLoader.js",
+	"../lib/THREE/extras/cameras/CombinedCamera.js",
+	
+	
+
+	"../lib/Tween/r12/tween.min.js",
+	"../lib/GIScene/Coordinate2.js",
+	"../lib/GIScene/Coordinate3.js",
+	"../lib/GIScene/Extent2.js",
+	"../lib/GIScene/Line2.js",
+	"../lib/GIScene/Utils.js",
+	
+	
+	"../lib/GIScene/OverrideMaterialHandler.js",
+	"../lib/GIScene/OverrideMaterialHandler/WMS.js",
+	"../lib/GIScene/Control.js",
+	"../lib/GIScene/Control/Select.js",
+	
+	"../lib/GIScene/Control/OrbitZoomPan.js",
+	"../lib/GIScene/Control/PanOrbitZoomCenter.js",
+	"../lib/GIScene/Control/Trackball.js",
+	"../lib/GIScene/Control/Fly.js",
+	"../lib/GIScene/Control/Walk.js",
+	"../lib/GIScene/Control/CameraLight.js",
+	"../lib/GIScene/Control/Pick.js",
+	"../lib/GIScene/Control/Measure.js",
+	"../lib/GIScene/Control/LoadIndicator.js",
+	"../lib/GIScene/Control/Compass.js",
+	"../lib/GIScene/Control/AxisHelper.js",
+	"../lib/GIScene/Control/TextPanel.js",
+	"../lib/GIScene/Control/ObjectPosition.js",
+	
+	"../lib/GIScene/Format.js",
+	"../lib/GIScene/Loader/LocalFileLoader.js",
+	"../lib/GIScene/Loader/GeoJSONLoader.js",
+	"../lib/GIScene/ModelLoader.js",
+	"../lib/GIScene/Service.js",
+	"../lib/GIScene/Service/W3DS_0_4_0.js",
+	"../lib/GIScene/Service/W3DS_0_4_1.js",
+	"../lib/GIScene/Style.js",
+	"../lib/GIScene/Layer.js",
+	"../lib/GIScene/Layer/Helper.js",
+	"../lib/GIScene/Layer/Fixed.js",
+	"../lib/GIScene/Grid.js",
+	"../lib/GIScene/Layer/Grid.js",
+	"../lib/GIScene/Layer/Grid/W3DS_0_4_0.js",
+	"../lib/GIScene/Layer/Grid/W3DS_0_4_1.js",
+	"../lib/GIScene/Scene.js"
+]
