@@ -1,0 +1,1541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>GIScene\Scene.js - GIScene 3D WebGIS API.</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><img src="..\..\lib\resources\images\GIScene-logo.png" title="GIScene 3D WebGIS API."></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 1.0.1</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/GIScene.html">GIScene</a></li>
+                                <li><a href="../classes/GIScene.AspectMaterial.html">GIScene.AspectMaterial</a></li>
+                                <li><a href="../classes/GIScene.Control.html">GIScene.Control</a></li>
+                                <li><a href="../classes/GIScene.Control.AxisHelper.html">GIScene.Control.AxisHelper</a></li>
+                                <li><a href="../classes/GIScene.Control.CameraLight.html">GIScene.Control.CameraLight</a></li>
+                                <li><a href="../classes/GIScene.Control.Compass.html">GIScene.Control.Compass</a></li>
+                                <li><a href="../classes/GIScene.Control.EdgeDetectionFreiChen.html">GIScene.Control.EdgeDetectionFreiChen</a></li>
+                                <li><a href="../classes/GIScene.Control.Fly.html">GIScene.Control.Fly</a></li>
+                                <li><a href="../classes/GIScene.Control.LoadIndicator.html">GIScene.Control.LoadIndicator</a></li>
+                                <li><a href="../classes/GIScene.Control.Measure.html">GIScene.Control.Measure</a></li>
+                                <li><a href="../classes/GIScene.Control.ObjectPosition.html">GIScene.Control.ObjectPosition</a></li>
+                                <li><a href="../classes/GIScene.Control.OrbitZoomPan.html">GIScene.Control.OrbitZoomPan</a></li>
+                                <li><a href="../classes/GIScene.Control.Pan.html">GIScene.Control.Pan</a></li>
+                                <li><a href="../classes/GIScene.Control.PanOrbitZoomCenter.html">GIScene.Control.PanOrbitZoomCenter</a></li>
+                                <li><a href="../classes/GIScene.Control.Pick.html">GIScene.Control.Pick</a></li>
+                                <li><a href="../classes/GIScene.Control.Select.html">GIScene.Control.Select</a></li>
+                                <li><a href="../classes/GIScene.Control.SSAO.html">GIScene.Control.SSAO</a></li>
+                                <li><a href="../classes/GIScene.Control.TextPanel.html">GIScene.Control.TextPanel</a></li>
+                                <li><a href="../classes/GIScene.Control.Trackball.html">GIScene.Control.Trackball</a></li>
+                                <li><a href="../classes/GIScene.Control.Walk.html">GIScene.Control.Walk</a></li>
+                                <li><a href="../classes/GIscene.Coordinate2.html">GIscene.Coordinate2</a></li>
+                                <li><a href="../classes/GIscene.Coordinate3.html">GIscene.Coordinate3</a></li>
+                                <li><a href="../classes/GIScene.DirectionMaterial.html">GIScene.DirectionMaterial</a></li>
+                                <li><a href="../classes/GIScene.DistanceOpacityMaterial.html">GIScene.DistanceOpacityMaterial</a></li>
+                                <li><a href="../classes/GIScene.Extent2.html">GIScene.Extent2</a></li>
+                                <li><a href="../classes/GIScene.Format.html">GIScene.Format</a></li>
+                                <li><a href="../classes/GIScene.GeoJSONLoader.html">GIScene.GeoJSONLoader</a></li>
+                                <li><a href="../classes/GIScene.Grid.html">GIScene.Grid</a></li>
+                                <li><a href="../classes/GIScene.Grid.Index.html">GIScene.Grid.Index</a></li>
+                                <li><a href="../classes/GIScene.Layer.html">GIScene.Layer</a></li>
+                                <li><a href="../classes/GIScene.Layer.Fixed.html">GIScene.Layer.Fixed</a></li>
+                                <li><a href="../classes/GIScene.Layer.Grid.html">GIScene.Layer.Grid</a></li>
+                                <li><a href="../classes/GIScene.Layer.Helper.html">GIScene.Layer.Helper</a></li>
+                                <li><a href="../classes/GIScene.Layer.W3DS_0_4_0.html">GIScene.Layer.W3DS_0_4_0</a></li>
+                                <li><a href="../classes/GIScene.Layer.W3DS_0_4_1.html">GIScene.Layer.W3DS_0_4_1</a></li>
+                                <li><a href="../classes/GIScene.Line2.html">GIScene.Line2</a></li>
+                                <li><a href="../classes/GIScene.LocalFileLoader.html">GIScene.LocalFileLoader</a></li>
+                                <li><a href="../classes/GIScene.ModelLoader.html">GIScene.ModelLoader</a></li>
+                                <li><a href="../classes/GIScene.OverrideMaterialHandler.html">GIScene.OverrideMaterialHandler</a></li>
+                                <li><a href="../classes/GIScene.OverrideMaterialHandler.WMS.html">GIScene.OverrideMaterialHandler.WMS</a></li>
+                                <li><a href="../classes/GIScene.PointAlignmentMaterial.html">GIScene.PointAlignmentMaterial</a></li>
+                                <li><a href="../classes/GIScene.Process.html">GIScene.Process</a></li>
+                                <li><a href="../classes/GIScene.Process.Intervisibility.html">GIScene.Process.Intervisibility</a></li>
+                                <li><a href="../classes/GIScene.Process.LineOfSight.html">GIScene.Process.LineOfSight</a></li>
+                                <li><a href="../classes/GIScene.Process.LineOfSight_fastClient.html">GIScene.Process.LineOfSight_fastClient</a></li>
+                                <li><a href="../classes/GIScene.Process.LineOfSight_Layer.html">GIScene.Process.LineOfSight_Layer</a></li>
+                                <li><a href="../classes/GIScene.Process.LineOfSight_simpleClient.html">GIScene.Process.LineOfSight_simpleClient</a></li>
+                                <li><a href="../classes/GIScene.Process.LineOfSightNetwork_allToAll.html">GIScene.Process.LineOfSightNetwork_allToAll</a></li>
+                                <li><a href="../classes/GIScene.RasterOverlayMaterial.html">GIScene.RasterOverlayMaterial</a></li>
+                                <li><a href="../classes/GIScene.Scene.html">GIScene.Scene</a></li>
+                                <li><a href="../classes/GIScene.Service.html">GIScene.Service</a></li>
+                                <li><a href="../classes/GIScene.Service.W3DS_0_4_0.html">GIScene.Service.W3DS_0_4_0</a></li>
+                                <li><a href="../classes/GIScene.Service.W3DS_0_4_1.html">GIScene.Service.W3DS_0_4_1</a></li>
+                                <li><a href="../classes/GIScene.Style.html">GIScene.Style</a></li>
+                                <li><a href="../classes/GIScene.Utils.html">GIScene.Utils</a></li>
+                                <li><a href="../classes/GIScene.WMSOverlayMaterial.html">GIScene.WMSOverlayMaterial</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/GIScene.html">GIScene</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: GIScene\Scene.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/**
+ * The Scene Object
+ *
+ * @namespace GIScene
+ * @class Scene
+ * @constructor
+ * @extends THREE.EventDispatcher
+ * @param {String} containerDivId The id of an HTMLDivElement which will be used as container for the webgl canvas.
+ * @param {Object} [config] Allowed
+ * values for config are:
+ *
+ * 	cameratype:	&#x27;perspective&#x27;|&#x27;ortho&#x27;
+ *  near: {Number}
+ *  far:  {Numver}
+ *  fov:  {Number}
+ * 
+ *  width:	{Integer}
+ *  height: {Integer}
+ * 
+ *  animate:{Boolean}
+ *  
+ *  center: 				{THREE.Vector3}
+ *  positionFromCenter: 	{THREE.Vector3}
+ *  projection: 			{String}
+ *  units:					{String}
+ *  offset:					{GIScene.Coordinate3}
+ *  skyColor:				{THREE.Color}
+ *  fog:					{THREE.Fog}
+ */
+
+GIScene.Scene = function(containerDivId, config) {
+
+	/**
+	 * The default config which is used when no config object is provided.
+	 *
+	 * @private
+	 * @property defaults
+	 * @type Object
+	 **/
+	var defaults = {
+
+		//canvas options
+		width : null,
+		height : null,
+
+		//render options
+		animate : true, 
+		fog : null,
+
+		//scene options
+		center : new THREE.Vector3(0, 0, 0),
+		projection : &#x27;EPSG:32616&#x27;, //not yet used UTM16N???--&gt;EPSG:32616
+		units : &#x27;m&#x27;, //not yet used
+		offset : new GIScene.Coordinate3(0,0,0), 
+		//new THREE.Vector3(0,0,0), //new THREE.Vector3(269500, 550, -1641500), //not yet used offset is used to keep coordinates short.
+		skyColor : new THREE.Color().setStyle(&#x27;lightskyblue&#x27;).getHex(),
+
+		//camera options
+		cameratype : &#x27;perspective&#x27;,
+		near : 0.1,
+		far : 1000,
+		fov : 45, //for perspective camera only
+		positionFromCenter : new THREE.Vector3(0, 0, 10),
+
+		//data options
+		// url : null,
+		// format : null,
+		// verticalAxis : &quot;Y&quot;
+
+	};
+
+	/**
+	 * The config which is used to initialize the Scene. Merged from defaults and passed config Object.
+	 *
+	 * @property config
+	 * @type Object
+	 */
+	this.config = GIScene.Utils.mergeObjects(defaults, config || {});
+
+
+	//make this class an EventDispatcher
+	//THREE.EventDispatcher.call( this );
+
+	//canvas properties
+	this.containerDiv = document.getElementById(containerDivId);
+	this.canvas = null;
+	//get size from config else from containerDiv-CSS Style else use default 500x500 px
+	var width = null;
+	width = (this.config.width) ? this.config.width :  this.containerDiv.clientWidth ;
+	
+	var height = null;
+	height = (this.config.height) ?  this.config.height : (this.containerDiv.clientHeight &gt; 0) ?  this.containerDiv.clientHeight :  500;
+
+	//render properties
+	var animationFrameId;
+
+	//scene properties
+	/**
+	 * The scenegraph root node. Add {THREE.Object3D}-objects to this node. See THREE.js docs for further information
+	 * @property root
+	 * @type {THREE.Scene}
+	 */
+	this.root = null;
+	/**
+	 * The active camera. {THREE.CombinedCamera} can be switched from perspective to orthographic and vice versa
+	 * @property camera
+	 * @type {THREE.CombinedCamera}
+	 */
+	this.camera = null;
+	//Camera gets a target object later in initScene()
+	
+	//THREE.Scene and THREE.Orthocamera to render Sprites in screen coordinate space
+	this.spriteRoot = null;
+	this.spriteCamera = null;
+	
+	this.lights = [];
+	this.renderer = null;
+	this.effectComposer = null;
+	this.fog = null;
+	this.layers = [];
+	//Layers should add {THREE.Scene} objects to this.root
+	this.center = new THREE.Vector3(0, 0, 0);
+
+	//controls
+	this.controls = [];
+
+	//clock to be independent of framerates
+	this.clock = new THREE.Clock();
+	this.delta = null; //global, automatically updated in startAnimation() every frame
+
+	this.init = function() {
+
+		//initCanvas
+		this.initCanvas();
+
+		//initScene
+		this.initScene();
+
+		//animate: start renderLoop or render once
+		(this.config.animate) ? this.startAnimation() : this.renderer.render(this.root, this.camera);
+
+	};
+
+	this.initCanvas = function() {
+		//create canvas in div use div use size from config else from div element else
+		this.canvas = document.createElement(&#x27;canvas&#x27;);
+		this.canvas.className = &quot;giscene_canvas&quot;;
+		//remove line height from canvas containterDiv to fit the canvas exactly to its wrapper div
+		this.containerDiv.style.lineHeight = 0;
+		
+		
+		
+		// this.canvas.style.width  = &quot;100%&quot;;//width + &quot;px&quot;;//
+		// this.canvas.style.height = &quot;100%&quot;;//height + &quot;px&quot;;//
+		this.containerDiv.appendChild(this.canvas);
+		// this.containerDiv.style.width  = width + &quot;px&quot;;
+		// this.containerDiv.style.height = height + &quot;px&quot;;
+	};
+
+	this.initScene = function(config) {
+		//create THREE.Scene
+		this.root = new THREE.Scene();
+		this.root.name = &#x27;root&#x27;;
+		
+		//optionally add fog
+		if(this.config.fog){this.root.fog = this.fog = this.config.fog.clone();}
+		
+		//initCamera
+		//this.camera = (this.config.cameratype == &#x27;ortho&#x27;) ? new THREE.OrthographicCamera(width / -2, width / 2, height / 2, height / -2, this.config.near, this.config.far) : new THREE.PerspectiveCamera(this.config.fov, width / height, this.config.near, this.config.far);
+		this.camera = new THREE.CombinedCamera(width, height, this.config.fov, this.config.near, this.config.far, this.config.near, this.config.far );
+		this.camera.name = &#x27;THREE.CombinedCamera&#x27;;
+		this.camera.target = new THREE.Object3D();
+		this.camera.target.name = &quot;Camera target&quot;;
+		this.camera.add(this.camera.target);
+		if(this.config.cameratype == &#x27;ortho&#x27;){this.camera.toOrthographic();}
+
+		/**
+		 * Fires whenever camera position changes
+		 *
+		 * @event cameraChange
+		 */
+		var oldCamPos = new THREE.Vector3(0, 0, 0);
+		var oldCamRot = new THREE.Vector3(0, 0, 0);
+		var cameraHasChanged = function() {
+			if (!oldCamPos.equals(this.camera.position) || !oldCamRot.equals(this.camera.rotation)) {
+				
+				this.dispatchEvent({type : &#x27;cameraChange&#x27;});
+				oldCamPos = this.camera.position.clone();
+				oldCamRot = this.camera.rotation.clone();
+			};
+			
+		}.bind(this);
+		this.addEventListener(&#x27;afterRender&#x27;, cameraHasChanged);
+		//this.addEventListener(&#x27;beforeRender&#x27;, cameraHasChanged);
+		
+		//init sprite scene and camera
+		this.spriteRoot = new THREE.Scene();
+		// this.spriteCamera = new THREE.OrthographicCamera(0,width,0,height,-100,100 ); //l,r,t,b,near,far
+		var width1_2 = width/2;
+		var heigh1_2 = height/2;
+		this.spriteCamera = new THREE.OrthographicCamera(-width1_2,width1_2,heigh1_2,-heigh1_2,-100,100 ); //l,r,t,b,near,far
+		// this.spriteRoot.add(this.spriteCamera);
+		// this.camera.add(this.spriteCamera);
+		
+		//initLights
+		this.directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);//new THREE.DirectionalLight(0xffffff, 0.5);
+		this.directionalLight.name = &quot;THREE.DirectionalLight&quot;;
+		//color, intensity //position will be set by Control.CameraLight
+		this.ambientLight = new THREE.AmbientLight(0xcccccc); //cc ^= 0.8   new THREE.AmbientLight(0xffffff);
+		this.ambientLight.name = &quot;THREE.AmbientLight&quot;;
+
+		//experimental spot light
+		this.headLight = new THREE.SpotLight(0xffffff,0.3,0,Math.PI/2,20);
+		this.camera.add(this.headLight);
+		this.headLight.target.position.setZ(-1000);
+		this.camera.target.add(this.headLight.target);
+
+		//initRenderer
+		this.renderer = new THREE.WebGLRenderer({
+			antialias : true,
+			precision : &quot;highp&quot;,
+			canvas : this.canvas,
+			devicePixelRatio: 1, //when browser is in zoom mode this ratio is changed and renderer.setSize uses it 
+		});
+		
+		this.renderer.setSize(width, height);
+		this.renderer.setClearColor(this.config.skyColor);
+		this.renderer.autoClear = false;
+		
+		// init effectComposer
+		this.effectComposer = new THREE.EffectComposer(this.renderer);
+		this.effectComposer.setSize(width, height);
+		
+		// add objects to the scene
+		this.root.add(this.camera);
+		this.root.add(this.ambientLight);
+		this.root.add(this.directionalLight);
+
+		//setCenter
+		// this.camera.position.add(this.config.positionFromCenter);
+		// this.camera.target.position.setZ(-this.config.positionFromCenter.length());
+		this.setCenter(this.config.center, this.config.positionFromCenter);
+		
+		//add Logo
+		var gisceneLogoTexture = new THREE.Texture(null);
+		var gisceneLogoImage = new Image();
+		gisceneLogoImage.onload = function(e) {
+			gisceneLogoTexture.image = gisceneLogoImage;
+			gisceneLogoTexture.needsUpdate = true;
+		};
+		// dataURL from poweredbygiscenegiscience.png
+		// gisceneLogoImage.src = &quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJ4AAAAUCAYAAAB8roTFAAAABmJLR0QAAAAAAAD5Q7t/AAAVfklEQVRo3uWaeXRUVb7vP+fUPCZVlbGADFBAgABhiIAMakQZG54+wG6hceBdEZet0t1eG1G7W+jrbfThclZeu7i0aLNaWO0FH6IgtEbTShoQIZGEQMicVFKpVKXmOlX7/ZFQEgbt1Q7d977fP7Xq7H32/p29v+f7+/2+Z0v8g0wIMRy4A7gNcF7YpigJ1GrV3zoOyaS46FoSSZK/9l6V6qv7KEoCWZaQZZn/X00JhQg3NGAZNepbHVf9PYMtA1gF/BgYA5BIJIlE4vT2RlGUJAaDBkVJYDJpMZv1qXvD4RiKkuzrH1WIRhMkkgK9ToVWM/AxkskkkiQhSdIVr8fjCUKROLIsoVHLGPQaNBoVarWMwaAhmRR4vSGEAEVJoiQF6VYdWq0KvV773x5wIpkkEYuRjMdJhELf+vjq7wFsKmAesBJYJITQhcNxAoEonZ4QPn8YISDNqifTYcJi0aFWywQCUdra/bR2BOgNRInFFIwGDVaLDrNJh8WsJZkURJUEPd4QkgTBsEJcSVzWD1mWMOjUqGSJNIsOs1GL3qABIBiM0t7ZN4+/N4pep0atlsnNsmAx69DpZCK9UerOdhOOxNEbNDjSDdhsRswm7dcy53850CkKweZmtHY7KqMRJRb71ueQvkPADQXuApYDg2MxhbZ2Px2dQTo6A0SiCdKtOgrzbOTmWDCZdHR3B2lo9tHQ3ENHVxCLSUuG3Uhhno2sTDMmowZfb5QTtZ00t/tJs+ixmLTYrHqG5FiQZZnzQTcWUwDQaFQp5ksmErR2huj2hfAHYnj9EWxWPcXDM8hzpiHLEqFQDJ8/wtkGL+6uIC3tfhw2IwVDbORm9fnQ0NRDa0cvsXiSDLsBZ7aV7CwTaWmGS1j2vxbiBEo4jBIIgBDIej0oCv5Tp8iYPv2fF3hCCCOwoj+UXg3IiUSShqYezp7rpt3dSyyWwGzSUjwqm8J8GwaDlkgkxtHP2/jr8TY6ugIYDRpmXJXHxLG5mEzaPkAJwduH6th9qA5nlpnZU/MZV5SFpb/9QjtZ6+aP+07hD8S4cXoB869xXeJrOBzjdIOXg582Un6kiRunF3LrgtFYzLpUn0gkzokvOvjkSDMt7b2YTVrGj86mtMSJLElU1bipb/CiUsmYTVqG5ttwDXVgsei/1U2K+v24T5zAYLfjKCpKgTsWDBLt6cHidMIFgE8qCq2VlZgyM0kfOhTpK3JUkUzSduQIuSUlRD0eVHo9kc5OtA4HWqsVSa3G/ec/k3Xttf98oVYIMb0/lN4CpH2ZnCscP9nBqdNuItG+EKjXqZkwNpfhrsxUcVB5rJX3PjhDOKqgVslMnTiYWdMKBrBHXUM3r/zxOLG4wgMrJzNmeOZlfUkmk+yvOMcf951CAN2+MFPGOXHYjAP6GQxaxhVlk5dr5fMaN7/beZzheTaum5qfmlev11A6YTAWk443366ixx+h/NMGgqEYi+cWMXH8IBQlSWOLjx5/hM9OtuPuClJSnEN2tvUbr6uvsZFDDz9Mw6FDJKJRAAZPn85NO3agMRj4YscODq5bx71nz6IxmwH4eMMGqnfuJOzxoEQizHv5ZUYtWXLFOb7YtYt9a9Yw77nnyJ85E+JxSCTQ2e0ogQCR9vY+BvxnyfGEEFn9VelKYPTl+nR1hag905UCHYDFrGXI4PQB/eJKYkBuplbLl4SsnAwzU8blcuhwIzX1Hobn29Bq1ZeLFkSiSup/KKJcUvVeWLUer3Hj8YUpKnSQ7TBdNlRqtSpkWUqNH40lUnlpbraF5lYfSQFJIWhp82O16MjIMH+j3C/s9bLzpptQabXMefZZcktLafzwQ/yNjWgMhv54NdDXmv/8Tz595hmu2bCBsStX0l1Tg83l+kq2c44bR+k995A9diwqnQ4BaBwOgmfOoLJYMLtc+Kqq/rHAE0KogZv6Q+kc4CvLO41GhUY9cPETCUEspqDXa/rXTmLS+EEkEkmqajpp7wzy1+OtaDUyJcW56HRqZFnGYtbxk+UTKS3O4VS9h9d2n6TAmUbhYBtZdgM6nRpJ6pNIrikdQltnAF8gyo1XF2JPN5BIJBFCkEgk6fCEOdfipbrOg8cXZs70QmZPK2BEoeMSYNY3eKn4axM+fwSrWceIoXamTBiM0dj36JFoHHEBriVJQqdVp4D699rhp58m1NXFivffT4Fn7IoVX3lPz9mz6G02Jq5ejSTL5EyceAm7dRw9iqxWM2zOHGSgeudOZK0Wg8OB1majq6KC3t5e2o4dI9rbS25pKZZkEoCKTZvIHj+eQFsbnVVVZBYVMWrpUrTWPnb31NZSt2cPvS0t2FwuJq1ZA5JEpKeHk9u301Nfj23YMFwLF/5twOvX3M7LIM6/dfHsdiMjhmVw8lQH4UgfC/n8EeobvIwZpU1pdWlWPTdcO5yJY51U1XRytrGbjyubqD3bTXaGibxBaQx2pmHQq7lxRiHXXpWHuzuMxxukvrmbz2tifVWrXo0jzUhOhon/9T/HAmA166mt99DZHaY3FCceV9BqZNKteqaOz6VgUBpWix5ZlonFFBQlibszQHObn5b2Xlo7etHr1JTNGMrIYQ6cORZ0ur6XpqOjl5a23lRBI0sSQwalMbTA9o2LjJZPPqGgrOwrGetiyxo3jojXy6F167ju3/4NSaVKhYG9a9ZQv38/rvnzEYkEnZ9/jikri5bDhxHAlHvvJeJ2U/P++xzbtg1naSmSLPPZq68y9c47GbxsGad376b6jTfImjABndnM+7/4BUo8zqS776bu3Xc58MAD2FwusoqLaaushHvuobO6mv+7ahUCcJaWUvHb39JUUXFl4AkhzMCt/ZXppL+rcpEkikdnY7XoqKvvxt0VJBKN83l1B4FgjOFDHdjtBtTqPjccDhMzpxmZVjoET3cId1eAto4AtWc91J71kEgIsjJMaDWCc2eO0tXVTjgcTrEZqJg2vQyraTAfHHwHj6eLRYtuIisrCxH303T6Uzo6OlCUOKr+TTEYTJRMmg2SBo83TDyeQKWS0WhUDMu3MW3yEDLsRvR6daqICYdjNDX7qDnTRVd3CFmSSE/TM6zAztACO+YLCpS/1wKtrQy++uov/7e3c/SVV/rSjpISRixefMk9hddfz9QHH+STp57C19zM4q1bkbVaTm7fTu2ePSx76y2cpaXEe3pIxuMgy1Tv3IlIJDAOHsyZP/2Jo7/7HZN+8hOm/+IX+OrreX32bHxtbX0pUTBI0bJlzHj4YQA6q6vpPHkSJRym/Fe/Ir+sjLnPPZcqZoQQHFq3DkmlYvm776IxmVBpNDSWlw8EnhBCAq7vZ7abAMs3XUBZlinIt+PMteLuDHDmXDfurhCnz3po7QiQlWFkyKB0HHYjFrMWSZLQaFTkZFvIybYwdrRACEEwGCMaTRAIRnjqfz/N9t+/QCgUHMAsBoORh9dbGVci8+r/eYXGxjPk5xdRUBjnlRd/y+7db6IoyoB78vIKefaFyQx3FeAqsKPVqjGb+7S58/2EEJzXHju6grS2+XF3BZEkyMkyU5hnY5AzDatF963JKRqzmfgFwm0iGsVXX09TRQVKKHRZ4AFc/dBD6NLS+Ojxxzn4yCPM3rSJmt27cc2di7O0FCUSIRGLpYqVnvp6XP1jnd67FyUWo+voUXYvXUrXmTNozGYKpk0j0NKCv7mZnJKSL/PQ7m4s2dnU79+P9/RpFm3bNqCCbj96lOaPPya7pIQPH38cb10drZWVTH/44T7gCSHy+guFHwEjvwuJSKtVM3hQOjnZFnoDMdzuXjo6g3h9YVraGtHrNNjS9aRb9WRmmNBp1aSnG1Cp+jbSYtFjsUBLSx0f/nk3Go2aO++8k8LCwhRj6nQ6rrtuJnZ7Jg6HmY4ODcMKHZjNCkeP/gWj0ciPf/xjBg8enPLLZrNxzYzRGI3G/hwwgRBJuruDRKMJ/IE43d4w3d4Q/kAUkUxgtegocjkYlJtGerqh/2uLgqIoA16486w6MG9U+tn5yn0A0vLzaT96FCEEkiSRlp/PD/7jP3h99uyvXetJd9+Nv6GB03v2IJ54An9zMyMWLEAoCkpPD4l4HLXBQCIex9vYiM3lInDuHD11dWSNGkXW5MnEgkFG33EH2SNH4jt2DPfJk0iSRMbYvhQm0NZGoKWF9OHD8be0oLfZcIwYcUnOCTBi0SKCHR0MX7iQ2U89RXphIWohxA7gfwA6vgfTaNQIIbClGxg2NIFGo6elpYsefwR3V5DWjl7qznkBSLf2uWQ0aMjKNGPQazh48CPOnDnDkiXL2LDhN1itlosYVoXf70sxj1arJhj0093djcvl4t57f0JurhMhBIFAjGg8Qbc3jrvTw9GjR/jkLx/R0dGM1xsCScuc+ctwODI4dPA93O3nUKti2O1m8vPzmDx5MmVlZXzwwQfs3LmTWL/Cr1aryczMZPz48cybNw+DwUBHRwf79u2jqqoKv9+PVqtlyJAhTJ06lRkzZlzClKNvuYW9d93FJ08+ybR//deUPpeMx6/8XTUaRa3TpVg6EYn0vbROJ+2ff060qwuVyYQIhdBlZHDq9ddJRqNo4nF6q6uxjR1L4wcfMGXtWmRNXx4bqK8HoPv0aSxOJ+lDhgDgPn4ckUxiGzaMoNtNxOultbISZ2lp3/yJBMbMPsnLlJND6X33pfw6X9Xe0hfeNKxatYqXXnrpexPK+4oLBaczDaczjaJkklhMIRCIk0gk8fdG8Hj7crj6hm5C4TifVlYRi8WwOYZReayTaLSJaDRyQbg1EQ4HaWvzEgpFqPi0HrVag6IkOXv2HL/61b9jMllQa3QgGRg+cgJ5+YUcO/Ixv9/6FB5PGzabDYDMzExcBUY+++wDtm/7LWazGV3/xvb09OB0OnnhhReora1l69atSJKE3W7vk3FCISRJYvPmzfzwhz9k8+bNPP/881itVjT9m+rxeBg1ahRbtmxh4kUVaNHNN9NUXs5fNm2i8cMPSSsooLmiAn9jI4U33HDJWnpqa/nTkiXkTp1KxOuluaKCcStXIqlUuObP59C6dbzzwAOotFpiPh+z1q6lp6EBo8OB65Zb8B45woiFC6nesYM//uAH5EyaROvhwyx85pk+4NXVDSh0vGfPojWbU6HXlJPDO6tXk3/99bRVVjLzl78kb+ZMMouLKX/8cVorKwm0tlJQVkbJqlWkAnJ1dTXbtm0DYOPGjVitVp544gny8/NZuXIlGo2GlStXkp+fn5r86aefxmKxsGrVqlQxMW3atMu23X///ZSVlV0WgGVlZdx///1MmjSJjz76kDfeeJXbb1/GcFcmUyYP4eop+VwzvZDrZhaSnalFpVIxdsxQhhbY+ezI+/xy/d38cv3d/PvGn9HSVEVWhjmlvaVbdZSML+LGG+fi83nZsWMrr776LK+8/CSvvPQ4f/1kF1dNyMDjPklHRxM//elP2bdvHwcOHOAPf/gDU6ZM5MSJE8iyzPr169m/fz979+5lwYIFNDQ0UFtb239CJsnixYt59913ee+997jvvvvw+XxUVVXh8/morKxEr9ezYcMG9u/fz1tvvcU111xDTU0N9f2scrHd8PTTzH3xRTJGj0YJhXDNm8fi7duZ8cgjfcXYyJGMu+MOZK0WrclE0bJlCCHILC5m8Wuvce1vfgNA8Y9+xKKXXsKYlobeaGTC6tWYCgqwFxczYfVqop2daDMyKLzxRhb9/vc4Ro0iEY0yZvlykv3pg2PkSIouEKKNOTlMvuceZI0GWaNh5aFDlPzLv5BUFEYtW0bOxInIajWLt29n1NKlKMEg2SUl5F93XaqgEIDQaDTirrvuEkIIkZ6eLsrLy0V6erpYsWKFUKvV4vbbbxdqtVqsWLFCnDe73S4AoVKpxPlxampqLttmsVhEeXm56J8yZYAoLy8XFotFPPvss2LBggUiMzNTVFVViYtNURTx0EMPCZ1OJ95++20hhBBbtmwRkydPFmazWVitVrFz507h8/lEWVmZyMnJEYcPHxZCCHH69Gnx8ssvi02bNoknn3xSrF27VmRkZIiioiJx6tQpcfPNN4ucnBxRUVExYM5wOCyWL18ujEajePTRR8U777wj9uzZI+bNmyfMZrN47bXXxIsvvij0er1YvXq1SCQSQggh3njjDaHVasXPf/5z4fF4RFlZmUhLSxMbN24U+/btE7t27RIzZswQdrtd7Nu3T3xXpgQCoqe6WoTb20XE7e57prY2EQ8GU306P/roivd7KitF05tvfut+para2BVOIMyaNYvXX3+ddevWsW3bNmbNmjWgvby8nBkzZqT+j7ggwby47ets+fLlPPjgg9x5552MHj36MufnVKkw6Ha7Abj11luZM2cOq1evpqKiYoCUcz6BB3C5XAwbNiyVY3i9Xg4fPkxbWxvxeDz1/Fqt9hJJSJZlQqEQW7ZsYevWrf3fcSPMnj2b0tJSDh48+LWykiRJ+Hw+nn/++VQxFIlEWLhwIcXFxd/ZKROhUmFwOpFkGak/xCuBAPqcnJTGJxKJK4/xHZxMueKXi5/97GfMnz+fdevWMWvWLMaMGcOIESMYM2bMAOBt3LiR+fPn09vbm9rQK7XddtttPPbYY5d14rHHHuP222+nu7sbg8HAr3/96ys67HK50Ol0HDx4kGuvvRaLxYJKpfpKGUMIgcfjGXCtvb1PAzwPTqvViqIotPVrVhebxWLhgQceYObMmSkg5eXl4XQ6vxZ4Xwrqdh566CGuuuqq1Lwul4uMjIzvZHOT0SjJeBxtWhpRjwedxUKgvh5TQcGX34OrqrCMvLKQkfgugXcxaB555BEe6c8jAE6cODHg97ytWbOGNWvWDNjgK7U999xzVwTFl8WGmkcffZTMzMwrOjxhwgQmTJjAm2++SW1tLTqdDiHEJb5daMePH2f9+vX09vZecDolzIkTJxg3bhxms5mSkhJ27drFM888Q2VlJbIsYzabWbp0KVarlWg0yvHjx4n2618ABQUFLPmKD/AXMnV6ejrhcJhjx47h8/lSbU1NTSxevPgSpv2mpgQCIMtozGYibjf67GySiQRCUZDUX/JNpK2NtMswrkgmSUQiKD093x/j/aPsQh3sSjZ06FDWrl3L5s2b+eKLL1LA1Wg0WK1WtNq+Y1J2ux2Hw4FGoyEUClFTUzNgwwGcTidLliwhNzeXpUuXUlNTw969e/nss88AyM7O5oYbbmDOnDlUVlZy4MABDhw4kLp/5syZzJ8/H71eT0ZGBhbLl9LOhdeMRiOLFi2itraWvXv3DvBh0aJFzJ0791sFXqCujmB9PYrfjxACpbcXSa0m3NaGrNXSEosholES0SiR9nZad+/uY8f+a8loFHHBXuTfdtu3vtf/D4zKlfzuTTcVAAAAAElFTkSuQmCC&quot;;	
+		// dataURL from poweredbygiscenegiscience2.png
+		gisceneLogoImage.src = &quot;data:image/png;base64,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&quot;;
+		var gisceneLogoMaterial = new THREE.SpriteMaterial({ map : gisceneLogoTexture, opacity:1  });
+		var gisceneLogo = new THREE.Sprite(gisceneLogoMaterial);
+		gisceneLogo.scale.set( 158, 20, 1 );
+		gisceneLogo.position.set((this.canvas.width/2)-79,(-this.canvas.height/2)+10,0);
+		this.spriteRoot.add(gisceneLogo);
+		//will be called in this.onResize
+		this.logoOnResize = function() {
+			gisceneLogo.position.set((this.canvas.width/2)-79,(-this.canvas.height/2)+10,0);
+		}.bind(this);
+		
+
+	};
+
+	/**
+	 * Start animation frame and render loop
+	 *
+	 * @method startAnimation
+	 */
+	this.startAnimation = function() {
+		animationFrameId = requestAnimationFrame(this.startAnimation.bind(this));
+		
+		this.delta = this.clock.getDelta();
+		
+		TWEEN.update();
+		
+		this.renderer.clear(true,true,true); //color, depth, stencil; autoclear is false to render sprites on top of scene
+		/**
+		 * beforeRender Event will be executed directly before the render call in the render loop
+		 * @event beforeRender
+		 */
+		this.dispatchEvent({
+			type : &#x27;beforeRender&#x27;
+		});
+		/**
+		 * beforeRender2 Event will be executed directly before the render call in the render loop
+		 * @event beforeRender
+		 */
+		this.dispatchEvent({
+			type : &#x27;beforeRender2&#x27;
+		});
+		
+		//mcaTWEEN.update();	
+		
+		if(this.effectComposer.passes.length&gt;0){
+			this.effectComposer.render();
+		}else{
+			this.renderer.render(this.root, this.camera);
+		}
+		
+		this.renderer.clear(false,true,false); //render sprites always on top, therefore clear depth buffer
+		this.renderer.render(this.spriteRoot, this.spriteCamera);
+		
+		this.dispatchEvent({
+			type : &#x27;afterRender&#x27;
+		});
+	};
+
+	/**
+	 * Stop animation frame and render loop
+	 *
+	 * @method stopAnimation
+	 */
+	this.stopAnimation = function() {
+		cancelAnimationFrame(animationFrameId);
+	};
+
+	this.setCenter_old = function(vector, positionFromCenter) {
+		var translation = vector.clone().sub(this.center);
+		//
+		// //keep light direction but translate light.target
+		// var lightWorld 		 = this.directionalLight.parent.localToWorld(this.directionalLight.position.clone());
+		// var lightTargetWorld = this.directionalLight.target.parent.localToWorld(this.directionalLight.target.position.clone());
+		// var lightWorldNew 	 = lightWorld.add(translation);
+		// this.directionalLight.position = this.directionalLight.parent.worldToLocal(lightWorldNew);
+		//
+		// this.directionalLight.target.position = vector.clone();
+
+		//scene center
+		this.center = vector.clone();
+		//focus camera on center
+		if (positionFromCenter) {
+			//translate and focus camera on center
+			// console.log(positionFromCenter.length());
+			this.camera.position = vector.clone().add(positionFromCenter);
+			this.camera.lookAt(this.center);
+			this.camera.target.position.setZ(-positionFromCenter.length());
+			
+		} else {
+			//just translate
+			this.camera.position.add(translation);
+		}
+
+		// var positionFromCenter = positionFromCenter || this.camera.position.clone().sub(this.camera.target.parent.localToWorld(this.camera.target.position.clone())); //new THREE.Vector3(0,0,0);
+		// this.camera.position = vector.clone().add(positionFromCenter);
+		// this.camera.target.position = positionFromCenter.clone().multiplyScalar(-1);
+		//this.camera.lookAt(this.center);
+		// //this.camera.target.position = this.camera.target.parent.worldToLocal(vector.clone());
+		this.dispatchEvent({
+			type : &#x27;center&#x27;,
+			content : {
+				center : vector.clone(),
+				translation : translation,
+				positionFromCenter : positionFromCenter
+			}
+		});
+	};
+	
+	
+	/**
+	 * Jump to another place in the scene.
+	 * 
+	 * @method setCenter
+	 * @param {THREE.Vector3} vector vector in scene coordinates
+	 * @param {THREE.Vector3} positionFromCenter vector to place the camera at some distance from the point of interest (vector)
+	 * @param {Number} duration duration in milliseconds. if undefined or &gt; 0 an animation is perforemed from the current to the specified new center. Set this to 0 to jump immediately to the new location.
+	 */
+	var _setCenterActive=false;
+	var _setCenterTween = null;
+	this.setCenter = function(vector, positionFromCenter, duration) {
+		// stop exisitng tween when a new one comes during animation time
+		if(_setCenterActive &amp;&amp; _setCenterTween){_setCenterTween.stop();_setCenterActive=false;}
+		
+		if(!_setCenterActive){
+				_setCenterActive = true;
+		//var active = &quot;false&quot;; // avoid multiple calls at a time
+		var duration = (duration == null)?1000:duration;
+		var oldCamTargetPos	= this.center;//this.camera.localToWorld(this.camera.target.position.clone());
+		var newCamTargetPos	= vector.clone();
+		var positionFromCenter = positionFromCenter || this.camera.position.clone().sub( oldCamTargetPos );
+		var oldCamPos		= this.camera.position.clone();
+		var newCamPos 		= vector.clone().add(positionFromCenter);
+		var lookAtVector	= new THREE.Vector3();
+		var numDecimals = 3;
+		
+		var tweenValues = {
+			tx: oldCamTargetPos.x,
+			ty: oldCamTargetPos.y,
+			tz: oldCamTargetPos.z,
+			cx: oldCamPos.x,
+			cy: oldCamPos.y,
+			cz: oldCamPos.z
+		};
+		var targetValues = {
+			tx: newCamTargetPos.x,
+			ty: newCamTargetPos.y,
+			tz: newCamTargetPos.z,
+			cx: newCamPos.x,
+			cy: newCamPos.y,
+			cz: newCamPos.z
+		};
+		//scene center
+		this.center = vector.clone();
+		// console.log(&quot;Scene.setCenter():duration: &quot;+duration);
+		if(duration == 0){
+			this.camera.position.set(parseFloat(targetValues.cx.toFixed(numDecimals)), parseFloat(targetValues.cy.toFixed(numDecimals)), parseFloat(targetValues.cz.toFixed(numDecimals)));
+			this.camera.lookAt(lookAtVector.set(parseFloat(targetValues.tx.toFixed(numDecimals)),parseFloat(targetValues.ty.toFixed(numDecimals)),parseFloat(targetValues.tz.toFixed(numDecimals))));
+			this.camera.target.position.setZ(-positionFromCenter.length());
+			/**
+			 * Fires after setCenter() completed
+			 * @event center
+			 */
+			this.dispatchEvent({
+				type : &#x27;center&#x27;,
+				content : {
+					center : vector.clone(),
+					translation : oldCamTargetPos.clone().sub(newCamTargetPos),
+					positionFromCenter : positionFromCenter
+				}
+			});
+			_setCenterActive = false;
+		}
+		else {
+			
+				//tween camera target position and camera position
+				_setCenterTween = new TWEEN.Tween(tweenValues)
+											.to(targetValues,duration)
+											.easing( TWEEN.Easing.Quartic.Out )
+											.onUpdate(function(){
+												this.camera.position.set(parseFloat(tweenValues.cx.toFixed(numDecimals)), parseFloat(tweenValues.cy.toFixed(numDecimals)), parseFloat(tweenValues.cz.toFixed(numDecimals)));
+												this.camera.lookAt(lookAtVector.set(parseFloat(tweenValues.tx.toFixed(numDecimals)),parseFloat(tweenValues.ty.toFixed(numDecimals)),parseFloat(tweenValues.tz.toFixed(numDecimals))));
+											}.bind(this))
+											.onComplete(function(){
+												this.camera.target.position.setZ(-positionFromCenter.length());
+												/**
+												 * Fires after setCenter() completed
+												 * @event center
+												 */
+												this.dispatchEvent({
+													type : &#x27;center&#x27;,
+													content : {
+														center : vector.clone(),
+														translation : oldCamTargetPos.clone().sub(newCamTargetPos),
+														positionFromCenter : positionFromCenter
+													}
+												});
+												
+												_setCenterActive = false;
+												
+												}.bind(this))
+											.start();		
+				
+			}
+		
+
+		//this is done every frame update by OrbitZoomPan-Control
+		// if (this.camera.inOrthographicMode) {
+			// this.camera.toOrthographic();
+		// }
+		
+		}	
+	};
+	
+	/**
+	 * Function to move camera to predefined relative positions from Scene.center
+	 * 
+	 * @method viewFrom
+	 * @param {String} relativePosition allowed values are &#x27;left&#x27;,&#x27;right&#x27;,&#x27;front&#x27;,&#x27;back&#x27;,&#x27;top&#x27;,&#x27;bottom&#x27;
+	 */
+	this.viewFrom = function(relativePosition) {
+		var distanceToCenter = this.camera.position.clone().sub( this.center ).length();
+		var direction = new THREE.Vector3(0,0,1); //default &#x27;front&#x27;
+		switch (relativePosition) {
+			case &#x27;left&#x27;: 
+				direction = new THREE.Vector3(-1,0,0);
+				break;
+			case &#x27;right&#x27;:
+				direction = new THREE.Vector3(1,0,0);
+				break;
+			case &#x27;front&#x27;:
+				direction = new THREE.Vector3(0,0,1);
+				break;
+			case &#x27;back&#x27;:
+				direction = new THREE.Vector3(0,0,-1);
+				break;
+			case &#x27;top&#x27;:
+				direction = new THREE.Vector3(0,1,0.01);
+				break;	
+			case &#x27;bottom&#x27;:
+				direction = new THREE.Vector3(0,-1,0.01);
+				break;	
+			default:
+				console.error(&#x27;Value &quot;&#x27; + relativePosition + &#x27;&quot; not supported!&#x27;);	
+		}
+		
+		this.setCenter(this.center, direction.clone().multiplyScalar(distanceToCenter));
+	};
+
+	/**
+	 * Adds a control to the scene
+	 *
+	 * @method addControl
+	 */
+	this.addControl = function(control) {
+		// add Control to controls array
+		this.controls.push(control);
+		control.setScene(this);
+
+	};
+
+	/**
+	 * Removes a control from the scene
+	 *
+	 * @method removeControl
+	 */
+	this.removeControl = function(control) {
+		control.deactivate();
+		var x = 0;
+		while (x &lt; this.controls.length) {
+			if (control === this.controls[x]) {
+				this.controls.splice(x, 1);
+			}
+			x++;
+		}
+		control.setScene(null);
+	};
+
+	/**
+	 * Adds a layer to the scene
+	 *
+	 * @method addLayer
+	 */
+	this.addLayer = function(layer) {
+		this.layers.push(layer);
+		layer.setScene(this);
+		this.root.add(layer.root);
+		/**
+		 * @event addlayer 
+		 */
+		this.dispatchEvent({ type: &#x27;addlayer&#x27;, content: layer });
+	};
+
+	/**
+	 * Removes a layer from the scene
+	 *
+	 * @method removeLayer
+	 */
+	this.removeLayer = function(layer) {
+		/**
+		 * @event removelayer 
+		 */
+		this.dispatchEvent({ type: &#x27;beforeremovelayer&#x27;, content: layer });
+		this.root.remove(layer.root);
+		var x = 0;
+		while (x &lt; this.layers.length) {
+			if (layer === this.layers[x]) {
+				this.layers.splice(x, 1);
+			}
+			x++;
+		}
+		layer.setScene(null);
+		/**
+		 * @event removelayer 
+		 */
+		this.dispatchEvent({ type: &#x27;removelayer&#x27;, content: layer });
+	};
+	
+	/**
+	 * Deletes all layer objects and the layer from memory
+	 * 
+	 * @method disposeLayer
+	 * @param {GIScene.Layer} layer
+	 * 
+	 *  @TODO remove all working materials first
+	 *  @TODO removeEventListeners
+	 */
+	this.disposeLayer = function(layer) {
+		this.removeLayer(layer);
+		
+		var objects = layer.root.getDescendants(); 
+		objects.push(layer.root);
+		//get all geoms, materials, textures
+		var materials = [], textures = [];
+		
+		objects.forEach(function(object){
+			//@TODO Docs fire event to clear references in other objects, eg. selectables in Control.Select
+			this.dispatchEvent( { type: &#x27;beforeDisposeObject&#x27;, content: object } );
+			
+			if(object.geometry){
+				object.geometry.dispose();
+				delete object.geometry;
+			}
+			
+			//get materials
+			if (object.material) {
+				if (object.material instanceof THREE.MeshFaceMaterial) {
+					object.material.materials.forEach(function(material) {
+						if (! GIScene.Utils.arrayContains(materials, material)) {
+							materials.push(material);
+						};
+					});
+				} else {
+
+					if (! GIScene.Utils.arrayContains(materials, object.material)) {
+						materials.push(object.material);
+					};
+				}
+			}
+			delete object.material;
+			
+			
+			// // get textures
+			// materials.forEach(function(material) {
+				// var maps = [&quot;map&quot;, &quot;lightMap&quot;, &quot;bumpMap&quot;, &quot;normalMap&quot;, &quot;specularMap&quot;, &quot;envMap&quot;];
+				// for (var i = 0, j = maps.length; i &lt; j; i++) {
+					// if (material[maps[i]] &amp;&amp; material[maps[i]] != null &amp;&amp; ! GIScene.Utils.arrayContains(textures, material[maps[i]])) {
+						// textures.push(material[maps[i]]);
+					// };
+				// };
+			// }); 
+			
+			//dispose objects
+			if(object.dispose)object.dispose();
+			object = null;
+		}.bind(this)
+		);
+		
+		//get further materials from styles
+		layer.styles.forEach(function(style){
+			if (style.material) {
+				if (style.material instanceof THREE.MeshFaceMaterial) {
+					style.material.materials.forEach(function(material) {
+						if (! GIScene.Utils.arrayContains(materials, material)) {
+							materials.push(material);
+						};
+					});
+				} else {
+
+					if (! GIScene.Utils.arrayContains(materials, style.material)) {
+						materials.push(style.material);
+					};
+				}
+			}
+			
+		});
+		
+		// get textures
+			materials.forEach(function(material) {
+				var maps = [&quot;map&quot;, &quot;lightMap&quot;, &quot;bumpMap&quot;, &quot;normalMap&quot;, &quot;specularMap&quot;, &quot;envMap&quot;, &quot;texture&quot;]; //texture exists in RasterOverlayMaterial
+				for (var i = 0, j = maps.length; i &lt; j; i++) {
+					if (material[maps[i]] &amp;&amp; material[maps[i]] != null &amp;&amp; ! GIScene.Utils.arrayContains(textures, material[maps[i]])) {
+						textures.push(material[maps[i]]);
+					};
+				};
+			}); 
+		
+		//dispose textures, materials
+		textures.forEach(function (texture) {
+		  texture.dispose();
+		});
+		textures = null;
+		
+		materials.forEach(function (material) {
+		  material.dispose();
+		});
+		materials = null;
+		
+		objects = null;
+		
+		//remove THREE.EventDispatcher listeners
+		for (type in layer._listeners){
+			delete layer._listeners[type];
+		}
+		for (type in layer.loader._listeners){
+			delete layer.loader._listeners[type];
+		}
+		
+		layer = null;
+	};
+	
+	/**
+	 * Set the wireframe property for the whole scene
+	 * @method setWireframe
+	 * @param {Mixed} wireframeMode can be {String} &#x27;default&#x27; | {boolean} true | {boolean} false
+	 */
+	
+	this.setWireframe = function(wireframeMode) {
+		this.root.traverse(function(object) {
+			
+			GIScene.Utils.WorkingMaterial.setWireframe(object,wireframeMode);
+			
+			// if (object.material) {
+				// if(!object.userData.originalMaterial){
+					// // if no working material exists create one 
+					// object.userData.originalMaterial = object.material;
+					// object.material = object.userData.originalMaterial.clone();
+				// }
+				// if(object.userData.workingMaterialFlags &amp;&amp; (object.userData.workingMaterialFlags &amp; GIScene.WORKINGMATERIALFLAGS.WIRE) != 0){
+					// //if wire flag exist remove and check if workingmaterial is still in use, and change state or material
+					// object.userData.workingMaterialFlags ^= GIScene.WORKINGMATERIALFLAGS.WIRE;
+					// if(object.userData.workingMaterialFlags == 0){
+						// //change back to original material
+						// object.material = object.userData.originalMaterial;
+						// object.userData.originalMaterial = null;
+						// delete object.userData.originalMaterial;
+					// }
+					// else{
+						// // set original state
+// 						
+						// //for multimaterial objects
+						// if(&quot;materials&quot; in object.material){
+							// object.material.materials.forEach(
+								// function (e,i,a){
+									// a[i].wireframe = isTrue;
+								// }
+							// );
+						// }
+// 						
+						// // for single material objects
+						// else {
+							// object.material.wireframe = isTrue;
+						// }
+					// }
+				// }
+				// else{
+					// //set wireflag and change wireframe state
+					// //set wire flag
+					// object.userData.workingMaterialFlags = (&quot;workingMaterialFlags&quot; in object.userData)? object.userData.workingMaterialFlags ^ GIScene.WORKINGMATERIALFLAGS.WIRE : GIScene.WORKINGMATERIALFLAGS.WIRE ;
+					// //change wireframe state
+// 					
+					// //for multimaterial objects
+						// if(&quot;materials&quot; in object.material){
+							// object.material.materials.forEach(
+								// function (e,i,a){
+									// a[i].wireframe = isTrue;
+								// }
+							// );
+						// }
+// 						
+						// // for single material objects
+						// else {
+							// object.material.wireframe = isTrue;
+						// }
+				// }
+// 				
+			// }
+		});
+	}; 
+
+	/**
+	 * Sets texturing of on or off for the whole scene
+	 * @method setTexturing
+	 * @param {Mixed} texturingMode can be: {String} &#x27;default&#x27; | {boolean} true | {boolean} false
+	 */
+	this.setTexturing = function(texturingMode) {
+		this.root.traverse(function(object) {
+			
+			GIScene.Utils.WorkingMaterial.setTexturing(object, texturingMode);
+			
+			// if (object.material &amp;&amp; !((object instanceof THREE.Sprite)||(object instanceof THREE.ParticleSystem))) {
+				// if(!object.userData.originalMaterial){
+					// // if no working material exists create one 
+					// object.userData.originalMaterial = object.material;
+					// object.material = object.userData.originalMaterial.clone();
+				// }
+				// if(object.userData.workingMaterialFlags &amp;&amp; (object.userData.workingMaterialFlags &amp; GIScene.WORKINGMATERIALFLAGS.MAP) != 0){
+					// //if texture flag exist remove and check if workingmaterial is still in use, and change state or material
+					// object.userData.workingMaterialFlags ^= GIScene.WORKINGMATERIALFLAGS.MAP;
+					// if(object.userData.workingMaterialFlags == 0){
+						// //change back to original material
+						// object.material = object.userData.originalMaterial;
+						// object.userData.originalMaterial = null;
+						// delete object.userData.originalMaterial;
+					// }
+					// else{
+						// // set original state
+// 						
+						// //for multimaterial objects
+						// if(&quot;materials&quot; in object.material){
+							// object.material.materials.forEach(
+								// function (e,i,a){
+									// a[i].map = (object.userData.originalMaterial.materials[i].map &amp;&amp; object.userData.originalMaterial.materials[i].map != null)? object.userData.originalMaterial.materials[i].map.clone() : null;
+									// if(a[i].map != null)a[i].map.needsUpdate = true;
+									// a[i].needsUpdate = true;
+								// }
+							// );
+						// }
+// 						
+						// // for single material objects
+						// else{
+							// object.material.map = (object.userData.originalMaterial.map &amp;&amp; object.userData.originalMaterial.map != null)? object.userData.originalMaterial.map.clone() : null;
+							// if(object.material.map != null)object.material.map.needsUpdate = true;
+							// object.material.needsUpdate = true;
+						// }
+// 						
+					// }
+				// }
+				// else{
+					// //set mapflag and change map state
+					// //set map flag
+					// object.userData.workingMaterialFlags = (&quot;workingMaterialFlags&quot; in object.userData)? object.userData.workingMaterialFlags ^ GIScene.WORKINGMATERIALFLAGS.MAP : GIScene.WORKINGMATERIALFLAGS.MAP ;
+// 					
+					// //change map state
+// 					
+					// //for multimaterial objects
+					// if(&quot;materials&quot; in object.material){
+						// object.material.materials.forEach(
+							// function (e,i,a){
+								// a[i].map = null;
+								// a[i].needsUpdate = true;
+							// }
+						// );
+					// }
+// 					
+					// // for single material objects
+					// else{
+						// object.material.map = null;
+						// object.material.needsUpdate =true;
+					// }
+				// }
+			// }
+		});
+	};
+	
+	/**
+	 * Sets the face culling mode for the whole scene
+	 * 
+	 * @method setFaceCulling
+	 * @param {THREE.FrontSide || THREE.BackSide || THREE.DoubleSide || &#x27;default&#x27;} faceCullingMode
+	 */
+	
+	this.setFaceCulling = function(faceCullingMode) { //use THREE.FrontSide || THREE.BackSide || THREE.DoubleSide || &#x27;default&#x27;
+		this.root.traverse(function(object) {
+			
+			GIScene.Utils.WorkingMaterial.setFaceCulling(object,faceCullingMode);
+			
+			// if (object.material &amp;&amp; !((object instanceof THREE.Sprite)||(object instanceof THREE.ParticleSystem))) {
+				// if(!object.userData.originalMaterial){
+					// // if no working material exists create one 
+					// object.userData.originalMaterial = object.material;
+					// object.material = object.userData.originalMaterial.clone();
+					// //set flag
+					// object.userData.workingMaterialFlags = GIScene.WORKINGMATERIALFLAGS.SIDE;
+				// }
+// 				
+				// //no wm --&gt; create and set flag and mode
+// 					
+				// //else wm exists --&gt; check if new mode == original
+				// /*else*/ if (faceCullingMode == object.userData.originalMaterial.side || faceCullingMode == &#x27;default&#x27;){
+					// //remove (toggle) flag
+					// object.userData.workingMaterialFlags ^= GIScene.WORKINGMATERIALFLAGS.SIDE;	
+				// }
+// 				
+				// //set property
+// 				
+				// function setFC(material, faceCullingMode){
+					// material.side = faceCullingMode;
+					// material.needsUpdate = true;
+				// }
+// 				
+				// //for multimaterial objects
+						// if(&quot;materials&quot; in object.material){
+							// object.material.materials.forEach(
+								// function (e,i,a){
+									// if(faceCullingMode == &#x27;default&#x27;){
+										// var FCValue = object.userData.originalMaterial.materials[i].side;
+										// // a[i].side = object.userData.originalMaterial.materials[i].side;
+										// // a[i].needsUpdate = true;
+									// }
+									// else{
+										// var FCValue = faceCullingMode;
+										// // a[i].side = faceCullingMode;
+										// // a[i].needsUpdate = true;
+									// }
+									// setFC(a[i],FCValue);
+								// }
+							// );
+						// }
+// 						
+						// // for single material objects
+						// else {
+							// if(faceCullingMode == &#x27;default&#x27;){
+								// var FCValue = object.userData.originalMaterial.side;
+								// // object.material.side = object.userData.originalMaterial.side;
+								// // object.material.needsUpdate = true;
+							// }
+							// else{
+								// var FCValue = faceCullingMode;
+								// // object.material.side = faceCullingMode;
+								// // object.material.needsUpdate = true;
+							// }
+							// setFC(object.material, FCValue);
+						// }
+// 				
+				// //check if wm still in use --&gt; false remove wm and switch to orignal
+				// if(object.userData.workingMaterialFlags == 0){
+						// //change back to original material
+						// object.material = object.userData.originalMaterial;
+						// object.userData.originalMaterial = null;
+						// delete object.userData.originalMaterial;
+				// }
+// 				
+			// }
+		}
+		);
+	};
+	
+	/**
+	 * Sets the vertex color mode for the whole scene
+	 * 
+	 * @method setVertexColors
+	 * @param {THREE.NoColors || THREE.FaceColors || THREE.VertexColors || &#x27;default&#x27;} vertexColorMode
+	 */
+	
+	this.setVertexColors = function(vertexColorMode) { 
+		this.root.traverse(function(object) {
+			
+			GIScene.Utils.WorkingMaterial.setVertexColors(object,vertexColorMode);
+			
+			// console.log(&#x27;VC&#x27;,object.userData.workingMaterialFlags);
+			// if (object.material &amp;&amp; !((object instanceof THREE.Sprite)||(object instanceof THREE.ParticleSystem))) {
+				// if(!object.userData.originalMaterial){
+					// // if no working material exists create one 
+					// object.userData.originalMaterial = object.material;
+					// object.material = object.userData.originalMaterial.clone();
+					// //set flag
+					// // console.log(&quot;set workingmaterial vertexColors&quot;);
+					// object.userData.workingMaterialFlags = 0;//GIScene.WORKINGMATERIALFLAGS.VERTEXCOLORS;
+					// // console.log(object.userData.workingMaterialFlags);
+				// }
+// 				
+				// //no wm --&gt; create and set flag and mode
+// 					
+				// //else wm exists --&gt; check if new mode == original
+				// // /*else*/ if (vertexColorMode == object.userData.originalMaterial.vertexColors || vertexColorMode == &#x27;default&#x27;){
+// 					
+// 							 
+							 // //if default clear flag: object.userData.workingMaterialFlags &amp;= ~GIScene.WORKINGMATERIALFLAGS.VERTEXCOLORS;
+							 // if (vertexColorMode == &#x27;default&#x27;){ object.userData.workingMaterialFlags &amp;= ~GIScene.WORKINGMATERIALFLAGS.VERTEXCOLORS; }
+							 // //else
+							 // else{
+								 // //if multi
+								 // if (&quot;materials&quot; in object.material){
+								 	// //check isHomogenous
+								 	// var isHomogenous = null;
+								 	// for (var i=1; i &lt; object.userData.originalMaterial.materials.length; i++){
+								 		// isHomogenous = (object.userData.originalMaterial.materials[0].vertexColors == object.userData.originalMaterial.materials[i].vertexColors);
+								 		// if(!isHomogenous){break;}
+								 	// }
+								 	// //if isHomogenous
+								 	// if(isHomogenous){
+								 		// //if newVC != object.userData.originalMaterial.materials[0].vertexColors : set flag |=
+								 		// if(vertexColorMode != object.userData.originalMaterial.materials[0].vertexColors){ object.userData.workingMaterialFlags |= GIScene.WORKINGMATERIALFLAGS.VERTEXCOLORS; }
+								 		// //else clear flag &amp;= ~
+								 		// else{object.userData.workingMaterialFlags &amp;= ~GIScene.WORKINGMATERIALFLAGS.VERTEXCOLORS;}
+								 	// }
+								 	// //else (not homogenous)
+								 	// else{	
+								 		// //set flag: set flag |=
+								 		// object.userData.workingMaterialFlags |= GIScene.WORKINGMATERIALFLAGS.VERTEXCOLORS;
+								 	// }
+								 // }
+								 // //else (single)
+								 // else{
+								 	// //if newVC != object.userData.originalMaterial.vertexColors : set flag |=
+								 	// if(vertexColorMode != object.userData.originalMaterial.vertexColors){ object.userData.workingMaterialFlags |= GIScene.WORKINGMATERIALFLAGS.VERTEXCOLORS; }
+							 		// //else clear flag &amp;= ~
+							 		// else{object.userData.workingMaterialFlags &amp;= ~GIScene.WORKINGMATERIALFLAGS.VERTEXCOLORS;}
+								 // }
+							 // }
+// 							 
+// 							 
+							 // //check multiIsHomogenous
+							 // //if multiIsHomogenous == false: setMask : object.userData.workingMaterialFlags |= GIScene.WORKINGMATERIALFLAGS.VERTEXCOLORS;
+							 // //else 
+							 // //if newVCMode != 
+// 							 
+							 // // var newVCMode = (vertexColorMode == &#x27;default&#x27;)? object.userData.originalMaterial.vertexColors : vertexColorMode;
+					// // /*else*/ if (newVCMode != object.userData.originalMaterial.vertexColors || vertexColorMode == &#x27;default&#x27;){
+					// //remove (toggle) flag
+					// // console.log(&quot;remove workingmaterial vertexColors&quot;);
+					// // object.userData.workingMaterialFlags ^= GIScene.WORKINGMATERIALFLAGS.VERTEXCOLORS;	
+					// // console.log(object.userData.workingMaterialFlags);
+				// // }
+				// //set property
+// 				
+				// //for multimaterial objects
+				// if(&quot;materials&quot; in object.material){
+					// object.material.materials.forEach(
+								// function (e,i,a){
+									// if(vertexColorMode == &#x27;default&#x27;){
+										// a[i].vertexColors = object.userData.originalMaterial.materials[i].vertexColors;
+										// a[i].color = object.userData.originalMaterial.materials[i].color;
+										// a[i].ambient = object.userData.originalMaterial.materials[i].ambient;
+										// a[i].needsUpdate = true;
+									// }
+									// else{
+										// if (object.geometry.faces[0].vertexColors.length &gt; 0) {
+// 											
+											// a[i].vertexColors = vertexColorMode;
+// 											
+											// if(vertexColorMode == THREE.NoColors){
+												// a[i].color = new THREE.Color(0xFFFFFF);
+												// a[i].ambient = new THREE.Color(0x999999);
+											// }else
+											// {
+												// a[i].color = new THREE.Color(0xFFFFFF);
+												// a[i].ambient = new THREE.Color(0xFFFFFF);
+											// }
+// 											
+											// a[i].needsUpdate = true;
+// 											
+										// }
+									// }
+								// }
+					// )
+				// }
+				// else {
+					// //for single material models
+					// if(vertexColorMode == &#x27;default&#x27;){
+						// object.material.vertexColors = object.userData.originalMaterial.vertexColors;
+						// object.material.color = object.userData.originalMaterial.color;
+						// object.material.ambient = object.userData.originalMaterial.ambient;
+						// object.material.needsUpdate = true;
+					// }
+					// else{
+						// if (object.geometry.faces[0].vertexColors.length &gt; 0) {
+// 							
+							// object.material.vertexColors = vertexColorMode;
+// 							
+							// if(vertexColorMode == THREE.NoColors){
+								// object.material.color = new THREE.Color(0xFFFFFF);
+								// object.material.ambient = new THREE.Color(0x999999);
+							// }else
+							// {
+								// object.material.color = new THREE.Color(0xFFFFFF);
+								// object.material.ambient = new THREE.Color(0xFFFFFF);
+							// }
+// 							
+							// object.material.needsUpdate = true;
+// 							
+						// }
+					// }
+				// }
+// 				
+				// //check if wm still in use --&gt; false remove wm and switch to orignal
+				// if(object.userData.workingMaterialFlags == 0){
+						// //change back to original material
+						// object.material = object.userData.originalMaterial;
+						// object.userData.originalMaterial = null;
+						// delete object.userData.originalMaterial;
+				// }
+			// }
+		}
+		);
+	};
+	
+	/**
+	 * Sets the shading mode for the whole scene
+	 * 
+	 * @method setShading
+	 * @param { THREE.FlatShading || THREE.SmoothShading || &#x27;default&#x27; } shadingMode
+	 */
+	this.setShading = function(shadingMode) { //use THREE.FlatShading || THREE.SmoothShading || &#x27;default&#x27;
+		this.root.traverse(function(object) {
+			
+			GIScene.Utils.WorkingMaterial.setShading(object,shadingMode);
+			
+			// if (object.material &amp;&amp; !((object instanceof THREE.Sprite)||(object instanceof THREE.ParticleSystem))) {
+				// if(!object.userData.originalMaterial){
+					// // if no working material exists create one 
+					// object.userData.originalMaterial = object.material;
+					// object.material = object.userData.originalMaterial.clone();
+					// //set flag
+					// object.userData.workingMaterialFlags = GIScene.WORKINGMATERIALFLAGS.SHADING;
+				// }
+// 				
+				// //no wm --&gt; create and set flag and mode
+// 					
+				// //else wm exists --&gt; check if new mode == original
+				// /*else*/ if (shadingMode == object.userData.originalMaterial.shading || shadingMode == &#x27;default&#x27;){
+					// //remove (toggle) flag
+					// object.userData.workingMaterialFlags ^= GIScene.WORKINGMATERIALFLAGS.SHADING;	
+				// }
+// 				
+				// //store originalVertexNormals the first time we are changing this property
+				// if(!(&quot;originalVertexNormals&quot; in object.userData) ) {
+					// // console.log(&#x27;store originalVertexNormals&#x27;);
+					// object.userData.originalVertexNormals = [];
+					// for (var i=0,l=object.geometry.faces.length; i&lt;l ;i++){
+						// // object.userData.originalVertexNormals.push(object.geometry.faces[i].vertexNormals);
+						// if(object.geometry.faces[i].vertexNormals.length != 0){
+							// object.userData.originalVertexNormals[object.geometry.faces[i].a] = object.geometry.faces[i].vertexNormals[0].clone();
+							// object.userData.originalVertexNormals[object.geometry.faces[i].b] = object.geometry.faces[i].vertexNormals[1].clone();
+							// object.userData.originalVertexNormals[object.geometry.faces[i].c] = object.geometry.faces[i].vertexNormals[2].clone();	
+						// }
+					// }
+				// }
+// 				
+				// //set property
+				// if(shadingMode == &#x27;default&#x27;){
+					// //restore originalVertexNormals
+					// for (var i=0,l=object.geometry.faces.length; i&lt;l ;i++){
+						// if(object.userData.originalVertexNormals[object.geometry.faces[i].a] == undefined){
+							// object.geometry.faces[i].vertexNormals = [];
+						// }
+						// else{
+							// object.geometry.faces[i].vertexNormals[0] = object.userData.originalVertexNormals[object.geometry.faces[i].a];
+							// object.geometry.faces[i].vertexNormals[1] = object.userData.originalVertexNormals[object.geometry.faces[i].b];
+							// object.geometry.faces[i].vertexNormals[2] = object.userData.originalVertexNormals[object.geometry.faces[i].c];	
+						// }	
+					// }
+					// // console.log(&#x27;deleting originalVertexNormals&#x27;);
+					// object.geometry.__tmpVertices = undefined; //has been set by Geometry.computeVertexNormals()
+					// delete object.userData.originalVertexNormals;
+// 					
+						// //for multimaterial objects
+						// if(&quot;materials&quot; in object.material){
+							// object.material.materials.forEach(
+								// function (e,i,a){
+									// a[i].shading = object.userData.originalMaterial.materials[i].shading;
+									// object.geometry.normalsNeedUpdate = true;
+									// a[i].needsUpdate = true;
+								// }
+							// )
+						// }
+// 						
+						// //for single materials
+						// else{
+							// object.material.shading = object.userData.originalMaterial.shading;
+							// object.geometry.normalsNeedUpdate = true;
+							// object.material.needsUpdate = true;
+						// }
+				// }
+// 				
+				// // other than &#x27;default&#x27;
+				// else{
+					// if( object.geometry.faces[0].vertexNormals.length == 0 ){
+						// object.geometry.computeVertexNormals();
+					// }
+// 					
+					// //for multimaterial objects
+						// if(&quot;materials&quot; in object.material){
+							// object.material.materials.forEach(
+								// function (e,i,a){
+									// a[i].shading = shadingMode;
+									// object.geometry.normalsNeedUpdate = true;
+									// a[i].needsUpdate = true;
+								// }
+							// )
+						// }
+// 						
+						// //for single materials
+						// else{
+							// object.material.shading = shadingMode;
+							// object.geometry.normalsNeedUpdate = true;
+							// object.material.needsUpdate = true;
+						// }
+				// }
+// 					
+				// //check if wm still in use --&gt; false remove wm and switch to orignal
+				// if(object.userData.workingMaterialFlags == 0){
+						// //change back to original material
+						// object.material = object.userData.originalMaterial;
+						// object.userData.originalMaterial = null;
+						// delete object.userData.originalMaterial;
+				// }
+// 				
+			// }
+		}
+		);
+	};
+	
+	/**
+	 * get all descendants of the layers. Optionally the layers can be filtered by an array filter function.
+	 * 
+	 * @method getLayerDescendants
+	 * @param {Function} filter An array filter function that is applied to each layer object of the scene. Should return true or false. 
+	 * @example
+	 * 	//get only descendants of layers that are not Helper Layers
+	 * 	scene.getLayerDescendants(function(e,i,a){
+	 * 		return !(e instanceof GIScene.Layer.Helper);
+	 * 		}
+	 *	);
+	 *  
+	 */
+	this.getLayerDescendants = function(filter){
+		var layerDescendants = [];
+		var layers = this.layers;
+		
+		if(typeof filter == &#x27;function&#x27;){
+			layers = layers.filter(filter);
+		}
+		
+		for(var i=0,j=layers.length; i&lt;j; i++){
+		  layers[i].root.getDescendants(layerDescendants);
+		};
+		
+		return layerDescendants;
+	};
+	
+	/**
+	 * @method getLayerById
+	 * @param {String} id
+	 * @return {GIScene.Layer} result returns the layer found by id or null
+	 */
+	this.getLayerById = function(id) {
+		var result = null;
+		for (var i=0,j=this.layers.length;i&lt;j;i++){
+			if(this.layers[i].id.toString() === id.toString()) return this.layers[i];
+		}
+		return result;
+	};
+	
+	/* experimental function */
+	this.sortFacesFromCamera = function() {
+		//sorting function to sort face arrays according to the distance from the camera to minimize opacity rendering problems
+		var sortingFunction = function (elementA, elementB){
+		    var distA = this.camera.position.distanceTo(elementA);
+		    var distB = this.camera.position.distanceTo(elementB);
+		    // return distA - distB;
+		    return distB - distA; //sort from far to near
+		}.bind(this);
+		
+		//merge all geoms
+		var mergedGeom = new THREE.Geometry();
+		this.root.traverse(function(object) {
+			if (object.geometry &amp;&amp; object instanceof THREE.Mesh){
+				THREE.GeometryUtils.merge(mergedGeom, object.geometry);
+			}
+		}.bind(this));
+		
+		//sort triangles
+		mergedGeom.faces.sort(sortingFunction);
+		// this.root.traverse(function(object) {
+			// if (object.geometry &amp;&amp; object instanceof THREE.Mesh){
+				// object.geometry.faces.sort(sortingFunction);
+			// }
+		// });
+		mergedMat = new THREE.MeshLambertMaterial({
+			color : 0xD2B48C, //0xFFFF66(gelb),
+			ambient : 0x8B7355, //0x7B7B33,
+			emissive : 0x000000,
+			depthTest: false,
+			depthWrite: true,
+			opacity:0.5,
+			transparent:true
+		});
+		
+		mergedMesh = new THREE.Mesh(mergedGeom, mergedMat);
+		
+		mergedLayer = new GIScene.Layer();
+		mergedLayer.root.add(mergedMesh);
+		this.disposeLayer(this.layers[0]);
+		this.addLayer(mergedLayer);
+		
+		
+	};
+
+	var debugView = false;
+	this.toggleDebugView = function() {
+		if(debugView){
+			debugView = false;
+			this.camera.target.remove(this.camera.target.children[1]);
+		}
+		else{
+			debugView = true;
+			var sphereGeom1 = new THREE.SphereGeometry(0.1,8,8);
+			var camTargetDummy = new THREE.Mesh(sphereGeom1);
+			this.camera.target.add(camTargetDummy);
+			
+			var sphereGeom2 = new THREE.SphereGeometry(0.2,10,10);
+			var pivotLightDummy = new THREE.Mesh(sphereGeom2);
+			cameraLightControl.pivotLight.add(pivotLightDummy);
+		}
+	};
+	
+	//start auto initialization
+	this.init();
+	
+	//set viewport on resize
+	this.onResize = function(event) {
+		var w = this.containerDiv.clientWidth;
+		var h = this.containerDiv.clientHeight;
+		this.renderer.setSize( w, h );
+		this.effectComposer.setSize( w, h );
+		this.camera.setSize( w, h );
+		this.camera.updateProjectionMatrix();
+		
+		this.spriteCamera.left = -w/2;
+		this.spriteCamera.right = w/2;
+		this.spriteCamera.top = h/2;
+		this.spriteCamera.bottom = -h/2;
+		this.spriteCamera.updateProjectionMatrix();
+		
+		//update logo position
+		this.logoOnResize();
+	}.bind(this);
+	window.addEventListener(&#x27;resize&#x27;, this.onResize, false);
+	
+	this.onUnload = function(event) {
+		//@TODO free memory before reload
+		
+		this.stopAnimation();
+		
+		//deactivate all controls to removeEventListeners on canvas etc
+		for(var i=0,j=this.controls.length; i&lt;j; i++){
+		  if(this.controls[i].isActive)this.controls[i].deactivate();
+		};
+		
+		//dispose all layers
+		for(var i=0,j=this.layers.length; i&lt;j; i++){
+		  this.disposeLayer(this.layers[i]); 
+		};
+		
+		this.containerDiv.innerHTML = &quot;&quot;;
+		
+		for (props in this){
+			delete this[props];
+		}
+		
+		
+		
+	}.bind(this);
+	window.addEventListener(&#x27;unload&#x27;, this.onUnload, false);
+};
+
+//Provide EventDispatcher Functions
+GIScene.Scene.prototype = {
+
+	constructor : GIScene.Scene,
+	
+	/**
+	 * get Objects by a evaluation function which recursively tries to match the objects of the scene
+	 * 
+	 * @method getObjectsBy
+	 * @param {Function} callback
+	 * @return {Array} matches
+	 */
+	getObjectsBy : function(callback) {
+		return GIScene.Utils.getObjectsBy(this.root,callback);
+	},
+
+	/**
+	 * inherited from THREE.EventDispatcher
+	 *
+	 * @method addEventListener
+	 * @param {String} eventType
+	 * @param {Function} listener function, to be called when the event is dispatched
+	 */
+	addEventListener : THREE.EventDispatcher.prototype.addEventListener,
+	
+	/**
+	 * inherited from THREE.EventDispatcher
+	 *
+	 * @method hasEventListener
+	 * @param {String} eventType
+	 * @param {Function} listener function, to be removed from the event
+	 */
+	hasEventListener : THREE.EventDispatcher.prototype.hasEventListener,
+	
+	/**
+	 * inherited from THREE.EventDispatcher
+	 *
+	 * @method removeEventListener
+	 * @param {String} eventType
+	 * @param {Function} listener function, to be removed from the event
+	 */
+	removeEventListener : THREE.EventDispatcher.prototype.removeEventListener,
+	
+	/**
+	 * inherited from THREE.EventDispatcher
+	 *
+	 * @method dispatchEvent
+	 * @param {Object} event
+	 * @example this.dispatchEvent( { type: &#x27;beforeRender&#x27;, content: anythingToBePassedToTheListeners } );
+	 *
+	 */
+	dispatchEvent : THREE.EventDispatcher.prototype.dispatchEvent
+
+};
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>
