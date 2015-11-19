@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="windrose.svg"
+   inkscape:export-filename="D:\AptanaStudio3Workspace\GIScene\resources\images\windrose3.png"
+   inkscape:export-xdpi="35.581551"
+   inkscape:export-ydpi="35.581551">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.34"
+     inkscape:cx="185.17388"
+     inkscape:cy="226.46528"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid3005" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:#ff0000;stroke:#ff0000;stroke-width:2;stroke-miterlimit:4"
+       d="m 229.84375,693.65625 -5.1875,43.875 c 1.7687,-0.10981 3.54739,-0.15625 5.34375,-0.15625 1.70119,0 3.38605,0.0577 5.0625,0.15625 l -5.21875,-43.875 z"
+       id="path3124"
+       inkscape:export-filename="D:\AptanaStudio3Workspace\GIScene\resources\images\windrose2.png"
+       inkscape:export-xdpi="36.23"
+       inkscape:export-ydpi="36.23" />
+    <g
+       id="g3937"
+       style="stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none">
+      <path
+         inkscape:export-ydpi="36.23"
+         inkscape:export-xdpi="36.23"
+         inkscape:export-filename="D:\AptanaStudio3Workspace\GIScene\resources\images\windrose2.png"
+         id="path3122"
+         d="m 314.84375,817.3125 c -2.5174,-42.91403 -36.86872,-77.25829 -79.78125,-79.78125"
+         style="fill:none;stroke:#808080;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
+      <path
+         inkscape:export-ydpi="36.23"
+         inkscape:export-xdpi="36.23"
+         inkscape:export-filename="D:\AptanaStudio3Workspace\GIScene\resources\images\windrose2.png"
+         id="path3118"
+         d="m 235.09375,907.21875 c 42.80075,-2.53137 77.06297,-36.73282 79.71875,-79.5"
+         style="fill:none;stroke:#808080;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
+      <path
+         inkscape:export-ydpi="36.23"
+         inkscape:export-xdpi="36.23"
+         inkscape:export-filename="D:\AptanaStudio3Workspace\GIScene\resources\images\windrose2.png"
+         id="path3114"
+         d="m 145.1875,827.75 c 2.664,42.64765 36.76278,76.75812 79.40625,79.4375"
+         style="fill:none;stroke:#808080;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
+      <path
+         inkscape:export-ydpi="36.23"
+         inkscape:export-xdpi="36.23"
+         inkscape:export-filename="D:\AptanaStudio3Workspace\GIScene\resources\images\windrose2.png"
+         id="path3007"
+         d="m 224.65625,737.53125 c -42.76074,2.65492 -76.95886,36.92729 -79.5,79.71875"
+         style="fill:none;stroke:#808080;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none" />
+    </g>
+    <path
+       transform="matrix(0.46669047,-0.46669047,0.46669047,0.46669047,-115.92982,772.7338)"
+       sodipodi:type="star"
+       style="fill:#ffffff;stroke:#808080;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path2985-1"
+       sodipodi:sides="4"
+       sodipodi:cx="317.14285"
+       sodipodi:cy="423.79074"
+       sodipodi:r1="128.85683"
+       sodipodi:r2="19.328524"
+       sodipodi:arg1="1.5707963"
+       sodipodi:arg2="2.3561945"
+       inkscape:flatsided="false"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 317.14286,552.64757 -13.66734,-115.1895 -115.18949,-13.66733 115.18949,-13.66733 13.66733,-115.1895 13.66733,115.1895 115.1895,13.66733 -115.1895,13.66733 z"
+       inkscape:export-filename="D:\AptanaStudio3Workspace\GIScene\resources\images\windrose2.png"
+       inkscape:export-xdpi="36.23"
+       inkscape:export-ydpi="36.23" />
+    <path
+       id="path3134"
+       style="fill:#ffffff;stroke:#808080;stroke-width:2;stroke-miterlimit:4"
+       d="m 243.53125,836.1875 -8.4375,71.03125 -5.25,44.15625 -5.25,-44.1875 -8.40625,-71 -71,-8.4375 L 101,822.5 l 44.15625,-5.25 71.03125,-8.40625 8.46875,-71.3125 10.40625,0 8.46875,71.3125 71.3125,8.46875 43.875,5.1875 -43.90625,5.21875 z"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccccccccc"
+       inkscape:export-filename="D:\AptanaStudio3Workspace\GIScene\resources\images\windrose2.png"
+       inkscape:export-xdpi="36.23"
+       inkscape:export-ydpi="36.23" />
+    <path
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:#c83737;font-family:Sans;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 216.59375,664.03125 c 0,10.20833 0,20.41667 0,30.625 8.84489,2.63656 8.10964,-4.30702 7.625,-11 -1.60265,-11.58723 3.25104,-1.88307 6.66485,3.07272 2.78655,5.0536 5.62417,10.03742 12.2414,7.92728 0,-10.875 0,-21.75 0,-32.625 -8.84489,-2.63656 -8.10964,4.30702 -7.625,11 1.60645,11.58124 -3.27021,1.81546 -6.67332,-3.09831 -2.7822,-5.05142 -5.62906,-10.0046 -12.23293,-7.90169 l 0,1 0,1 z"
+       id="text3913"
+       inkscape:connector-curvature="0" />
+    <path
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#808080;font-family:Sans;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 71.875,843.34375 c 10.040963,-2.66929 20.087514,-5.31774 30.125,-8 2.53837,-7.74984 -4.235706,-8.41972 -10.13933,-9.75643 -9.007894,-1.66911 -10.501389,-3.33214 -0.623705,-4.986 5.339879,-1.72108 13.381805,-1.38612 10.763035,-9.16382 -9.307413,-3.81691 -20.889126,-5.8917 -31.058788,-9.04336 -4.342062,1.677 -1.097908,11.14722 5.793902,9.3724 2.25002,1.13678 14.90309,2.08839 6.652933,3.40296 -4.137894,2.56005 -13.803598,0.9339 -14.013047,6.48675 -2.365514,7.65799 7.378367,6.17233 12.056102,8.48462 11.500561,1.76236 -1.188743,2.97305 -5.867361,4.36643 -6.917329,-2.22383 -9.069409,10.22718 -3.688741,8.83645 z"
+       id="text3917"
+       inkscape:connector-curvature="0" />
+    <path
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#808080;font-family:Sans;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 388.34375,810.3125 c -10.20833,0 -20.41667,0 -30.625,0 0,8.45833 0,16.91667 0,25.375 8.75983,2.63483 7.74483,-4.50517 7.375,-11 -3.536,-8.34182 8.82611,-9.16563 5.75,-0.5625 -1.94705,6.64255 1.60549,13.20192 7.34375,8.8125 1.48786,-4.78298 -3.6479,-16.18957 4,-14.8125 2.474,3.75517 -1.05293,13.51126 1.78125,16.90625 8.84639,2.72139 6.03312,-6.21688 6.375,-12 -1.07192,-3.52806 2.29953,-12.57162 -2,-12.71875 z"
+       id="text3921"
+       inkscape:connector-curvature="0" />
+    <path
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#808080;font-family:Sans;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 230.90625,983.96875 c 7.41853,0.64004 14.36919,-7.82543 9.90625,-14.5625 -3.55638,-5.98147 -12.11136,-3.8816 -16.59375,-8.09375 -0.30417,-4.35627 6.56556,-4.15495 9.25,-2.5 3.32095,1.15465 0.88407,7.42167 5.40242,5.47512 4.4599,0.97944 5.12329,-2.23122 3.81633,-5.60012 -3.43493,-11.78584 -25.08088,-11.17518 -26.21875,1.6875 -0.67102,8.05923 8.42125,10.90341 14.8125,11.84375 3.01914,-0.45916 4.49048,3.31257 1.46875,4.09375 -3.70939,1.40675 -8.98543,-0.39612 -8.0625,-5.28125 -3.89455,0.16215 -9.39593,-0.55256 -7.0625,4.6875 1.20633,6.01739 7.68109,8.65521 13.28125,8.25 z"
+       id="text3925"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>
