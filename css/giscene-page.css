@@ -1,0 +1,17 @@
+header {
+	background-color: #dddddd;
+}
+
+header  h1 > a {
+	text-decoration: none;
+	color: #0275d8;
+}
+
+header  h1 > a:hover, header > h1 > a:visited {
+	text-decoration: none;
+	color: #0275d8;
+}
+
+#giscene-logo {
+	vertical-align: baseline;
+}

@@ -1,0 +1,5053 @@
+{
+    "project": {
+        "name": "GIScene 3D WebGIS API.",
+        "description": "GIScene 3D WebGIS API: a library based on THREE.js for visualization and analysis of geographic 3D content. It's easy to learn and customize.",
+        "version": "1.0.1",
+        "url": "http://giscience.uni-hd.de/",
+        "logo": "http://giscience.github.io/GIScene.js/images/GIScene-logo.png"
+    },
+    "files": {
+        "GIScene\\Control\\AxisHelper.js": {
+            "name": "GIScene\\Control\\AxisHelper.js",
+            "modules": {},
+            "classes": {
+                "GIScene.Control.AxisHelper": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\Control\\CameraLight.js": {
+            "name": "GIScene\\Control\\CameraLight.js",
+            "modules": {},
+            "classes": {
+                "GIScene.Control.CameraLight": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\Control\\Compass.js": {
+            "name": "GIScene\\Control\\Compass.js",
+            "modules": {},
+            "classes": {
+                "GIScene.Control.Compass": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\Control\\EdgeDetectionFreiChen.js": {
+            "name": "GIScene\\Control\\EdgeDetectionFreiChen.js",
+            "modules": {},
+            "classes": {
+                "GIScene.Control.EdgeDetectionFreiChen": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\Control\\Fly.js": {
+            "name": "GIScene\\Control\\Fly.js",
+            "modules": {},
+            "classes": {
+                "GIScene.Control.Fly": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\Control\\LoadIndicator.js": {
+            "name": "GIScene\\Control\\LoadIndicator.js",
+            "modules": {},
+            "classes": {
+                "GIScene.Control.LoadIndicator": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\Control\\Measure.js": {
+            "name": "GIScene\\Control\\Measure.js",
+            "modules": {},
+            "classes": {
+                "GIScene.Control.Measure": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\Control\\ObjectPosition.js": {
+            "name": "GIScene\\Control\\ObjectPosition.js",
+            "modules": {},
+            "classes": {
+                "GIScene.Control.ObjectPosition": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\Control\\OrbitZoomPan.js": {
+            "name": "GIScene\\Control\\OrbitZoomPan.js",
+            "modules": {},
+            "classes": {
+                "GIScene.Control.OrbitZoomPan": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\Control\\Pan.js": {
+            "name": "GIScene\\Control\\Pan.js",
+            "modules": {},
+            "classes": {
+                "GIScene.Control.Pan": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\Control\\PanOrbitZoomCenter.js": {
+            "name": "GIScene\\Control\\PanOrbitZoomCenter.js",
+            "modules": {},
+            "classes": {
+                "GIScene.Control.PanOrbitZoomCenter": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\Control\\Pick.js": {
+            "name": "GIScene\\Control\\Pick.js",
+            "modules": {},
+            "classes": {
+                "GIScene.Control.Pick": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\Control\\SSAO.js": {
+            "name": "GIScene\\Control\\SSAO.js",
+            "modules": {},
+            "classes": {
+                "GIScene.Control.SSAO": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\Control\\Select.js": {
+            "name": "GIScene\\Control\\Select.js",
+            "modules": {},
+            "classes": {
+                "GIScene.Control.Select": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\Control\\TextPanel.js": {
+            "name": "GIScene\\Control\\TextPanel.js",
+            "modules": {},
+            "classes": {
+                "GIScene.Control.TextPanel": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\Control\\Trackball.js": {
+            "name": "GIScene\\Control\\Trackball.js",
+            "modules": {},
+            "classes": {
+                "GIScene.Control.Trackball": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\Control\\Walk.js": {
+            "name": "GIScene\\Control\\Walk.js",
+            "modules": {},
+            "classes": {
+                "GIScene.Control.Walk": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\Layer\\Grid\\W3DS_0_4_0.js": {
+            "name": "GIScene\\Layer\\Grid\\W3DS_0_4_0.js",
+            "modules": {},
+            "classes": {
+                "GIScene.Layer.W3DS_0_4_0": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\Layer\\Grid\\W3DS_0_4_1.js": {
+            "name": "GIScene\\Layer\\Grid\\W3DS_0_4_1.js",
+            "modules": {},
+            "classes": {
+                "GIScene.Layer.W3DS_0_4_1": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\Layer\\Fixed.js": {
+            "name": "GIScene\\Layer\\Fixed.js",
+            "modules": {},
+            "classes": {
+                "GIScene.Layer.Fixed": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\Layer\\Grid.js": {
+            "name": "GIScene\\Layer\\Grid.js",
+            "modules": {},
+            "classes": {
+                "GIScene.Layer.Grid": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\Layer\\Helper.js": {
+            "name": "GIScene\\Layer\\Helper.js",
+            "modules": {},
+            "classes": {
+                "GIScene.Layer.Helper": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\Loader\\GeoJSONLoader.js": {
+            "name": "GIScene\\Loader\\GeoJSONLoader.js",
+            "modules": {},
+            "classes": {
+                "GIScene.GeoJSONLoader": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\Loader\\LocalFileLoader.js": {
+            "name": "GIScene\\Loader\\LocalFileLoader.js",
+            "modules": {},
+            "classes": {
+                "GIScene.LocalFileLoader": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\OverrideMaterialHandler\\WMS.js": {
+            "name": "GIScene\\OverrideMaterialHandler\\WMS.js",
+            "modules": {},
+            "classes": {
+                "GIScene.OverrideMaterialHandler.WMS": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\Process\\Intervisibility.js": {
+            "name": "GIScene\\Process\\Intervisibility.js",
+            "modules": {},
+            "classes": {
+                "GIScene.Process.Intervisibility": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\Process\\LineOfSight.js": {
+            "name": "GIScene\\Process\\LineOfSight.js",
+            "modules": {},
+            "classes": {
+                "GIScene.Process.LineOfSight": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\Process\\LineOfSightNetwork_allToAll.js": {
+            "name": "GIScene\\Process\\LineOfSightNetwork_allToAll.js",
+            "modules": {},
+            "classes": {
+                "GIScene.Process.LineOfSightNetwork_allToAll": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\Process\\LineOfSight_Layer.js": {
+            "name": "GIScene\\Process\\LineOfSight_Layer.js",
+            "modules": {},
+            "classes": {
+                "GIScene.Process.LineOfSight_Layer": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\Process\\LineOfSight_fastClient.js": {
+            "name": "GIScene\\Process\\LineOfSight_fastClient.js",
+            "modules": {},
+            "classes": {
+                "GIScene.Process.LineOfSight_fastClient": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\Process\\LineOfSight_simpleClient.js": {
+            "name": "GIScene\\Process\\LineOfSight_simpleClient.js",
+            "modules": {},
+            "classes": {
+                "GIScene.Process.LineOfSight_simpleClient": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\Service\\W3DS_0_4_0.js": {
+            "name": "GIScene\\Service\\W3DS_0_4_0.js",
+            "modules": {},
+            "classes": {
+                "GIScene.Service.W3DS_0_4_0": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\Service\\W3DS_0_4_1.js": {
+            "name": "GIScene\\Service\\W3DS_0_4_1.js",
+            "modules": {},
+            "classes": {
+                "GIScene.Service.W3DS_0_4_1": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\ShaderMaterials\\AspectMaterial.js": {
+            "name": "GIScene\\ShaderMaterials\\AspectMaterial.js",
+            "modules": {},
+            "classes": {
+                "GIScene.AspectMaterial": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\ShaderMaterials\\DirectionMaterial.js": {
+            "name": "GIScene\\ShaderMaterials\\DirectionMaterial.js",
+            "modules": {},
+            "classes": {
+                "GIScene.DirectionMaterial": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\ShaderMaterials\\DistanceOpacityMaterial.js": {
+            "name": "GIScene\\ShaderMaterials\\DistanceOpacityMaterial.js",
+            "modules": {},
+            "classes": {
+                "GIScene.DistanceOpacityMaterial": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\ShaderMaterials\\PointAlignmentMaterial.js": {
+            "name": "GIScene\\ShaderMaterials\\PointAlignmentMaterial.js",
+            "modules": {},
+            "classes": {
+                "GIScene.PointAlignmentMaterial": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\ShaderMaterials\\RasterOverlayMaterial.js": {
+            "name": "GIScene\\ShaderMaterials\\RasterOverlayMaterial.js",
+            "modules": {},
+            "classes": {
+                "GIScene.RasterOverlayMaterial": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\ShaderMaterials\\WMSOverlayMaterial.js": {
+            "name": "GIScene\\ShaderMaterials\\WMSOverlayMaterial.js",
+            "modules": {},
+            "classes": {
+                "GIScene.WMSOverlayMaterial": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\Control.js": {
+            "name": "GIScene\\Control.js",
+            "modules": {},
+            "classes": {
+                "GIScene.Control": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\Coordinate2.js": {
+            "name": "GIScene\\Coordinate2.js",
+            "modules": {},
+            "classes": {
+                "GIscene.Coordinate2": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIscene": 1
+            }
+        },
+        "GIScene\\Coordinate3.js": {
+            "name": "GIScene\\Coordinate3.js",
+            "modules": {},
+            "classes": {
+                "GIscene.Coordinate3": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIscene": 1
+            }
+        },
+        "GIScene\\Extent2.js": {
+            "name": "GIScene\\Extent2.js",
+            "modules": {},
+            "classes": {
+                "GIScene.Extent2": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\Format.js": {
+            "name": "GIScene\\Format.js",
+            "modules": {},
+            "classes": {
+                "GIScene.Format": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\Grid.js": {
+            "name": "GIScene\\Grid.js",
+            "modules": {},
+            "classes": {
+                "GIScene.Grid": 1,
+                "GIScene.Grid.Index": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\Layer.js": {
+            "name": "GIScene\\Layer.js",
+            "modules": {},
+            "classes": {
+                "GIScene.Layer": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\Line2.js": {
+            "name": "GIScene\\Line2.js",
+            "modules": {},
+            "classes": {
+                "GIScene.Line2": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\ModelLoader.js": {
+            "name": "GIScene\\ModelLoader.js",
+            "modules": {},
+            "classes": {
+                "GIScene.ModelLoader": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\OverrideMaterialHandler.js": {
+            "name": "GIScene\\OverrideMaterialHandler.js",
+            "modules": {},
+            "classes": {
+                "GIScene.OverrideMaterialHandler": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\Process.js": {
+            "name": "GIScene\\Process.js",
+            "modules": {},
+            "classes": {
+                "GIScene.Process": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\Scene.js": {
+            "name": "GIScene\\Scene.js",
+            "modules": {},
+            "classes": {
+                "GIScene.Scene": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\Service.js": {
+            "name": "GIScene\\Service.js",
+            "modules": {},
+            "classes": {
+                "GIScene.Service": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\Style.js": {
+            "name": "GIScene\\Style.js",
+            "modules": {},
+            "classes": {
+                "GIScene.Style": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene\\Utils.js": {
+            "name": "GIScene\\Utils.js",
+            "modules": {},
+            "classes": {
+                "GIScene.Utils": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "GIScene": 1
+            }
+        },
+        "GIScene.js": {
+            "name": "GIScene.js",
+            "modules": {
+                "GIScene": 1
+            },
+            "classes": {
+                "GIScene": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {
+        "GIScene": {
+            "name": "GIScene",
+            "submodules": {},
+            "elements": {},
+            "classes": {
+                "GIScene.Control.AxisHelper": 1,
+                "GIScene.Control.CameraLight": 1,
+                "GIScene.Control.Compass": 1,
+                "GIScene.Control.EdgeDetectionFreiChen": 1,
+                "GIScene.Control.Fly": 1,
+                "GIScene.Control.LoadIndicator": 1,
+                "GIScene.Control.Measure": 1,
+                "GIScene.Control.ObjectPosition": 1,
+                "GIScene.Control.OrbitZoomPan": 1,
+                "GIScene.Control.Pan": 1,
+                "GIScene.Control.PanOrbitZoomCenter": 1,
+                "GIScene.Control.Pick": 1,
+                "GIScene.Control.SSAO": 1,
+                "GIScene.Control.Select": 1,
+                "GIScene.Control.TextPanel": 1,
+                "GIScene.Control.Trackball": 1,
+                "GIScene.Control.Walk": 1,
+                "GIScene.Layer.W3DS_0_4_0": 1,
+                "GIScene.Layer.W3DS_0_4_1": 1,
+                "GIScene.Layer.Fixed": 1,
+                "GIScene.Layer.Grid": 1,
+                "GIScene.Layer.Helper": 1,
+                "GIScene.GeoJSONLoader": 1,
+                "GIScene.LocalFileLoader": 1,
+                "GIScene.OverrideMaterialHandler.WMS": 1,
+                "GIScene.Process.Intervisibility": 1,
+                "GIScene.Process.LineOfSight": 1,
+                "GIScene.Process.LineOfSightNetwork_allToAll": 1,
+                "GIScene.Process.LineOfSight_Layer": 1,
+                "GIScene.Process.LineOfSight_fastClient": 1,
+                "GIScene.Process.LineOfSight_simpleClient": 1,
+                "GIScene.Service.W3DS_0_4_0": 1,
+                "GIScene.Service.W3DS_0_4_1": 1,
+                "GIScene.AspectMaterial": 1,
+                "GIScene.DirectionMaterial": 1,
+                "GIScene.DistanceOpacityMaterial": 1,
+                "GIScene.PointAlignmentMaterial": 1,
+                "GIScene.RasterOverlayMaterial": 1,
+                "GIScene.WMSOverlayMaterial": 1,
+                "GIScene.Control": 1,
+                "GIscene.Coordinate2": 1,
+                "GIscene.Coordinate3": 1,
+                "GIScene.Extent2": 1,
+                "GIScene.Format": 1,
+                "GIScene.Grid": 1,
+                "GIScene.Grid.Index": 1,
+                "GIScene.Layer": 1,
+                "GIScene.Line2": 1,
+                "GIScene.ModelLoader": 1,
+                "GIScene.OverrideMaterialHandler": 1,
+                "GIScene.Process": 1,
+                "GIScene.Scene": 1,
+                "GIScene.Service": 1,
+                "GIScene.Style": 1,
+                "GIScene.Utils": 1,
+                "GIScene": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "main",
+            "file": "GIScene.js",
+            "line": 1,
+            "description": "Base Object wich gives the namespace for all other classes of the library.\nDefines global constants used in other classes",
+            "itemtype": "main"
+        }
+    },
+    "classes": {
+        "GIScene.Control.AxisHelper": {
+            "name": "GIScene.Control.AxisHelper",
+            "shortname": "GIScene.Control.AxisHelper",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Control\\AxisHelper.js",
+            "line": 1,
+            "description": "The AxisHelper Control provides a graphical information on the current camera orientation in 3D space.",
+            "is_constructor": 1,
+            "extends": "GIScene.Control",
+            "params": [
+                {
+                    "name": "camera",
+                    "description": "",
+                    "type": "THREE.Camera"
+                },
+                {
+                    "name": "config",
+                    "description": "you can configure the size with an config object {size:50}",
+                    "type": "Object",
+                    "optional": true
+                }
+            ]
+        },
+        "GIScene.Control.CameraLight": {
+            "name": "GIScene.Control.CameraLight",
+            "shortname": "GIScene.Control.CameraLight",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Control\\CameraLight.js",
+            "line": 1,
+            "description": "A control which adds a sprite to the viewport for interactive movement of a directional light source.\nThe Light will always stay relative to the camera. This ensures to keep a chosen lighting angle while moving the camera.\nChanging interactively the lighting angle gives the user a good impression of surface characteristics.",
+            "is_constructor": 1,
+            "extends": "GIScene.Control",
+            "params": [
+                {
+                    "name": "camera",
+                    "description": "",
+                    "type": "THREE.Camera"
+                },
+                {
+                    "name": "light",
+                    "description": "",
+                    "type": "THREE.DirectionalLight"
+                },
+                {
+                    "name": "config",
+                    "description": "config.<properties> are: maxHorizontalAngle, maxVerticalAngle both Numbers in degrees between 0..90",
+                    "type": "Object",
+                    "optional": true
+                }
+            ]
+        },
+        "GIScene.Control.Compass": {
+            "name": "GIScene.Control.Compass",
+            "shortname": "GIScene.Control.Compass",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Control\\Compass.js",
+            "line": 1,
+            "description": "The Compass Control provides a graphical information on the current camera orientation, like a compass.",
+            "is_constructor": 1,
+            "extends": "GIScene.Control",
+            "params": [
+                {
+                    "name": "camera",
+                    "description": "",
+                    "type": "THREE.Camera"
+                }
+            ]
+        },
+        "GIScene.Control.EdgeDetectionFreiChen": {
+            "name": "GIScene.Control.EdgeDetectionFreiChen",
+            "shortname": "GIScene.Control.EdgeDetectionFreiChen",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Control\\EdgeDetectionFreiChen.js",
+            "line": 1,
+            "description": "Edge Detection Control to render scenes with FreiChen Filter",
+            "is_constructor": 1,
+            "extends": "GIScene.Control"
+        },
+        "GIScene.Control.Fly": {
+            "name": "GIScene.Control.Fly",
+            "shortname": "GIScene.Control.Fly",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Control\\Fly.js",
+            "line": 1,
+            "description": "Control to Fly over through a scene.",
+            "is_constructor": 1,
+            "extends": "GIScene.Control",
+            "params": [
+                {
+                    "name": "object",
+                    "description": "The camera object to be used with this control",
+                    "type": "THREE.Camera"
+                },
+                {
+                    "name": "domElement",
+                    "description": "The DOM Element to which the mouse events will be added",
+                    "type": "DOMElement",
+                    "optional": true
+                }
+            ],
+            "author": "modified by m.auer"
+        },
+        "GIScene.Control.LoadIndicator": {
+            "name": "GIScene.Control.LoadIndicator",
+            "shortname": "GIScene.Control.LoadIndicator",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Control\\LoadIndicator.js",
+            "line": 1,
+            "description": "The LoadIndicator-Control provides visual feedback about the current state of loading activity.",
+            "is_constructor": 1,
+            "extends": "GIScene.Control"
+        },
+        "GIScene.Control.Measure": {
+            "name": "GIScene.Control.Measure",
+            "shortname": "GIScene.Control.Measure",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Control\\Measure.js",
+            "line": 1,
+            "description": "The Measure-Control lets you pick two points of an Object by clicking. \nAs a result you get the an Object containing the measured distance in scene units.\n\nThe measure-Event content looks like this:\n\n\t\t{\n\t\t\tdistance: \t\t\t{Number in Scene units},\n\t\t\tangleToNorth : \t\t{Number angle in degrees}\n\t\t}",
+            "is_constructor": 1,
+            "extends": "GIScene.Control",
+            "params": [
+                {
+                    "name": "camera",
+                    "description": "",
+                    "type": "THREE.Camera"
+                },
+                {
+                    "name": "config",
+                    "description": "Configuration properties. e.g. {color : new THREE.Color(0xff0000)}",
+                    "type": "Object",
+                    "optional": true
+                }
+            ]
+        },
+        "GIScene.Control.ObjectPosition": {
+            "name": "GIScene.Control.ObjectPosition",
+            "shortname": "GIScene.Control.ObjectPosition",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Control\\ObjectPosition.js",
+            "line": 1,
+            "description": "This Control diplays the Object position coordinates in a TextPanel",
+            "is_constructor": 1,
+            "extends": "GIScene.Control",
+            "params": [
+                {
+                    "name": "object",
+                    "description": "",
+                    "type": "THREE.Object3D"
+                }
+            ]
+        },
+        "GIScene.Control.OrbitZoomPan": {
+            "name": "GIScene.Control.OrbitZoomPan",
+            "shortname": "GIScene.Control.OrbitZoomPan",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Control\\OrbitZoomPan.js",
+            "line": 1,
+            "description": "Control to Examine Objects. Rotates the Camera around a center, zooms in and out and pans the camera.",
+            "is_constructor": 1,
+            "extends": "GIScene.Control",
+            "params": [
+                {
+                    "name": "object",
+                    "description": "The camera object to be used with this control",
+                    "type": "THREE.Camera"
+                },
+                {
+                    "name": "domElement",
+                    "description": "The DOM Element to which the mouse events will be added",
+                    "type": "DOMElement",
+                    "optional": true
+                }
+            ],
+            "author": "alteredq / http://alteredqualia.com/\nmodified by m.auer"
+        },
+        "GIScene.Control.Pan": {
+            "name": "GIScene.Control.Pan",
+            "shortname": "GIScene.Control.Pan",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Control\\Pan.js",
+            "line": 1,
+            "description": "Pan Control. *experimental, not ready to use*",
+            "is_constructor": 1,
+            "extends": "GIScene.Control",
+            "params": [
+                {
+                    "name": "object",
+                    "description": "The camera object to be used with this control",
+                    "type": "THREE.Camera"
+                },
+                {
+                    "name": "domElement",
+                    "description": "The DOM Element to which the mouse events will be added",
+                    "type": "DOMElement",
+                    "optional": true
+                }
+            ]
+        },
+        "GIScene.Control.PanOrbitZoomCenter": {
+            "name": "GIScene.Control.PanOrbitZoomCenter",
+            "shortname": "GIScene.Control.PanOrbitZoomCenter",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Control\\PanOrbitZoomCenter.js",
+            "line": 1,
+            "description": "Control to examine Objects and move around on a terrain. Rotates the Camera around a center, zooms in and out, pans the camera and moves to a new rotation center on double click.",
+            "is_constructor": 1,
+            "extends": "GIScene.Control",
+            "params": [
+                {
+                    "name": "object",
+                    "description": "The camera object to be used with this control",
+                    "type": "THREE.Camera"
+                },
+                {
+                    "name": "domElement",
+                    "description": "The DOM Element to which the mouse events will be added",
+                    "type": "DOMElement",
+                    "optional": true
+                }
+            ],
+            "author": "alteredq / http://alteredqualia.com/\nmodified by m.auer"
+        },
+        "GIScene.Control.Pick": {
+            "name": "GIScene.Control.Pick",
+            "shortname": "GIScene.Control.Pick",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Control\\Pick.js",
+            "line": 1,
+            "description": "The Pick-Control lets you pick an Object by clicking. \nAs a result you get the an Object containing various information on the clicked point or event.content == false.\n\nThe click-Event content looks like this:\n\n\t\t{\n \t\tdistance: \t{Number in Scene units},\n \t\tobject:\t\t{A reference to the clicked object},\n \t\tface:\t\t{A reference to the clicked face},\n \t\tfaceIndex:\t{Index Number of the geomerty.faces Array},\n \t\tpoint:\t\t{The intersection point on the clicked face as THREE.Vector3}\n\t\t}",
+            "is_constructor": 1,
+            "extends": "GIScene.Control",
+            "params": [
+                {
+                    "name": "camera",
+                    "description": "",
+                    "type": "THREE.Camera"
+                },
+                {
+                    "name": "config",
+                    "description": "Configuration properties. e.g. {color : new THREE.Color(0xff0000)}",
+                    "type": "Object",
+                    "optional": true
+                }
+            ]
+        },
+        "GIScene.Control.SSAO": {
+            "name": "GIScene.Control.SSAO",
+            "shortname": "GIScene.Control.SSAO",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Control\\SSAO.js",
+            "line": 1,
+            "description": "This Control enables to render a Scene with a Screen Space Ambient Occlusion (SSAO) effect.",
+            "is_constructor": 1,
+            "extends": "GIScene.Control"
+        },
+        "GIScene.Control.Select": {
+            "name": "GIScene.Control.Select",
+            "shortname": "GIScene.Control.Select",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Control\\Select.js",
+            "line": 1,
+            "description": "Control to enable the interactive selection and or highlighting of 3D Objects in the scene",
+            "is_constructor": 1,
+            "extends": "GIScene.Control",
+            "params": [
+                {
+                    "name": "selectables",
+                    "description": "An Array or single THREE.Object3D. Contains the potentially selectable Elements of type THREE.Object3D",
+                    "type": "Array | THREE.Object3D"
+                },
+                {
+                    "name": "camera",
+                    "description": "The active camera",
+                    "type": "THREE.Camera"
+                },
+                {
+                    "name": "config",
+                    "description": "Configuration properties to influence the behaviour of this Control\n\t\n\n You can use multiple options to customize the behaviour of the Select Control:\n\t\n\tMain options: \n\n\t1. Choose between hover or click behaviour by setting hover:true || hover:false\n 2. Choose whether objects should be really selected or just highlighted by setting highlightOnly:true || highlightOnly:false\n 3. Choose a highlighting color by setting e.g: selectColor:0xff0000\n\n The following options are only available if hover:false:\n\n multi    - whether it is possible to select only one object or multiple (hold down CTRL-Key)\n\n toggle   - whether click on a selected/highlighted object unselects/unhighlights it again\n\n clickout - whether a click somewhere not on a selectable object unselects all others \n\t\n You can even combine 2 Select controls to enable highlighting on mouseover ('hover') and selection on click:",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "example": [
+                "\n\t\tvar selectControl = new GIScene.Control.Select(scene.root.children, scene.camera, {highlightOnly:false, hover:false, multi:false, toggle:true, clickout:true});\n\t\tscene.addControl(selectControl);\n\t\tselectControl.activate();\n\n\t\tvar highlightControl = new GIScene.Control.Select(scene.root.children, scene.camera, {highlightOnly:true, hover:true});\n\t\tscene.addControl(highlightControl);\n\t\thighlightControl.activate(); "
+            ]
+        },
+        "GIScene.Control.TextPanel": {
+            "name": "GIScene.Control.TextPanel",
+            "shortname": "GIScene.Control.TextPanel",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Control\\TextPanel.js",
+            "line": 1,
+            "description": "The Compass Control provides a panel on which you can add text.",
+            "is_constructor": 1,
+            "extends": "GIScene.Control",
+            "params": [
+                {
+                    "name": "config] object properties may be: width, height, text:['Line1','Line2'",
+                    "description": ", textAlign:'left|start|center|end|right', pxFromLeft, pxFromTop, fontSize, lineSpace, fontFamily, fontStyle, color, halo",
+                    "type": "Object",
+                    "optional": true
+                }
+            ]
+        },
+        "GIScene.Control.Trackball": {
+            "name": "GIScene.Control.Trackball",
+            "shortname": "GIScene.Control.Trackball",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Control\\Trackball.js",
+            "line": 1,
+            "description": "Control to freely move the camera around a target point. Rotates, zooms, pans.",
+            "is_constructor": 1,
+            "extends": "GIScene.Control",
+            "params": [
+                {
+                    "name": "object",
+                    "description": "The camera object to be used with this control",
+                    "type": "THREE.Camera"
+                },
+                {
+                    "name": "domElement",
+                    "description": "The DOM Element to which the mouse events will be added",
+                    "type": "DOMElement",
+                    "optional": true
+                }
+            ],
+            "author": "Eberhard Graether / http://egraether.com/\nmodified by m.auer"
+        },
+        "GIScene.Control.Walk": {
+            "name": "GIScene.Control.Walk",
+            "shortname": "GIScene.Control.Walk",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Control\\Walk.js",
+            "line": 1,
+            "description": "Control to simulate walking. Use keybord controls.",
+            "is_constructor": 1,
+            "extends": "GIScene.Control",
+            "params": [
+                {
+                    "name": "object",
+                    "description": "The camera object to be used with this control",
+                    "type": "THREE.Camera"
+                },
+                {
+                    "name": "domElement",
+                    "description": "The DOM Element to which the mouse events will be added",
+                    "type": "DOMElement",
+                    "optional": true
+                }
+            ],
+            "author": "modified by m.auer"
+        },
+        "GIScene.Layer.W3DS_0_4_0": {
+            "name": "GIScene.Layer.W3DS_0_4_0",
+            "shortname": "GIScene.Layer.W3DS_0_4_0",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Layer\\Grid\\W3DS_0_4_0.js",
+            "line": 1,
+            "description": "Tiled multi LOD grid layer using the W3DS v0.4.0 OGC Discussion Paper Specification to load georeferenced 3D data\ninherits from GIScene.Layer.Grid",
+            "is_constructor": 1,
+            "extends": "GIScene.Layer.Grid",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "the layer name",
+                    "type": "String"
+                },
+                {
+                    "name": "config",
+                    "description": "a configuration object",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "example": [
+                "\n\t\t\tvar layerconfig = {\n\t\t\t\t url:\"http://www.example.org/w3ds\", \n\t\t\t\t // withCredentials:true,\n\t\t\t\t layer:\"DEM\",\n\t\t\t\t crs:\"EPSG:32616\", \n\t\t\t\t origin:new GIScene.Coordinate2(264495.0,1639108.0),\n\t\t\t\t offset:new GIScene.Coordinate3(264495.0,1639108.0,600), //w3ds GetScene offset param from this\n\t\t\t\t tileSizes:[1024,512,256,128], \n\t\t\t\t terrainHeight:600,\n\t\t\t\t maxExtent: new GIScene.Extent2(new GIScene.Coordinate2(264495.0, 1639108.0), new GIScene.Coordinate2(274495.0, 1649108.0)),\n\t\t\t\t maxDistance: 10000,\n\t\t\t\t lodDistanceFactor :1.5,\n\t\t\t\t format:GIScene.Format.Scene,\n\t\t\t\t overrideMaterial : wmsOverlayMaterial,\n\t\t\t\t overrideMaterialHandler : GIScene.OverrideMaterialHandler.WMS //only together with GIScene.WMSOverlayMaterial\n\t\t\t\t // overrideMaterial : new THREE.MeshBasicMaterial({wireframe:true})\n\t\t\t};\n\t\t\tvar layer = new GIScene.Layer.W3DS_0_4_0(\"w3ds\",layerconfig);\n\t\t\tscene.addLayer(layer);\n"
+            ]
+        },
+        "GIScene.Layer.W3DS_0_4_1": {
+            "name": "GIScene.Layer.W3DS_0_4_1",
+            "shortname": "GIScene.Layer.W3DS_0_4_1",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Layer\\Grid\\W3DS_0_4_1.js",
+            "line": 1,
+            "description": "Tiled multi LOD grid layer using the W3DS v0.4.1 OGC Discussion Paper Specification to load georeferenced 3D data\ninherits from GIScene.Layer.Grid",
+            "is_constructor": 1,
+            "extends": "GIScene.Layer.Grid",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "the layer name",
+                    "type": "String"
+                },
+                {
+                    "name": "config",
+                    "description": "a configuration object",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "example": [
+                "\n\t\t\tvar layerconfig = {\n\t\t\t\t url:\"http://www.example.org/w3ds\", \n\t\t\t\t // withCredentials:true,\n\t\t\t\t layer:\"DEM\",\n\t\t\t\t crs:\"EPSG:32616\", \n\t\t\t\t origin:new GIScene.Coordinate2(264495.0,1639108.0),\n\t\t\t\t offset:new GIScene.Coordinate3(264495.0,1639108.0,600), //w3ds GetScene offset param from this\n\t\t\t\t tileSizes:[1024,512,256,128], \n\t\t\t\t terrainHeight:600,\n\t\t\t\t maxExtent: new GIScene.Extent2(new GIScene.Coordinate2(264495.0, 1639108.0), new GIScene.Coordinate2(274495.0, 1649108.0)),\n\t\t\t\t maxDistance: 10000,\n\t\t\t\t lodDistanceFactor :1.5,\n\t\t\t\t format:GIScene.Format.Scene,\n\t\t\t\t overrideMaterial : wmsOverlayMaterial,\n\t\t\t\t overrideMaterialHandler : GIScene.OverrideMaterialHandler.WMS //only together with GIScene.WMSOverlayMaterial\n\t\t\t\t // overrideMaterial : new THREE.MeshBasicMaterial({wireframe:true})\n\t\t\t};\n\t\t\tvar layer = new GIScene.Layer.W3DS_0_4_1(\"w3ds\",layerconfig);\n\t\t\tscene.addLayer(layer);\n"
+            ]
+        },
+        "GIScene.Layer.Fixed": {
+            "name": "GIScene.Layer.Fixed",
+            "shortname": "GIScene.Layer.Fixed",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Layer\\Fixed.js",
+            "line": 1,
+            "description": "It doesn't care about BoundingBoxes, Frustums, LODs or geographic grids.",
+            "is_constructor": 1,
+            "extends": "GIScene.Layer",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "the layer name for display purposes",
+                    "type": "String"
+                },
+                {
+                    "name": "config",
+                    "description": "the layer configuration object",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "example": [
+                "\n \n \tvar onload = function(event){// do something when model is loaded};\n \tvar layerconfig = {\n \t\turl: \"./path/myModel.json\",\n \t\tformat: GIScene.Format.JSON,\n \t\tverticalAxis : \"Z\",\n \t\tlisteners:[{'load':onload}]\n \t};\n \tvar layer = new GIScene.Layer.Fixed(\"My Layer\", layerconfig);\n \tscene.addLayer(layer);\n "
+            ]
+        },
+        "GIScene.Layer.Grid": {
+            "name": "GIScene.Layer.Grid",
+            "shortname": "GIScene.Layer.Grid",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Layer\\Grid.js",
+            "line": 1,
+            "is_constructor": 1,
+            "extends": "GIScene.Layer",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "the layer name for display purposes",
+                    "type": "String"
+                },
+                {
+                    "name": "config",
+                    "description": "the layer configuration object",
+                    "type": "Object",
+                    "optional": true
+                }
+            ]
+        },
+        "GIScene.Layer.Helper": {
+            "name": "GIScene.Layer.Helper",
+            "shortname": "GIScene.Layer.Helper",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Layer\\Helper.js",
+            "line": 1,
+            "description": "A Helper Layer has a property isTangible = false.\nThis helps to determine objects which shouldn't be reflected in ray intersections, e.g. during visibility analysis.",
+            "is_constructor": 1,
+            "extends": "GIScene.Layer",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "the layer name for display purposes",
+                    "type": "String"
+                },
+                {
+                    "name": "config",
+                    "description": "the layer configuration object",
+                    "type": "Object",
+                    "optional": true
+                }
+            ]
+        },
+        "GIScene.GeoJSONLoader": {
+            "name": "GIScene.GeoJSONLoader",
+            "shortname": "GIScene.GeoJSONLoader",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Loader\\GeoJSONLoader.js",
+            "line": 1,
+            "description": "Loads a geojson file. Provides Methods to load and parse GeoJSON Files/Objects\n\n Currently no reprojection is supported, geojson-coords have to be in sceneunits.\n TODO offset support",
+            "is_constructor": 1,
+            "author": "m.auer"
+        },
+        "GIScene.LocalFileLoader": {
+            "name": "GIScene.LocalFileLoader",
+            "shortname": "GIScene.LocalFileLoader",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Loader\\LocalFileLoader.js",
+            "line": 1,
+            "description": "The local file loader will load files from the local file system",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "fileInputElement",
+                    "description": "an input element of type=\"file\" used to choose the file to load",
+                    "type": "HTMLInputElement"
+                },
+                {
+                    "name": "readAs",
+                    "description": "defines the nature of the result. Can be \"text\", \"dataURL\", \"binaryString\" or \"arrayBuffer\"",
+                    "type": "String"
+                },
+                {
+                    "name": "onSuccess",
+                    "description": "will have an argument containing the fileReader.result, which depends on the readAs property",
+                    "type": "Function"
+                },
+                {
+                    "name": "onProgress",
+                    "description": "will have an argument containing the ProgressEvent",
+                    "type": "Function"
+                },
+                {
+                    "name": "onError",
+                    "description": "will have an argument containing the DOMError object of fileReader.error",
+                    "type": "Fucntion"
+                }
+            ]
+        },
+        "GIScene.OverrideMaterialHandler.WMS": {
+            "name": "GIScene.OverrideMaterialHandler.WMS",
+            "shortname": "GIScene.OverrideMaterialHandler.WMS",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\OverrideMaterialHandler\\WMS.js",
+            "line": 1,
+            "description": "OverrideMaterialHandler to assign WMS images to objects, like terrain tiles.\nWorks only with GIScene.RasterOverlayMaterial"
+        },
+        "GIScene.Process.Intervisibility": {
+            "name": "GIScene.Process.Intervisibility",
+            "shortname": "GIScene.Process.Intervisibility",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Process\\Intervisibility.js",
+            "line": 1,
+            "description": "The Intervisibility Process calculates the intervisibility between two points in the scene. \nIt takes different observer offset and target offset heights into account.",
+            "is_constructor": 1,
+            "extends": "GIScene.Process",
+            "author": "mcauer https://github.com/mcauer"
+        },
+        "GIScene.Process.LineOfSight": {
+            "name": "GIScene.Process.LineOfSight",
+            "shortname": "GIScene.Process.LineOfSight",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Process\\LineOfSight.js",
+            "line": 1,
+            "description": "The Line of Sight Process calculates the visibility bewtween two points in the scene. Only for static/fixed layers.",
+            "is_constructor": 1,
+            "extends": "GIScene.Process",
+            "author": "mcauer https://github.com/mcauer"
+        },
+        "GIScene.Process.LineOfSightNetwork_allToAll": {
+            "name": "GIScene.Process.LineOfSightNetwork_allToAll",
+            "shortname": "GIScene.Process.LineOfSightNetwork_allToAll",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Process\\LineOfSightNetwork_allToAll.js",
+            "line": 1,
+            "description": "The Line of Sight Network (all to all) Process calculates the intervisibility between all points in the given dataset (point layer)",
+            "is_constructor": 1,
+            "extends": "GIScene.Process",
+            "author": "mcauer https://github.com/mcauer"
+        },
+        "GIScene.Process.LineOfSight_Layer": {
+            "name": "GIScene.Process.LineOfSight_Layer",
+            "shortname": "GIScene.Process.LineOfSight_Layer",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Process\\LineOfSight_Layer.js",
+            "line": 1,
+            "description": "The Line of Sight Process calculates the visibility between two points in the scene. \nObstacles can be specified as layers.\nInputs can be specified as layers.",
+            "is_constructor": 1,
+            "extends": "GIScene.Process"
+        },
+        "GIScene.Process.LineOfSight_fastClient": {
+            "name": "GIScene.Process.LineOfSight_fastClient",
+            "shortname": "GIScene.Process.LineOfSight_fastClient",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Process\\LineOfSight_fastClient.js",
+            "line": 1,
+            "description": "The Line of Sight Process calculates the visibility bewtween two points in the scene",
+            "is_constructor": 1,
+            "extends": "GIScene.Process"
+        },
+        "GIScene.Process.LineOfSight_simpleClient": {
+            "name": "GIScene.Process.LineOfSight_simpleClient",
+            "shortname": "GIScene.Process.LineOfSight_simpleClient",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Process\\LineOfSight_simpleClient.js",
+            "line": 1,
+            "description": "The Line of Sight Process calculates the visibility bewtween two points in the scene",
+            "is_constructor": 1,
+            "extends": "GIScene.Process",
+            "author": "mcauer https://github.com/mcauer"
+        },
+        "GIScene.Service.W3DS_0_4_0": {
+            "name": "GIScene.Service.W3DS_0_4_0",
+            "shortname": "GIScene.Service.W3DS_0_4_0",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Service\\W3DS_0_4_0.js",
+            "line": 1,
+            "description": "Service Interface to load data from a W3DS OGC Discussion Paper Specification Implementation",
+            "is_constructor": 1,
+            "extends": "GIScene.Service",
+            "params": [
+                {
+                    "name": "config",
+                    "description": "a config object for this class",
+                    "type": "Object"
+                },
+                {
+                    "name": "params",
+                    "description": "an object to specify service parameters, e.g. layer, crs, offset",
+                    "type": "Object"
+                }
+            ]
+        },
+        "GIScene.Service.W3DS_0_4_1": {
+            "name": "GIScene.Service.W3DS_0_4_1",
+            "shortname": "GIScene.Service.W3DS_0_4_1",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Service\\W3DS_0_4_1.js",
+            "line": 1,
+            "description": "Service Interface to load data from a W3DS OGC Discussion Paper Specification Implementation",
+            "is_constructor": 1,
+            "extends": "GIScene.Service",
+            "params": [
+                {
+                    "name": "config",
+                    "description": "a config object for this class",
+                    "type": "Object"
+                },
+                {
+                    "name": "params",
+                    "description": "an object to specify service parameters, e.g. layer, crs, offset",
+                    "type": "Object"
+                }
+            ]
+        },
+        "GIScene.AspectMaterial": {
+            "name": "GIScene.AspectMaterial",
+            "shortname": "GIScene.AspectMaterial",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\ShaderMaterials\\AspectMaterial.js",
+            "line": 1,
+            "description": "Visualizes a specified compass direction (aspect) by color coding faces which are perpendicular to that direction within a specified deviation.\nThis is similar to the DirectionMaterial but only considers the horizontal angle of the face normals and not the vertical angle.",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "compassDirection",
+                    "description": "",
+                    "type": "THREE.Vector3"
+                },
+                {
+                    "name": "maxDeviationDeg",
+                    "description": "A Number specifying the maximum deviation from compassDirection to which the colorramp is streched",
+                    "type": "Number"
+                }
+            ]
+        },
+        "GIScene.DirectionMaterial": {
+            "name": "GIScene.DirectionMaterial",
+            "shortname": "GIScene.DirectionMaterial",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\ShaderMaterials\\DirectionMaterial.js",
+            "line": 1,
+            "description": "Visualizes a specified direction by color coding faces which are perpendicular to that direction within a specified deviation.",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "direction",
+                    "description": "",
+                    "type": "THREE.Vector3"
+                },
+                {
+                    "name": "maxDeviationDeg",
+                    "description": "A Number specifying the maximum deviation from direction to which the colorramp is streched",
+                    "type": "Number"
+                }
+            ]
+        },
+        "GIScene.DistanceOpacityMaterial": {
+            "name": "GIScene.DistanceOpacityMaterial",
+            "shortname": "GIScene.DistanceOpacityMaterial",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\ShaderMaterials\\DistanceOpacityMaterial.js",
+            "line": 1,
+            "description": "A Material which sets opacity according to the distance to the camera. \nClose parts will be transparent, so you could watch inside a building, while the walls in the back are still opaque.",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "near",
+                    "description": "distance from where opacity begins",
+                    "type": "Number"
+                },
+                {
+                    "name": "far",
+                    "description": "distance from where opacity will be 1.0",
+                    "type": "Number"
+                }
+            ]
+        },
+        "GIScene.PointAlignmentMaterial": {
+            "name": "GIScene.PointAlignmentMaterial",
+            "shortname": "GIScene.PointAlignmentMaterial",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\ShaderMaterials\\PointAlignmentMaterial.js",
+            "line": 1,
+            "description": "The PointAlignmentMaterial highlights fragments whose normals are heading to a given point.",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "point",
+                    "description": "",
+                    "type": "THREE.Vector3"
+                },
+                {
+                    "name": "maxDeviationDeg",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "maxUpDeviationDeg",
+                    "description": "",
+                    "type": "Number"
+                }
+            ]
+        },
+        "GIScene.RasterOverlayMaterial": {
+            "name": "GIScene.RasterOverlayMaterial",
+            "shortname": "GIScene.RasterOverlayMaterial",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\ShaderMaterials\\RasterOverlayMaterial.js",
+            "line": 1,
+            "description": "This Material renders a georeferenced texture on a mesh without using textureCoordinates, but realWorldCoordinates of each fragment(pixel).",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "config",
+                    "description": "an Object with config properties",
+                    "type": "Object"
+                }
+            ],
+            "example": [
+                "\n\t\trasterOverlayMaterial = new GIScene.RasterOverlayMaterial({\n\t\t\t\tlowerLeft: \tnew GIScene.Coordinate2(llX, llY), //the lower left coordinate of the image boundingBox\n\t\t\t\tupperRight:\tnew GIScene.Coordinate2(urX, urY), //the upper right coordinate of the image boundingBox\n\t\t\t\toffset2:\tnew GIScene.Coordinate2(offsetX,offsetY), //optional\n\t\t\t\turl:\"http://www.example.com/rasterimage.jpg\",\n\t\t\t\tcrossOrigin:\"anonymous\"\t\n\t\t\t\t// texture: texture //instead of url you can also pass an existing texture\t\n\t\t});\n"
+            ]
+        },
+        "GIScene.WMSOverlayMaterial": {
+            "name": "GIScene.WMSOverlayMaterial",
+            "shortname": "GIScene.WMSOverlayMaterial",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\ShaderMaterials\\WMSOverlayMaterial.js",
+            "line": 1,
+            "description": "special raster overlay material to use OGC-WMS services as image source",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "config",
+                    "description": "the config object for the material",
+                    "type": "Object"
+                },
+                {
+                    "name": "params",
+                    "description": "the OGC-WMS params for the request string",
+                    "type": "Object"
+                }
+            ]
+        },
+        "GIScene.Control": {
+            "name": "GIScene.Control",
+            "shortname": "GIScene.Control",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Control.js",
+            "line": 1,
+            "description": "Abstract class used for Control classes"
+        },
+        "GIscene.Coordinate2": {
+            "name": "GIscene.Coordinate2",
+            "shortname": "GIscene.Coordinate2",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIscene",
+            "file": "GIScene\\Coordinate2.js",
+            "line": 1,
+            "description": "GIScene.Coordinate2 represents a 2 dimensional coordinate like in geographic or geodesic coordinate reference systems.",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "x",
+                    "description": "east-west direction",
+                    "type": "Object"
+                },
+                {
+                    "name": "y",
+                    "description": "south-north direction",
+                    "type": "Object"
+                }
+            ]
+        },
+        "GIscene.Coordinate3": {
+            "name": "GIscene.Coordinate3",
+            "shortname": "GIscene.Coordinate3",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIscene",
+            "file": "GIScene\\Coordinate3.js",
+            "line": 1,
+            "description": "GIScene.Coordinate3 represents a 3 dimensional coordinate in a right-handed system with z(height) upwards, like in geographic or geodesic coordinate reference systems.",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "x",
+                    "description": "east-west direction",
+                    "type": "Object"
+                },
+                {
+                    "name": "y",
+                    "description": "south-north direction",
+                    "type": "Object"
+                },
+                {
+                    "name": "z",
+                    "description": "height",
+                    "type": "Object"
+                }
+            ]
+        },
+        "GIScene.Extent2": {
+            "name": "GIScene.Extent2",
+            "shortname": "GIScene.Extent2",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Extent2.js",
+            "line": 1,
+            "description": "Represents a 2D bounding box in geo coordinates (z = height)",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "minCoordinate2",
+                    "description": "the lower left corner coordinate",
+                    "type": "GIScene.Coordiante2"
+                },
+                {
+                    "name": "maxCoordinate2",
+                    "description": "the upper right corner coordinate",
+                    "type": "GIScene.Coordiante2"
+                }
+            ]
+        },
+        "GIScene.Format": {
+            "name": "GIScene.Format",
+            "shortname": "GIScene.Format",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Format.js",
+            "line": 1,
+            "description": "File Format Constants to be used with loaders",
+            "static": 1
+        },
+        "GIScene.Grid": {
+            "name": "GIScene.Grid",
+            "shortname": "GIScene.Grid",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Grid.js",
+            "line": 1,
+            "description": "A Grid is defined by an origin and a tile size and provides functions to get indices, boundingBoxes etc.",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "config",
+                    "description": "",
+                    "type": "Object"
+                }
+            ]
+        },
+        "GIScene.Grid.Index": {
+            "name": "GIScene.Grid.Index",
+            "shortname": "GIScene.Grid.Index",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Grid.js",
+            "line": 34,
+            "description": "An object representing a tile in the grid.\nThe x property indexes the tiles from west to east.\nThe y property indexes the tiles from south to north.",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "x",
+                    "description": "",
+                    "type": "Integer"
+                },
+                {
+                    "name": "y",
+                    "description": "",
+                    "type": "Integer"
+                },
+                {
+                    "name": "tileSize",
+                    "description": "",
+                    "type": "Number"
+                }
+            ]
+        },
+        "GIScene.Layer": {
+            "name": "GIScene.Layer",
+            "shortname": "GIScene.Layer",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Layer.js",
+            "line": 1,
+            "description": "Base class used for Layer classes",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "name",
+                    "description": "the layer name for display purposes",
+                    "type": "String"
+                },
+                {
+                    "name": "config",
+                    "description": "the layer configuration object",
+                    "type": "Object",
+                    "optional": true
+                }
+            ],
+            "author": "mcauer https://github.com/mcauer"
+        },
+        "GIScene.Line2": {
+            "name": "GIScene.Line2",
+            "shortname": "GIScene.Line2",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Line2.js",
+            "line": 1,
+            "description": "Represents a mathematical 2D Line",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "positionVector2",
+                    "description": "",
+                    "type": "THREE.Vector2"
+                },
+                {
+                    "name": "directionVector2",
+                    "description": "",
+                    "type": "THREE.Vector2"
+                }
+            ]
+        },
+        "GIScene.ModelLoader": {
+            "name": "GIScene.ModelLoader",
+            "shortname": "GIScene.ModelLoader",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\ModelLoader.js",
+            "line": 1,
+            "description": "Loader class to load different formats",
+            "is_constructor": 1
+        },
+        "GIScene.OverrideMaterialHandler": {
+            "name": "GIScene.OverrideMaterialHandler",
+            "shortname": "GIScene.OverrideMaterialHandler",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\OverrideMaterialHandler.js",
+            "line": 1,
+            "description": "Abstract base class to implement override material handler. \nThese are functions that will be called on each object just after the override Material will be assigned to each object by using the Layer-event \"afterOverrideMaterial\"\nThese handlers should be referenced in the overrideMaterialHandler property of the Layer"
+        },
+        "GIScene.Process": {
+            "name": "GIScene.Process",
+            "shortname": "GIScene.Process",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Process.js",
+            "line": 1,
+            "description": "Base class for processes",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "config",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "author": "mcauer https://github.com/mcauer"
+        },
+        "GIScene.Scene": {
+            "name": "GIScene.Scene",
+            "shortname": "GIScene.Scene",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Scene.js",
+            "line": 1,
+            "description": "The Scene Object",
+            "is_constructor": 1,
+            "extends": "THREE.EventDispatcher",
+            "params": [
+                {
+                    "name": "containerDivId",
+                    "description": "The id of an HTMLDivElement which will be used as container for the webgl canvas.",
+                    "type": "String"
+                },
+                {
+                    "name": "config",
+                    "description": "Allowed\nvalues for config are:\n\n\tcameratype:\t'perspective'|'ortho'\n near: {Number}\n far:  {Numver}\n fov:  {Number}\n\n width:\t{Integer}\n height: {Integer}\n\n animate:{Boolean}\n \n center: \t\t\t\t{THREE.Vector3}\n positionFromCenter: \t{THREE.Vector3}\n projection: \t\t\t{String}\n units:\t\t\t\t\t{String}\n offset:\t\t\t\t\t{GIScene.Coordinate3}\n skyColor:\t\t\t\t{THREE.Color}\n fog:\t\t\t\t\t{THREE.Fog}",
+                    "type": "Object",
+                    "optional": true
+                }
+            ]
+        },
+        "GIScene.Service": {
+            "name": "GIScene.Service",
+            "shortname": "GIScene.Service",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Service.js",
+            "line": 1,
+            "description": "Abstract class for Service interfaces"
+        },
+        "GIScene.Style": {
+            "name": "GIScene.Style",
+            "shortname": "GIScene.Style",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Style.js",
+            "line": 1,
+            "description": "This class describes a style object with a name, title, material and definitions on which objects of a layer the style should be applied",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "config",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "example": [
+                "\n\t\tvar style = new GIScene.Style({\n\t\t\tname  : \t'myStyle1' \t\t\t\t\t\t// [optional] should be unique\n\t\t\ttitle :\t'My Style No. 1',\t\t\t\t\t// something nice to display\n\t\t\tmaterial : new THREE.MeshBasicMaterial(),\t// the material\n\t\t\trootObjectKeyAttribute \t: 'geom_id',\t\t// [optional]\n\t\t\trootObjectKeyValues\t\t: [22, 24, 42, 57],\t// [optional]\n\t\t\trecursive : true\t\t\t\t\t\t\t// [optional] if all descendants should be styled the same way\n\t\t});"
+            ]
+        },
+        "GIScene.Utils": {
+            "name": "GIScene.Utils",
+            "shortname": "GIScene.Utils",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "GIScene",
+            "file": "GIScene\\Utils.js",
+            "line": 1,
+            "description": "Utility Class with convenience functions stored in a central place.",
+            "static": 1
+        },
+        "GIScene": {
+            "name": "GIScene",
+            "shortname": "GIScene",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "GIScene",
+            "namespace": "",
+            "file": "GIScene.js",
+            "line": 1,
+            "description": "Base Object wich gives the namespace for all other classes of the library.\nDefines global constants used in other classes",
+            "mainName": "GIScene",
+            "tag": "main",
+            "itemtype": "main",
+            "_main": true
+        }
+    },
+    "elements": {},
+    "classitems": [
+        {
+            "file": "GIScene\\Control\\AxisHelper.js",
+            "line": 22,
+            "description": "The config which is used to initialize the AxisHelper-Control. Merged from defaults and passed config Object.",
+            "itemtype": "property",
+            "name": "config",
+            "type": "Object",
+            "class": "GIScene.Control.AxisHelper",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\AxisHelper.js",
+            "line": 45,
+            "description": "Activates this Control",
+            "itemtype": "method",
+            "name": "activate",
+            "class": "GIScene.Control.AxisHelper",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\AxisHelper.js",
+            "line": 68,
+            "description": "Deactivates this Control",
+            "itemtype": "method",
+            "name": "deactivate",
+            "class": "GIScene.Control.AxisHelper",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\CameraLight.js",
+            "line": 26,
+            "description": "The config which is used to initialize the CameraLight-Control. Merged from defaults and passed config Object.",
+            "itemtype": "property",
+            "name": "config",
+            "type": "Object",
+            "class": "GIScene.Control.CameraLight",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\CameraLight.js",
+            "line": 68,
+            "description": "Moves the UI graphic sprite and changes the light position accordingly",
+            "itemtype": "method",
+            "name": "panSprite",
+            "params": [
+                {
+                    "name": "panDelta",
+                    "description": "A Vector used to translate the UI-graphic in Pixels",
+                    "type": "THREE.Vector2()"
+                }
+            ],
+            "class": "GIScene.Control.CameraLight",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\CameraLight.js",
+            "line": 84,
+            "description": "Updates the light position to the correct angle according to sprite.position",
+            "itemtype": "method",
+            "name": "updateLightPosition",
+            "class": "GIScene.Control.CameraLight",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\CameraLight.js",
+            "line": 100,
+            "description": "Returns the position of the light in polar angles relative to the light.target and the camera.position",
+            "itemtype": "method",
+            "name": "getIlluminationAngles",
+            "return": {
+                "description": "illuminationAngles an object with two properties: \"theta\" and \"phi\" containing the actual values in degrees",
+                "type": "Object"
+            },
+            "class": "GIScene.Control.CameraLight",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\CameraLight.js",
+            "line": 121,
+            "description": "Fires on mouse down but before mouse moved",
+            "itemtype": "event",
+            "name": "panstart",
+            "class": "GIScene.Control.CameraLight",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\CameraLight.js",
+            "line": 165,
+            "description": "Fires while panning",
+            "itemtype": "event",
+            "name": "pan",
+            "class": "GIScene.Control.CameraLight",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\CameraLight.js",
+            "line": 177,
+            "description": "Fires on mouse up after a pan operation",
+            "itemtype": "event",
+            "name": "panend",
+            "class": "GIScene.Control.CameraLight",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\CameraLight.js",
+            "line": 204,
+            "description": "Activates this Control",
+            "itemtype": "method",
+            "name": "activate",
+            "class": "GIScene.Control.CameraLight",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\CameraLight.js",
+            "line": 247,
+            "description": "Deactivates this Control",
+            "itemtype": "method",
+            "name": "deactivate",
+            "class": "GIScene.Control.CameraLight",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\Compass.js",
+            "line": 20,
+            "description": "The config which is used to initialize the Compass-Control. Merged from defaults and passed config Object.",
+            "itemtype": "property",
+            "name": "config",
+            "type": "Object",
+            "class": "GIScene.Control.Compass",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\Compass.js",
+            "line": 69,
+            "description": "Get Compass direction in degrees",
+            "itemtype": "method",
+            "name": "getCompassDegrees",
+            "return": {
+                "description": "heading of compass in degrees",
+                "type": "Number"
+            },
+            "class": "GIScene.Control.Compass",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\Compass.js",
+            "line": 85,
+            "description": "Activates this Control",
+            "itemtype": "method",
+            "name": "activate",
+            "class": "GIScene.Control.Compass",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\Compass.js",
+            "line": 107,
+            "description": "Deactivates this Control",
+            "itemtype": "method",
+            "name": "deactivate",
+            "class": "GIScene.Control.Compass",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\Fly.js",
+            "line": 213,
+            "itemtype": "event",
+            "name": "change",
+            "class": "GIScene.Control.Fly",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\Fly.js",
+            "line": 309,
+            "description": "Activates this Control",
+            "itemtype": "method",
+            "name": "activate",
+            "class": "GIScene.Control.Fly",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\Fly.js",
+            "line": 344,
+            "description": "Deactivates this Control",
+            "itemtype": "method",
+            "name": "deactivate",
+            "class": "GIScene.Control.Fly",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\LoadIndicator.js",
+            "line": 43,
+            "description": "Activates this Control",
+            "itemtype": "method",
+            "name": "activate",
+            "class": "GIScene.Control.LoadIndicator",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\LoadIndicator.js",
+            "line": 65,
+            "description": "Deactivates this Control",
+            "itemtype": "method",
+            "name": "deactivate",
+            "class": "GIScene.Control.LoadIndicator",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\Measure.js",
+            "line": 29,
+            "description": "The config which is used to initialize the Control. Merged from defaults and passed config Object.",
+            "itemtype": "property",
+            "name": "config",
+            "type": "Object",
+            "class": "GIScene.Control.Measure",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\Measure.js",
+            "line": 82,
+            "description": "Draws a cross symbol to where the user has picked and a connection line.",
+            "itemtype": "method",
+            "name": "drawPickResult",
+            "params": [
+                {
+                    "name": "pickResult",
+                    "description": "A Raycaster intersect object",
+                    "type": "Object"
+                }
+            ],
+            "class": "GIScene.Control.Measure",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\Measure.js",
+            "line": 135,
+            "description": "The measure event contains a content property with an result object",
+            "itemtype": "event",
+            "name": "measure",
+            "class": "GIScene.Control.Measure",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\Measure.js",
+            "line": 152,
+            "description": "Activates this Control",
+            "itemtype": "method",
+            "name": "activate",
+            "class": "GIScene.Control.Measure",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\Measure.js",
+            "line": 194,
+            "description": "Deactivates this Control",
+            "itemtype": "method",
+            "name": "deactivate",
+            "class": "GIScene.Control.Measure",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\OrbitZoomPan.js",
+            "line": 231,
+            "itemtype": "event",
+            "name": "change",
+            "class": "GIScene.Control.OrbitZoomPan",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\OrbitZoomPan.js",
+            "line": 254,
+            "itemtype": "event",
+            "name": "beforechange",
+            "class": "GIScene.Control.OrbitZoomPan",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\OrbitZoomPan.js",
+            "line": 336,
+            "itemtype": "event",
+            "name": "afterchange",
+            "class": "GIScene.Control.OrbitZoomPan",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\OrbitZoomPan.js",
+            "line": 372,
+            "description": "Activates this Control",
+            "itemtype": "method",
+            "name": "activate",
+            "class": "GIScene.Control.OrbitZoomPan",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\OrbitZoomPan.js",
+            "line": 403,
+            "description": "Deactivates this Control",
+            "itemtype": "method",
+            "name": "deactivate",
+            "class": "GIScene.Control.OrbitZoomPan",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\PanOrbitZoomCenter.js",
+            "line": 234,
+            "itemtype": "event",
+            "name": "change",
+            "class": "GIScene.Control.PanOrbitZoomCenter",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\PanOrbitZoomCenter.js",
+            "line": 256,
+            "itemtype": "event",
+            "name": "beforechange",
+            "class": "GIScene.Control.PanOrbitZoomCenter",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\PanOrbitZoomCenter.js",
+            "line": 338,
+            "itemtype": "event",
+            "name": "afterchange",
+            "class": "GIScene.Control.PanOrbitZoomCenter",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\PanOrbitZoomCenter.js",
+            "line": 405,
+            "description": "Activates this Control",
+            "itemtype": "method",
+            "name": "activate",
+            "class": "GIScene.Control.PanOrbitZoomCenter",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\PanOrbitZoomCenter.js",
+            "line": 439,
+            "description": "Deactivates this Control",
+            "itemtype": "method",
+            "name": "deactivate",
+            "class": "GIScene.Control.PanOrbitZoomCenter",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\Pick.js",
+            "line": 32,
+            "description": "The config which is used to initialize the Control. Merged from defaults and passed config Object.",
+            "itemtype": "property",
+            "name": "config",
+            "type": "Object",
+            "class": "GIScene.Control.Pick",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\Pick.js",
+            "line": 87,
+            "description": "The click event contains a content property with an result object or false",
+            "itemtype": "event",
+            "name": "click",
+            "class": "GIScene.Control.Pick",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\Pick.js",
+            "line": 98,
+            "description": "Draws a cross symbol to where the user has picked.",
+            "itemtype": "method",
+            "name": "drawPickResult",
+            "params": [
+                {
+                    "name": "pickResult",
+                    "description": "A Raycaster intersect object",
+                    "type": "Object"
+                }
+            ],
+            "class": "GIScene.Control.Pick",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\Pick.js",
+            "line": 119,
+            "description": "Activates this Control",
+            "itemtype": "method",
+            "name": "activate",
+            "class": "GIScene.Control.Pick",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\Pick.js",
+            "line": 141,
+            "description": "Deactivates this Control",
+            "itemtype": "method",
+            "name": "deactivate",
+            "class": "GIScene.Control.Pick",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\Select.js",
+            "line": 54,
+            "description": "The config which is used to initialize the Control. Merged from defaults and passed config Object.",
+            "itemtype": "property",
+            "name": "config",
+            "type": "Object",
+            "class": "GIScene.Control.Select",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\Select.js",
+            "line": 91,
+            "description": "Highlight an object. This will also be called by the select() function. Sets object.userData.isHighlighted = true.",
+            "itemtype": "method",
+            "name": "highlight",
+            "params": [
+                {
+                    "name": "object",
+                    "description": "",
+                    "type": "THREE.Object3D"
+                },
+                {
+                    "name": "interaction",
+                    "description": "this flag is used to differentiate between user interaction triggered selection or programmatical selection resulting in a special event for user-triggerd selections.",
+                    "type": "Boolean"
+                }
+            ],
+            "class": "GIScene.Control.Select",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\Select.js",
+            "line": 133,
+            "description": "The highlighted event will be triggered after the feature is highlighted.\nThe event contains a content property with a reference to the highlighted object.",
+            "itemtype": "event",
+            "name": "highlighted",
+            "class": "GIScene.Control.Select",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\Select.js",
+            "line": 140,
+            "description": "The highlightedbyuser event will be triggered after the feature is highlighted by a user interaction.\nThe event contains a content property with a reference to the highlighted object.",
+            "itemtype": "event",
+            "name": "highlightedbyuser",
+            "class": "GIScene.Control.Select",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\Select.js",
+            "line": 156,
+            "description": "Unhighlight an object. This will also be called by the unselect() function. Sets object.userData.isHighlighted = false.",
+            "itemtype": "method",
+            "name": "unhighlight",
+            "params": [
+                {
+                    "name": "object",
+                    "description": "",
+                    "type": "THREE.Object3D"
+                },
+                {
+                    "name": "interaction",
+                    "description": "this flag is used to differentiate between user interaction triggered selection or programmatical selection resulting in a special event for user-triggerd selections.",
+                    "type": "Boolean"
+                }
+            ],
+            "class": "GIScene.Control.Select",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\Select.js",
+            "line": 201,
+            "description": "The unhighlighted event will be triggered after the feature is unhighlighted.\nThe event contains a content property with a reference to the unhighlighted object.",
+            "itemtype": "event",
+            "name": "unhighlighted",
+            "class": "GIScene.Control.Select",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\Select.js",
+            "line": 208,
+            "description": "The unhighlightedbyuser event will be triggered after the feature is unhighlighted through user interaction.\nThe event contains a content property with a reference to the unhighlighted object.",
+            "itemtype": "event",
+            "name": "unhighlightedbyuser",
+            "class": "GIScene.Control.Select",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\Select.js",
+            "line": 217,
+            "description": "Select an object. This will also call the highlight() function. Sets object.userData.isSelected = true.",
+            "itemtype": "method",
+            "name": "select",
+            "params": [
+                {
+                    "name": "object",
+                    "description": "",
+                    "type": "THREE.Object3D"
+                },
+                {
+                    "name": "interaction",
+                    "description": "this flag is used to differentiate between user interaction triggered selection or programmatical selection resulting in a special event for user-triggerd selections.",
+                    "type": "Boolean"
+                }
+            ],
+            "class": "GIScene.Control.Select",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\Select.js",
+            "line": 230,
+            "description": "The selected event will be triggered before the feature is highlighted.\nThe event contains a content property with a reference to the selected object.",
+            "itemtype": "event",
+            "name": "selected",
+            "class": "GIScene.Control.Select",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\Select.js",
+            "line": 237,
+            "description": "The selectedbyuser event will be triggered before the feature is highlighted.\nThe event contains a content property with a reference to the selected object.",
+            "itemtype": "event",
+            "name": "selectedbyuser",
+            "class": "GIScene.Control.Select",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\Select.js",
+            "line": 255,
+            "description": "Unselect an object. This will also call the unhighlight() function. Sets object.userData.isSelected = false.",
+            "itemtype": "method",
+            "name": "unselect",
+            "params": [
+                {
+                    "name": "object",
+                    "description": "",
+                    "type": "THREE.Object3D"
+                },
+                {
+                    "name": "interaction",
+                    "description": "this flag is used to differentiate between user interaction triggered selection or programmatical selection resulting in a special event for user-triggerd selections.",
+                    "type": "Boolean"
+                }
+            ],
+            "class": "GIScene.Control.Select",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\Select.js",
+            "line": 273,
+            "description": "The unselected event will be triggered after the feature is unhighlighted.\nThe event contains a content property with a reference to the unselected object.",
+            "itemtype": "event",
+            "name": "unselected",
+            "class": "GIScene.Control.Select",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\Select.js",
+            "line": 280,
+            "description": "The unselectedbyuser event will be triggered after the feature is unhighlighted.\nThe event contains a content property with a reference to the unselected object.",
+            "itemtype": "event",
+            "name": "unselectedbyuser",
+            "class": "GIScene.Control.Select",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\Select.js",
+            "line": 289,
+            "description": "Removes an object from the selectables Array",
+            "itemtype": "method",
+            "name": "removeSelectable",
+            "params": [
+                {
+                    "name": "object",
+                    "description": "",
+                    "type": "THREE.Object3D"
+                }
+            ],
+            "class": "GIScene.Control.Select",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\Select.js",
+            "line": 433,
+            "description": "Activates this Control",
+            "itemtype": "method",
+            "name": "activate",
+            "class": "GIScene.Control.Select",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\Select.js",
+            "line": 458,
+            "description": "Deactivates this Control",
+            "itemtype": "method",
+            "name": "deactivate",
+            "class": "GIScene.Control.Select",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\Select.js",
+            "line": 489,
+            "itemtype": "event",
+            "name": "unhighlightall",
+            "class": "GIScene.Control.Select",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\Select.js",
+            "line": 493,
+            "itemtype": "event",
+            "name": "unhighlightallbyuser",
+            "class": "GIScene.Control.Select",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\Select.js",
+            "line": 503,
+            "itemtype": "event",
+            "name": "unselectall",
+            "class": "GIScene.Control.Select",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\Select.js",
+            "line": 507,
+            "itemtype": "event",
+            "name": "unselectallbyuser",
+            "class": "GIScene.Control.Select",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\TextPanel.js",
+            "line": 31,
+            "description": "The config which is used to initialize the CameraLight-Control. Merged from defaults and passed config Object.",
+            "itemtype": "property",
+            "name": "config",
+            "type": "Object",
+            "class": "GIScene.Control.TextPanel",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\TextPanel.js",
+            "line": 79,
+            "description": "Activates this Control",
+            "itemtype": "method",
+            "name": "activate",
+            "class": "GIScene.Control.TextPanel",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\TextPanel.js",
+            "line": 100,
+            "description": "Deactivates this Control",
+            "itemtype": "method",
+            "name": "deactivate",
+            "class": "GIScene.Control.TextPanel",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\Walk.js",
+            "line": 375,
+            "description": "Fires when camera position or rotation is changed",
+            "itemtype": "event",
+            "name": "change",
+            "class": "GIScene.Control.Walk",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\Walk.js",
+            "line": 419,
+            "description": "Fires when camera position or rotation is changed",
+            "itemtype": "event",
+            "name": "change",
+            "class": "GIScene.Control.Walk",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\Walk.js",
+            "line": 472,
+            "description": "Activates this Control",
+            "itemtype": "method",
+            "name": "activate",
+            "class": "GIScene.Control.Walk",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control\\Walk.js",
+            "line": 525,
+            "description": "Deactivates this Control",
+            "itemtype": "method",
+            "name": "deactivate",
+            "class": "GIScene.Control.Walk",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Layer\\Fixed.js",
+            "line": 55,
+            "description": "Fires after layer is loaded. \nevent.content holds a reference to the layer",
+            "itemtype": "event",
+            "name": "load",
+            "class": "GIScene.Layer.Fixed",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Layer\\Grid.js",
+            "line": 95,
+            "description": "Starts the automatic loading and removing of tiles dependant on the camera perspective",
+            "itemtype": "method",
+            "name": "startUpdate",
+            "class": "GIScene.Layer.Grid",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Layer\\Grid.js",
+            "line": 102,
+            "description": "Stops the automatic loading and removing of tiles dependent on the camera perspective",
+            "itemtype": "method",
+            "name": "stopUpdate",
+            "class": "GIScene.Layer.Grid",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Layer\\Grid.js",
+            "line": 125,
+            "description": "Loads a tile by specifiying a GIScene.Grid.Index",
+            "itemtype": "method",
+            "name": "loadTile",
+            "params": [
+                {
+                    "name": "gridIndex",
+                    "description": "",
+                    "type": "GIScene.Grid.Index"
+                }
+            ],
+            "class": "GIScene.Layer.Grid",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Layer\\Grid.js",
+            "line": 187,
+            "description": "Fires after a tile is added to the scene. A reference to the tile can be found at event.content.tile",
+            "itemtype": "event",
+            "name": "tileadd",
+            "class": "GIScene.Layer.Grid",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Layer\\Grid.js",
+            "line": 240,
+            "description": "Fires after a tile is loaded. A reference to the tile can be found at event.content.tile",
+            "itemtype": "event",
+            "name": "tileload",
+            "class": "GIScene.Layer.Grid",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Layer\\Grid.js",
+            "line": 301,
+            "description": "loads several tiles by specifying an array of GIScene.Grid.Index objects",
+            "itemtype": "method",
+            "name": "loadTiles",
+            "params": [
+                {
+                    "name": "tileArray",
+                    "description": "",
+                    "type": "Array of GIScene.Grid.Index"
+                }
+            ],
+            "class": "GIScene.Layer.Grid",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Layer\\Grid.js",
+            "line": 313,
+            "description": "Removes a tile or aborts its loading by specifiying a GIScene.Grid.Index",
+            "itemtype": "method",
+            "name": "removeTile",
+            "params": [
+                {
+                    "name": "gridIndex",
+                    "description": "",
+                    "type": "GIScene.Grid.Index"
+                }
+            ],
+            "class": "GIScene.Layer.Grid",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Layer\\Grid.js",
+            "line": 340,
+            "description": "Fires after a tile is removed from the scene. A reference to the tile can be found at event.content.tile",
+            "itemtype": "event",
+            "name": "tileremove",
+            "class": "GIScene.Layer.Grid",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Layer\\Grid.js",
+            "line": 351,
+            "description": "removes or aborts the loading of several tiles by specifying an array of GIScene.Grid.Index objects",
+            "itemtype": "method",
+            "name": "removeTiles",
+            "params": [
+                {
+                    "name": "tileArray",
+                    "description": "",
+                    "type": "Array of GIScene.Grid.Index"
+                }
+            ],
+            "class": "GIScene.Layer.Grid",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Layer\\Grid.js",
+            "line": 363,
+            "description": "computes the visible tiles of the current camera view",
+            "itemtype": "method",
+            "name": "getNewTilesFromQuadtree",
+            "return": {
+                "description": "newTiles",
+                "type": "Array of GIScene.Grid.Index"
+            },
+            "class": "GIScene.Layer.Grid",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Layer\\Grid.js",
+            "line": 743,
+            "itemtype": "method",
+            "name": "getOutlineTiles",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "polygon",
+                    "description": "",
+                    "type": "Array of THREE.Vector3"
+                }
+            ],
+            "class": "GIScene.Layer.Grid",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Layer\\Grid.js",
+            "line": 1151,
+            "description": "updates the current tiles, loads new tiles and removes old ones",
+            "itemtype": "method",
+            "name": "update",
+            "class": "GIScene.Layer.Grid",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Layer\\Grid.js",
+            "line": 1339,
+            "description": "set an approximate terrain height at which the view frustrum will be cut horizontally to determine the visible tiles to be loaded",
+            "itemtype": "method",
+            "name": "setTerrainHeight",
+            "params": [
+                {
+                    "name": "height",
+                    "description": "the terrain height in coordinate reference system (CRS) units (e.g. meters)",
+                    "type": "Number"
+                }
+            ],
+            "class": "GIScene.Layer.Grid",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Layer\\Grid.js",
+            "line": 1350,
+            "description": "set the max extent of the layer to restrict loading of tiles to a rectangle/bounding box",
+            "itemtype": "method",
+            "name": "setMaxExtent",
+            "params": [
+                {
+                    "name": "maxExtent2",
+                    "description": "a 2D bounding box in coordinate reference system (CRS) units",
+                    "type": "GIScene.Extent2"
+                }
+            ],
+            "class": "GIScene.Layer.Grid",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Layer\\Grid.js",
+            "line": 1372,
+            "description": "switches the visibility of the layer on or off",
+            "itemtype": "method",
+            "name": "setVisibility",
+            "params": [
+                {
+                    "name": "visibility",
+                    "description": "",
+                    "type": "Boolean"
+                }
+            ],
+            "class": "GIScene.Layer.Grid",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Process\\Intervisibility.js",
+            "line": 181,
+            "itemtype": "event",
+            "name": "execute event has a content property referring to the processes data object with inputs and outputs",
+            "class": "GIScene.Process.Intervisibility",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Process\\LineOfSightNetwork_allToAll.js",
+            "line": 104,
+            "description": "run the process with the inputs that have been set before\nTo get notified when the process is finished add an event listener on the execute event. The event will provide a content propery with a data object with all input and output values of the process",
+            "itemtype": "method",
+            "name": "execute",
+            "params": [
+                {
+                    "name": "onExecute",
+                    "description": "callback when process is finished",
+                    "type": "Function",
+                    "optional": true
+                }
+            ],
+            "example": [
+                "\n\t\tvar doSomething = function(event){\n\t\t\tvar outputs = event.content.outputs;\n\t\t\t//do something with the results\n\t\t}\n\t\tprocess.addEventListener('execute', doSomething);\n\t\tprocess.execute();"
+            ],
+            "class": "GIScene.Process.LineOfSightNetwork_allToAll",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Process\\LineOfSightNetwork_allToAll.js",
+            "line": 192,
+            "itemtype": "event",
+            "name": "execute event has a content property referring to the processes data object with inputs and outputs",
+            "class": "GIScene.Process.LineOfSightNetwork_allToAll",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Process\\LineOfSight_fastClient.js",
+            "line": 119,
+            "description": "run the process with the inputs that have been set before",
+            "itemtype": "method",
+            "name": "execute",
+            "return": {
+                "description": "data an object with all input and output values of the process",
+                "type": "Object"
+            },
+            "class": "GIScene.Process.LineOfSight_fastClient",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Process\\LineOfSight_fastClient.js",
+            "line": 150,
+            "itemtype": "method",
+            "name": "getNearestIntersectionObject",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "referencePoint",
+                    "description": "",
+                    "type": "THREE.Vector3"
+                },
+                {
+                    "name": "intersectionObjectA",
+                    "description": "object returned from Raycaster.intersectObjects() method",
+                    "type": "Object"
+                },
+                {
+                    "name": "intersectionObjectB",
+                    "description": "object returned from Raycaster.intersectObjects() method",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "nearestIntersectionObject",
+                "type": "Object"
+            },
+            "class": "GIScene.Process.LineOfSight_fastClient",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Process\\LineOfSight_simpleClient.js",
+            "line": 98,
+            "description": "run the process with the inputs that have been set before",
+            "itemtype": "method",
+            "name": "execute",
+            "params": [
+                {
+                    "name": "onExecute",
+                    "description": "callback that will be called when process is finished",
+                    "type": "Function",
+                    "optional": true
+                }
+            ],
+            "class": "GIScene.Process.LineOfSight_simpleClient",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Process\\LineOfSight_simpleClient.js",
+            "line": 144,
+            "itemtype": "method",
+            "name": "getNearestIntersectionObject",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "referencePoint",
+                    "description": "",
+                    "type": "THREE.Vector3"
+                },
+                {
+                    "name": "intersectionObjectA",
+                    "description": "object returned from Raycaster.intersectObjects() method",
+                    "type": "Object"
+                },
+                {
+                    "name": "intersectionObjectB",
+                    "description": "object returned from Raycaster.intersectObjects() method",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "nearestIntersectionObject",
+                "type": "Object"
+            },
+            "class": "GIScene.Process.LineOfSight_simpleClient",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Service\\W3DS_0_4_0.js",
+            "line": 103,
+            "itemtype": "method",
+            "name": "getTile",
+            "params": [
+                {
+                    "name": "params",
+                    "description": "specify the following properties: {String} layer, {Number} tileLevel, {Number} tileCol, {Number} tileRow",
+                    "type": "Object"
+                },
+                {
+                    "name": "onSuccess",
+                    "description": "will be called with the response when the request was successful",
+                    "type": "Function"
+                },
+                {
+                    "name": "onError",
+                    "description": "will be called when the request failed",
+                    "type": "Function"
+                }
+            ],
+            "class": "GIScene.Service.W3DS_0_4_0",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Service\\W3DS_0_4_1.js",
+            "line": 104,
+            "itemtype": "method",
+            "name": "getTile",
+            "params": [
+                {
+                    "name": "params",
+                    "description": "specify the following properties: {String} layer, {Number} tileLevel, {Number} tileCol, {Number} tileRow",
+                    "type": "Object"
+                },
+                {
+                    "name": "onSuccess",
+                    "description": "will be called with the response when the request was successful",
+                    "type": "Function"
+                },
+                {
+                    "name": "onError",
+                    "description": "will be called when the request failed",
+                    "type": "Function"
+                }
+            ],
+            "class": "GIScene.Service.W3DS_0_4_1",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\ShaderMaterials\\RasterOverlayMaterial.js",
+            "line": 40,
+            "description": "The config which is used to initialize the RasterOverlayMaterial. Merged from defaults and passed config Object.",
+            "itemtype": "property",
+            "name": "config",
+            "type": "Object",
+            "class": "GIScene.RasterOverlayMaterial",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\ShaderMaterials\\RasterOverlayMaterial.js",
+            "line": 488,
+            "description": "Sets the upper right corner coordinate of the bounding box which georeferences the texture",
+            "itemtype": "method",
+            "name": "setUpperRight",
+            "params": [
+                {
+                    "name": "coord2",
+                    "description": "Coordinate in CRS units",
+                    "type": "GIScene.Coordinate2"
+                }
+            ],
+            "class": "GIScene.RasterOverlayMaterial",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\ShaderMaterials\\RasterOverlayMaterial.js",
+            "line": 498,
+            "description": "Sets the lower left corner coordinate of the bounding box which georeferences the texture",
+            "itemtype": "method",
+            "name": "setLowerLeft",
+            "params": [
+                {
+                    "name": "coord2",
+                    "description": "Coordinate in CRS units",
+                    "type": "GIScene.Coordinate2"
+                }
+            ],
+            "class": "GIScene.RasterOverlayMaterial",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\ShaderMaterials\\RasterOverlayMaterial.js",
+            "line": 508,
+            "description": "Sets a raster image as overlay texture",
+            "itemtype": "method",
+            "name": "setTexture",
+            "params": [
+                {
+                    "name": "texture",
+                    "description": "",
+                    "type": "THREE.Texture"
+                }
+            ],
+            "class": "GIScene.RasterOverlayMaterial",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\ShaderMaterials\\RasterOverlayMaterial.js",
+            "line": 515,
+            "itemtype": "event",
+            "name": "settexture fires after a new texture has been set to the material",
+            "class": "GIScene.RasterOverlayMaterial",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\ShaderMaterials\\RasterOverlayMaterial.js",
+            "line": 521,
+            "description": "asyncronously loads and attaches a texture by specifiing a url to an image and optionally updates the material uniforms (lowerLeft and upperRight)",
+            "itemtype": "method",
+            "name": "setTextureFromUrl",
+            "params": [
+                {
+                    "name": "url",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "crossOrigin",
+                    "description": "either \"anonymous\" or \"use-credentials\"",
+                    "type": "String"
+                },
+                {
+                    "name": "callback",
+                    "description": "function after texture has been loaded and attached to material",
+                    "type": "Function"
+                }
+            ],
+            "class": "GIScene.RasterOverlayMaterial",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\ShaderMaterials\\RasterOverlayMaterial.js",
+            "line": 541,
+            "description": "Sets an offset which will be subtracted from real world coordinates in case the geometry uses also an offset (scene.offset)",
+            "itemtype": "method",
+            "name": "setOffset2",
+            "params": [
+                {
+                    "name": "coord2",
+                    "description": "",
+                    "type": "GIScene.Coordinate2"
+                }
+            ],
+            "class": "GIScene.RasterOverlayMaterial",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\ShaderMaterials\\RasterOverlayMaterial.js",
+            "line": 553,
+            "description": "Clones the material. BUT reuses the texture without cloning it.",
+            "itemtype": "method",
+            "name": "clone",
+            "return": {
+                "description": "material",
+                "type": "GIScene.RasterOverlayMaterial"
+            },
+            "class": "GIScene.RasterOverlayMaterial",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\ShaderMaterials\\WMSOverlayMaterial.js",
+            "line": 33,
+            "description": "The config which is used to initialize the WMSOverlayMaterial. Merged from defaults and passed config Object.",
+            "itemtype": "property",
+            "name": "config",
+            "type": "Object",
+            "class": "GIScene.WMSOverlayMaterial",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\ShaderMaterials\\WMSOverlayMaterial.js",
+            "line": 56,
+            "description": "set BBOX paramter string from internal lowerLeft and upperRight properties",
+            "itemtype": "method",
+            "name": "setBboxParamFromLLUR",
+            "class": "GIScene.WMSOverlayMaterial",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\ShaderMaterials\\WMSOverlayMaterial.js",
+            "line": 64,
+            "description": "set internal lowerLeft and upperRight properties from params.bbox",
+            "itemtype": "method",
+            "name": "setLLURFromBboxParam",
+            "class": "GIScene.WMSOverlayMaterial",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\ShaderMaterials\\WMSOverlayMaterial.js",
+            "line": 74,
+            "description": "Returns a URL with OGC-WMS parameters based on the material params",
+            "itemtype": "method",
+            "name": "getGetMapUrl",
+            "return": {
+                "description": "getMapUrl",
+                "type": "String"
+            },
+            "class": "GIScene.WMSOverlayMaterial",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\ShaderMaterials\\WMSOverlayMaterial.js",
+            "line": 99,
+            "description": "Clones the material. BUT reuses the texture without cloning it.",
+            "itemtype": "method",
+            "name": "clone",
+            "return": {
+                "description": "material",
+                "type": "GIScene.WMSOverlayMaterial"
+            },
+            "class": "GIScene.WMSOverlayMaterial",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control.js",
+            "line": 11,
+            "itemtype": "property",
+            "name": "scene",
+            "type": "GIScene.Scene",
+            "class": "GIScene.Control",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control.js",
+            "line": 17,
+            "itemtype": "property",
+            "name": "isActive",
+            "type": "Boolean",
+            "class": "GIScene.Control",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control.js",
+            "line": 30,
+            "description": "Sets the scene property. This is automatically called on scene.addControl()",
+            "itemtype": "method",
+            "name": "setScene",
+            "params": [
+                {
+                    "name": "scene",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "GIScene.Control",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control.js",
+            "line": 37,
+            "description": "Activates this Control ...",
+            "itemtype": "method",
+            "name": "activate",
+            "class": "GIScene.Control",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Control.js",
+            "line": 45,
+            "description": "Dectivates this Control ...",
+            "itemtype": "method",
+            "name": "deactivate",
+            "class": "GIScene.Control",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Coordinate2.js",
+            "line": 19,
+            "itemtype": "method",
+            "name": "toVector2",
+            "return": {
+                "description": "",
+                "type": "THREE.Vector2"
+            },
+            "class": "GIscene.Coordinate2",
+            "namespace": "GIscene"
+        },
+        {
+            "file": "GIScene\\Coordinate2.js",
+            "line": 27,
+            "itemtype": "method",
+            "name": "fromVector2",
+            "params": [
+                {
+                    "name": "v2",
+                    "description": "",
+                    "type": "THREE.Vector2"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "GIScene.Coordinate2"
+            },
+            "class": "GIscene.Coordinate2",
+            "namespace": "GIscene"
+        },
+        {
+            "file": "GIScene\\Coordinate2.js",
+            "line": 38,
+            "itemtype": "method",
+            "name": "clone",
+            "return": {
+                "description": "",
+                "type": "GIScene.Coordinate2"
+            },
+            "class": "GIscene.Coordinate2",
+            "namespace": "GIscene"
+        },
+        {
+            "file": "GIScene\\Coordinate3.js",
+            "line": 20,
+            "itemtype": "method",
+            "name": "toVector3",
+            "return": {
+                "description": "",
+                "type": "THREE.Vector3"
+            },
+            "class": "GIscene.Coordinate3",
+            "namespace": "GIscene"
+        },
+        {
+            "file": "GIScene\\Coordinate3.js",
+            "line": 28,
+            "itemtype": "method",
+            "name": "fromVector3",
+            "params": [
+                {
+                    "name": "v3",
+                    "description": "",
+                    "type": "THREE.Vector3"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "GIScene.Coordinate3"
+            },
+            "class": "GIscene.Coordinate3",
+            "namespace": "GIscene"
+        },
+        {
+            "file": "GIScene\\Coordinate3.js",
+            "line": 40,
+            "itemtype": "method",
+            "name": "clone",
+            "return": {
+                "description": "",
+                "type": "GIScene.Coordinate3"
+            },
+            "class": "GIscene.Coordinate3",
+            "namespace": "GIscene"
+        },
+        {
+            "file": "GIScene\\Extent2.js",
+            "line": 17,
+            "description": "will be used in Layer.Grid to reduce tile loading to maxExtent",
+            "itemtype": "method",
+            "name": "toPolygonV2",
+            "return": {
+                "description": "poly",
+                "type": "Array of GIScene.Coordinate2"
+            },
+            "class": "GIScene.Extent2",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Extent2.js",
+            "line": 30,
+            "description": "Creates a new GIScene.Extent2 object by passing a THREE.Box3",
+            "itemtype": "method",
+            "name": "fromBox3",
+            "params": [
+                {
+                    "name": "box3",
+                    "description": "",
+                    "type": "THREE.Box3"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "GIScene.Extent2"
+            },
+            "class": "GIScene.Extent2",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Extent2.js",
+            "line": 42,
+            "itemtype": "method",
+            "name": "clone",
+            "return": {
+                "description": "",
+                "type": "GIScene.Extent2"
+            },
+            "class": "GIScene.Extent2",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Format.js",
+            "line": 11,
+            "itemtype": "property",
+            "name": "JSON",
+            "type": "Number",
+            "static": 1,
+            "final": 1,
+            "class": "GIScene.Format",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Format.js",
+            "line": 18,
+            "itemtype": "property",
+            "name": "JSONBinary",
+            "type": "Number",
+            "static": 1,
+            "final": 1,
+            "class": "GIScene.Format",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Format.js",
+            "line": 25,
+            "itemtype": "property",
+            "name": "OBJ",
+            "type": "Number",
+            "static": 1,
+            "final": 1,
+            "class": "GIScene.Format",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Format.js",
+            "line": 32,
+            "itemtype": "property",
+            "name": "Collada",
+            "type": "Number",
+            "static": 1,
+            "final": 1,
+            "class": "GIScene.Format",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Format.js",
+            "line": 39,
+            "itemtype": "property",
+            "name": "CTM",
+            "type": "Number",
+            "static": 1,
+            "final": 1,
+            "class": "GIScene.Format",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Format.js",
+            "line": 46,
+            "itemtype": "property",
+            "name": "Scene",
+            "type": "Number",
+            "static": 1,
+            "final": 1,
+            "class": "GIScene.Format",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Format.js",
+            "line": 53,
+            "itemtype": "property",
+            "name": "GeoJSON",
+            "type": "Number",
+            "static": 1,
+            "final": 1,
+            "class": "GIScene.Format",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Grid.js",
+            "line": 381,
+            "description": "Returns an array of Grid.Index objects which are intersected by a line",
+            "itemtype": "method",
+            "name": "getTilesFromLineIntersection",
+            "params": [
+                {
+                    "name": "startCoord2",
+                    "description": "",
+                    "type": "GIScene.Coordinate2"
+                },
+                {
+                    "name": "endCoord2",
+                    "description": "",
+                    "type": "GIScene.Coordinate2"
+                },
+                {
+                    "name": "tileSize",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "tiles",
+                "type": "Array of GIScene.Grid.Index"
+            },
+            "class": "GIScene.Grid.Index",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Layer.js",
+            "line": 116,
+            "itemtype": "event",
+            "name": "setScene",
+            "class": "GIScene.Layer",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Layer.js",
+            "line": 126,
+            "description": "Sets the opacity value for the whole layer",
+            "itemtype": "method",
+            "name": "setOpacity",
+            "params": [
+                {
+                    "name": "opacity",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "class": "GIScene.Layer",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Layer.js",
+            "line": 180,
+            "description": "add a style to the layers styles list",
+            "itemtype": "method",
+            "name": "addStyle",
+            "params": [
+                {
+                    "name": "style",
+                    "description": "",
+                    "type": "GIScene.Style"
+                }
+            ],
+            "class": "GIScene.Layer",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Layer.js",
+            "line": 187,
+            "itemtype": "event",
+            "name": "addStyle",
+            "class": "GIScene.Layer",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Layer.js",
+            "line": 193,
+            "description": "remove an existing style from the layers style list",
+            "itemtype": "method",
+            "name": "removeStyle",
+            "params": [
+                {
+                    "name": "style",
+                    "description": "",
+                    "type": "GIScene.Style"
+                }
+            ],
+            "class": "GIScene.Layer",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Layer.js",
+            "line": 203,
+            "itemtype": "event",
+            "name": "removeStyle",
+            "class": "GIScene.Layer",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Layer.js",
+            "line": 211,
+            "description": "remove style, its material and textures from memory",
+            "itemtype": "method",
+            "name": "disposeStyle",
+            "params": [
+                {
+                    "name": "style",
+                    "description": "",
+                    "type": "GIScene.Style"
+                }
+            ],
+            "class": "GIScene.Layer",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Layer.js",
+            "line": 307,
+            "description": "get Objects by a evaluation function which recursively tries to match the objects of the layer",
+            "itemtype": "method",
+            "name": "getObjectsBy",
+            "params": [
+                {
+                    "name": "callback",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "return": {
+                "description": "matches",
+                "type": "Array"
+            },
+            "class": "GIScene.Layer",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Layer.js",
+            "line": 318,
+            "description": "set or modify the current layer selection by attribute query",
+            "itemtype": "method",
+            "name": "selectByAttributes",
+            "params": [
+                {
+                    "name": "attributeName",
+                    "description": "must be available in object.userData.gisceneAttributes",
+                    "type": "String"
+                },
+                {
+                    "name": "operator",
+                    "description": "defines how to compare the given values with the object attributes",
+                    "type": "String"
+                },
+                {
+                    "name": "value",
+                    "description": "the values for the selection criteria",
+                    "type": "Mixed"
+                },
+                {
+                    "name": "selectMode",
+                    "description": "can be new,add,sub,intersect",
+                    "type": "String"
+                }
+            ],
+            "example": [
+                "\n\t{\n\t\t\"attributeName\" : \"attr_id\",\n\t\t\"operator\"\t\t: \"IN\", //\"==\",\"!=\" .... TODO\n\t\t\"value\"\t\t\t: [2393,1234],\n\t\t\"selectMode\"\t: \"new\"\n\t}\n"
+            ],
+            "class": "GIScene.Layer",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Layer.js",
+            "line": 424,
+            "itemtype": "event",
+            "name": "beforeSetOverrideMaterial",
+            "class": "GIScene.Layer",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Layer.js",
+            "line": 473,
+            "itemtype": "event",
+            "name": "afterSetOverrideMaterial",
+            "class": "GIScene.Layer",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Layer.js",
+            "line": 497,
+            "itemtype": "event",
+            "name": "changedvisibility\nlistener function will get the following event object as argument",
+            "example": [
+                "\n \teventObject = {\n \t\tcontent:{\n \t\t\tlayer:{GIScene.Layer}, \n \t\t\tvisibility:{Boolean}\n \t\t}\n \t}\t\t\t"
+            ],
+            "class": "GIScene.Layer",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Layer.js",
+            "line": 515,
+            "itemtype": "method",
+            "name": "getAttributeNames",
+            "return": {
+                "description": "attributeNames",
+                "type": "Array(String)"
+            },
+            "class": "GIScene.Layer",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Layer.js",
+            "line": 543,
+            "description": "apply a style to the layer",
+            "itemtype": "method",
+            "name": "setActiveStyle",
+            "params": [
+                {
+                    "name": "style",
+                    "description": "",
+                    "type": "GIScene.Style"
+                }
+            ],
+            "class": "GIScene.Layer",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Layer.js",
+            "line": 587,
+            "itemtype": "event",
+            "name": "setActiveStyle",
+            "class": "GIScene.Layer",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Line2.js",
+            "line": 27,
+            "description": "Creates a Line2 by specifying two points somewhere on that line",
+            "itemtype": "method",
+            "name": "fromPoints",
+            "params": [
+                {
+                    "name": "pointA2",
+                    "description": "",
+                    "type": "THREE.Vector2"
+                },
+                {
+                    "name": "pointB2",
+                    "description": "",
+                    "type": "THREE.Vector2"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "GIScene.Line2"
+            },
+            "class": "GIScene.Line2",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Line2.js",
+            "line": 42,
+            "description": "Computes the intersection point between this line and a second one",
+            "itemtype": "method",
+            "name": "intersect",
+            "params": [
+                {
+                    "name": "line2",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "instersectionPoint",
+                "type": "THREE.Vector2"
+            },
+            "class": "GIScene.Line2",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\ModelLoader.js",
+            "line": 138,
+            "description": "The returned event object has a content property with a THREE.Scene() Object containing the model as child.",
+            "itemtype": "event",
+            "name": "load",
+            "class": "GIScene.ModelLoader",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\ModelLoader.js",
+            "line": 146,
+            "description": "load function to load Models from different formats.",
+            "itemtype": "method",
+            "name": "load",
+            "params": [
+                {
+                    "name": "url",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "format",
+                    "description": "use constants defined in GIScene.Format\n\n\nTo get the resulting THREE.Scene() Object add an event listener on 'load':",
+                    "type": "Integer"
+                }
+            ],
+            "example": [
+                "\n\t modelLoader.addEventListener('load', onload);\n\t modelLoader.load(url, format);\n\n"
+            ],
+            "class": "GIScene.ModelLoader",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\ModelLoader.js",
+            "line": 165,
+            "itemtype": "event",
+            "name": "beforeLoad",
+            "class": "GIScene.ModelLoader",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\ModelLoader.js",
+            "line": 221,
+            "description": "abort function to abort a running request\nfires an abort event",
+            "itemtype": "method",
+            "name": "abort",
+            "class": "GIScene.ModelLoader",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\ModelLoader.js",
+            "line": 231,
+            "itemtype": "event",
+            "name": "abort",
+            "class": "GIScene.ModelLoader",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Process.js",
+            "line": 48,
+            "description": "Method to set a specific input parameter",
+            "itemtype": "method",
+            "name": "setInput",
+            "params": [
+                {
+                    "name": "inputIdentifier",
+                    "description": "the inputIdentifier defined in the process description",
+                    "type": "String"
+                },
+                {
+                    "name": "value",
+                    "description": "the value of the input to be set",
+                    "type": "Mixed"
+                }
+            ],
+            "class": "GIScene.Process",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Process.js",
+            "line": 59,
+            "description": "Method to set several inputs at a time",
+            "itemtype": "method",
+            "name": "setInputs",
+            "params": [
+                {
+                    "name": "inputParams",
+                    "description": "An object with key:value pairs of input parameters, where key corresponds to the inputIdentifiers defined in the process description",
+                    "type": "Object"
+                }
+            ],
+            "class": "GIScene.Process",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Process.js",
+            "line": 71,
+            "description": "Method to get a specific output result after process execution",
+            "itemtype": "method",
+            "name": "getOutput",
+            "params": [
+                {
+                    "name": "outputIdentifier",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "an output value of the process",
+                "type": "Mixed"
+            },
+            "class": "GIScene.Process",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Process.js",
+            "line": 82,
+            "description": "Method to get all process outputs after process execution",
+            "itemtype": "method",
+            "name": "getOutputs",
+            "return": {
+                "description": "An object containing all process outputs",
+                "type": "Object"
+            },
+            "class": "GIScene.Process",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Process.js",
+            "line": 92,
+            "description": "Get a param desription (input or ouput) by its identifier",
+            "itemtype": "method",
+            "name": "getParamDescriptionById",
+            "params": [
+                {
+                    "name": "identifier",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "parameterDescription",
+                "type": "Object"
+            },
+            "class": "GIScene.Process",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Scene.js",
+            "line": 33,
+            "description": "The default config which is used when no config object is provided.",
+            "access": "private",
+            "tagname": "",
+            "itemtype": "property",
+            "name": "defaults",
+            "type": "Object",
+            "class": "GIScene.Scene",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Scene.js",
+            "line": 72,
+            "description": "The config which is used to initialize the Scene. Merged from defaults and passed config Object.",
+            "itemtype": "property",
+            "name": "config",
+            "type": "Object",
+            "class": "GIScene.Scene",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Scene.js",
+            "line": 98,
+            "description": "The scenegraph root node. Add {THREE.Object3D}-objects to this node. See THREE.js docs for further information",
+            "itemtype": "property",
+            "name": "root",
+            "type": "{THREE.Scene}",
+            "class": "GIScene.Scene",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Scene.js",
+            "line": 104,
+            "description": "The active camera. {THREE.CombinedCamera} can be switched from perspective to orthographic and vice versa",
+            "itemtype": "property",
+            "name": "camera",
+            "type": "{THREE.CombinedCamera}",
+            "class": "GIScene.Scene",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Scene.js",
+            "line": 177,
+            "description": "Fires whenever camera position changes",
+            "itemtype": "event",
+            "name": "cameraChange",
+            "class": "GIScene.Scene",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Scene.js",
+            "line": 268,
+            "description": "Start animation frame and render loop",
+            "itemtype": "method",
+            "name": "startAnimation",
+            "class": "GIScene.Scene",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Scene.js",
+            "line": 281,
+            "description": "beforeRender Event will be executed directly before the render call in the render loop",
+            "itemtype": "event",
+            "name": "beforeRender",
+            "class": "GIScene.Scene",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Scene.js",
+            "line": 288,
+            "description": "beforeRender2 Event will be executed directly before the render call in the render loop",
+            "itemtype": "event",
+            "name": "beforeRender",
+            "class": "GIScene.Scene",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Scene.js",
+            "line": 312,
+            "description": "Stop animation frame and render loop",
+            "itemtype": "method",
+            "name": "stopAnimation",
+            "class": "GIScene.Scene",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Scene.js",
+            "line": 363,
+            "description": "Jump to another place in the scene.",
+            "itemtype": "method",
+            "name": "setCenter",
+            "params": [
+                {
+                    "name": "vector",
+                    "description": "vector in scene coordinates",
+                    "type": "THREE.Vector3"
+                },
+                {
+                    "name": "positionFromCenter",
+                    "description": "vector to place the camera at some distance from the point of interest (vector)",
+                    "type": "THREE.Vector3"
+                },
+                {
+                    "name": "duration",
+                    "description": "duration in milliseconds. if undefined or > 0 an animation is perforemed from the current to the specified new center. Set this to 0 to jump immediately to the new location.",
+                    "type": "Number"
+                }
+            ],
+            "class": "GIScene.Scene",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Scene.js",
+            "line": 412,
+            "description": "Fires after setCenter() completed",
+            "itemtype": "event",
+            "name": "center",
+            "class": "GIScene.Scene",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Scene.js",
+            "line": 438,
+            "description": "Fires after setCenter() completed",
+            "itemtype": "event",
+            "name": "center",
+            "class": "GIScene.Scene",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Scene.js",
+            "line": 467,
+            "description": "Function to move camera to predefined relative positions from Scene.center",
+            "itemtype": "method",
+            "name": "viewFrom",
+            "params": [
+                {
+                    "name": "relativePosition",
+                    "description": "allowed values are 'left','right','front','back','top','bottom'",
+                    "type": "String"
+                }
+            ],
+            "class": "GIScene.Scene",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Scene.js",
+            "line": 502,
+            "description": "Adds a control to the scene",
+            "itemtype": "method",
+            "name": "addControl",
+            "class": "GIScene.Scene",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Scene.js",
+            "line": 514,
+            "description": "Removes a control from the scene",
+            "itemtype": "method",
+            "name": "removeControl",
+            "class": "GIScene.Scene",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Scene.js",
+            "line": 531,
+            "description": "Adds a layer to the scene",
+            "itemtype": "method",
+            "name": "addLayer",
+            "class": "GIScene.Scene",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Scene.js",
+            "line": 540,
+            "itemtype": "event",
+            "name": "addlayer",
+            "class": "GIScene.Scene",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Scene.js",
+            "line": 546,
+            "description": "Removes a layer from the scene",
+            "itemtype": "method",
+            "name": "removeLayer",
+            "class": "GIScene.Scene",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Scene.js",
+            "line": 552,
+            "itemtype": "event",
+            "name": "removelayer",
+            "class": "GIScene.Scene",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Scene.js",
+            "line": 565,
+            "itemtype": "event",
+            "name": "removelayer",
+            "class": "GIScene.Scene",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Scene.js",
+            "line": 571,
+            "description": "Deletes all layer objects and the layer from memory",
+            "itemtype": "method",
+            "name": "disposeLayer",
+            "params": [
+                {
+                    "name": "layer",
+                    "description": "",
+                    "type": "GIScene.Layer"
+                }
+            ],
+            "todo": [
+                "remove all working materials first",
+                "removeEventListeners"
+            ],
+            "class": "GIScene.Scene",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Scene.js",
+            "line": 684,
+            "description": "Set the wireframe property for the whole scene",
+            "itemtype": "method",
+            "name": "setWireframe",
+            "params": [
+                {
+                    "name": "wireframeMode",
+                    "description": "can be {String} 'default' | {boolean} true | {boolean} false",
+                    "type": "Mixed"
+                }
+            ],
+            "class": "GIScene.Scene",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Scene.js",
+            "line": 753,
+            "description": "Sets texturing of on or off for the whole scene",
+            "itemtype": "method",
+            "name": "setTexturing",
+            "params": [
+                {
+                    "name": "texturingMode",
+                    "description": "can be: {String} 'default' | {boolean} true | {boolean} false",
+                    "type": "Mixed"
+                }
+            ],
+            "class": "GIScene.Scene",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Scene.js",
+            "line": 828,
+            "description": "Sets the face culling mode for the whole scene",
+            "itemtype": "method",
+            "name": "setFaceCulling",
+            "params": [
+                {
+                    "name": "faceCullingMode",
+                    "description": "",
+                    "type": "THREE.FrontSide || THREE.BackSide || THREE.DoubleSide || 'default'"
+                }
+            ],
+            "class": "GIScene.Scene",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Scene.js",
+            "line": 911,
+            "description": "Sets the vertex color mode for the whole scene",
+            "itemtype": "method",
+            "name": "setVertexColors",
+            "params": [
+                {
+                    "name": "vertexColorMode",
+                    "description": "",
+                    "type": "THREE.NoColors || THREE.FaceColors || THREE.VertexColors || 'default'"
+                }
+            ],
+            "class": "GIScene.Scene",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Scene.js",
+            "line": 1061,
+            "description": "Sets the shading mode for the whole scene",
+            "itemtype": "method",
+            "name": "setShading",
+            "params": [
+                {
+                    "name": "shadingMode",
+                    "description": "",
+                    "type": "THREE.FlatShading || THREE.SmoothShading || 'default'"
+                }
+            ],
+            "class": "GIScene.Scene",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Scene.js",
+            "line": 1177,
+            "description": "get all descendants of the layers. Optionally the layers can be filtered by an array filter function.",
+            "itemtype": "method",
+            "name": "getLayerDescendants",
+            "params": [
+                {
+                    "name": "filter",
+                    "description": "An array filter function that is applied to each layer object of the scene. Should return true or false.",
+                    "type": "Function"
+                }
+            ],
+            "example": [
+                "\n\t//get only descendants of layers that are not Helper Layers\n\tscene.getLayerDescendants(function(e,i,a){\n\t\treturn !(e instanceof GIScene.Layer.Helper);\n\t\t}\n\t);\n "
+            ],
+            "class": "GIScene.Scene",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Scene.js",
+            "line": 1205,
+            "itemtype": "method",
+            "name": "getLayerById",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "result returns the layer found by id or null",
+                "type": "GIScene.Layer"
+            },
+            "class": "GIScene.Scene",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Scene.js",
+            "line": 1336,
+            "description": "get Objects by a evaluation function which recursively tries to match the objects of the scene",
+            "itemtype": "method",
+            "name": "getObjectsBy",
+            "params": [
+                {
+                    "name": "callback",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "return": {
+                "description": "matches",
+                "type": "Array"
+            },
+            "class": "GIScene.Scene",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Scene.js",
+            "line": 1347,
+            "description": "inherited from THREE.EventDispatcher",
+            "itemtype": "method",
+            "name": "addEventListener",
+            "params": [
+                {
+                    "name": "eventType",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "listener",
+                    "description": "function, to be called when the event is dispatched",
+                    "type": "Function"
+                }
+            ],
+            "class": "GIScene.Scene",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Scene.js",
+            "line": 1356,
+            "description": "inherited from THREE.EventDispatcher",
+            "itemtype": "method",
+            "name": "hasEventListener",
+            "params": [
+                {
+                    "name": "eventType",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "listener",
+                    "description": "function, to be removed from the event",
+                    "type": "Function"
+                }
+            ],
+            "class": "GIScene.Scene",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Scene.js",
+            "line": 1365,
+            "description": "inherited from THREE.EventDispatcher",
+            "itemtype": "method",
+            "name": "removeEventListener",
+            "params": [
+                {
+                    "name": "eventType",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "listener",
+                    "description": "function, to be removed from the event",
+                    "type": "Function"
+                }
+            ],
+            "class": "GIScene.Scene",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Scene.js",
+            "line": 1374,
+            "description": "inherited from THREE.EventDispatcher",
+            "itemtype": "method",
+            "name": "dispatchEvent",
+            "params": [
+                {
+                    "name": "event",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "example": [
+                " this.dispatchEvent( { type: 'beforeRender', content: anythingToBePassedToTheListeners } );\n"
+            ],
+            "class": "GIScene.Scene",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Utils.js",
+            "line": 261,
+            "description": "Sets the face culling mode for an object",
+            "itemtype": "method",
+            "name": "setFaceCulling",
+            "params": [
+                {
+                    "name": "faceCullingMode",
+                    "description": "",
+                    "type": "THREE.FrontSide || THREE.BackSide || THREE.DoubleSide || 'default'"
+                }
+            ],
+            "class": "GIScene.Utils",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Utils.js",
+            "line": 341,
+            "description": "Sets the vertex color mode for an object",
+            "itemtype": "method",
+            "name": "setVertexColors",
+            "params": [
+                {
+                    "name": "vertexColorMode",
+                    "description": "",
+                    "type": "THREE.NoColors || THREE.FaceColors || THREE.VertexColors || 'default'"
+                }
+            ],
+            "class": "GIScene.Utils",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Utils.js",
+            "line": 864,
+            "description": "Merges object properties from a abse object with properties of an extending object.",
+            "itemtype": "method",
+            "name": "mergeObjects",
+            "params": [
+                {
+                    "name": "base",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "extending",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "merged object with base properties extended/overwritten by extending object.",
+                "type": "Object"
+            },
+            "class": "GIScene.Utils",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Utils.js",
+            "line": 884,
+            "description": "Transforms absolute screencoordinates from DOMEvents to relative screencoordinates inside a DOMElement",
+            "itemtype": "method",
+            "name": "getRelativeScreenCoordsFromDOMEvent",
+            "params": [
+                {
+                    "name": "domElement",
+                    "description": "Usually the canvas Element",
+                    "type": "DOMElement"
+                },
+                {
+                    "name": "event",
+                    "description": "e.g. a mouse event",
+                    "type": "DOMEvent"
+                }
+            ],
+            "return": {
+                "description": "A Vector which contains the event coordinates transformed into coordinates relative to the upper left corner of the DOMElement",
+                "type": "THREE.Vector2"
+            },
+            "class": "GIScene.Utils",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Utils.js",
+            "line": 901,
+            "description": "Transforms screencoordinates from DOMEvents",
+            "itemtype": "method",
+            "name": "getViewportCoordsFromDOMEvent",
+            "params": [
+                {
+                    "name": "domElement",
+                    "description": "Usually the canvas Element",
+                    "type": "DOMElement"
+                },
+                {
+                    "name": "event",
+                    "description": "e.g. a mouse event",
+                    "type": "DOMEvent"
+                }
+            ],
+            "return": {
+                "description": "A Vector which contains the event coordinates transformed into viewport coordinates (x and y are between -1 and 1)",
+                "type": "THREE.Vector2"
+            },
+            "class": "GIScene.Utils",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Utils.js",
+            "line": 917,
+            "description": "Transforms relative screen coordinates (e.g.from a canvas element) to normalized viewport coordinates",
+            "itemtype": "method",
+            "name": "transformRelativeScreenCoordsToViewportCoords",
+            "params": [
+                {
+                    "name": "relativeScreenCoords",
+                    "description": "",
+                    "type": "THREE.Vector2"
+                },
+                {
+                    "name": "width",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "height",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "A Vector which contains the relative screen coordinates transformed into viewport coordinates (x and y are between -1 and 1)",
+                "type": "THREE.Vector2"
+            },
+            "class": "GIScene.Utils",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Utils.js",
+            "line": 934,
+            "description": "Transforms viewport coordinates to relative screen coordinates (e.g.from a canvas element)",
+            "itemtype": "method",
+            "name": "transformViewportCoordsToRelativeScreenCoords",
+            "params": [
+                {
+                    "name": "viewPortCoords",
+                    "description": "",
+                    "type": "THREE.Vector2"
+                },
+                {
+                    "name": "width",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "height",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "A Vector which contains the viewport coordinates transformed into relative screen coordinates (x and y are between width and height)",
+                "type": "THREE.Vector2"
+            },
+            "class": "GIScene.Utils",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Utils.js",
+            "line": 951,
+            "description": "Recursively computes the bounding box of a scenegraph",
+            "itemtype": "method",
+            "name": "computeBoundingBoxRecursive",
+            "params": [
+                {
+                    "name": "node",
+                    "description": "",
+                    "type": "THREE.Object3D"
+                }
+            ],
+            "return": {
+                "description": "The united bounding box of the node and all its descendants",
+                "type": "THREE.Box3"
+            },
+            "class": "GIScene.Utils",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Utils.js",
+            "line": 984,
+            "itemtype": "method",
+            "name": "computeVertexMeanRecursive",
+            "params": [
+                {
+                    "name": "node",
+                    "description": "node from which mean will be computed recursively including itself",
+                    "type": "THREE.Object3D"
+                }
+            ],
+            "return": {
+                "description": "the point which represents the computed mean",
+                "type": "THREE.Vector3"
+            },
+            "todo": [
+                "does NOT take care of MatrixRotations",
+                "e.g. if verticalAxis=Z"
+            ],
+            "class": "GIScene.Utils",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Utils.js",
+            "line": 1013,
+            "description": "Performs a rotation of a point around a center",
+            "itemtype": "method",
+            "name": "polarTransformationAddAngle",
+            "params": [
+                {
+                    "name": "center",
+                    "description": "center of rotation",
+                    "type": "THREE.Vector3"
+                },
+                {
+                    "name": "point",
+                    "description": "point to rotate around center",
+                    "type": "THREE.Vector3"
+                },
+                {
+                    "name": "deltaTheta",
+                    "description": "horizontal angle in degrees to be rotated",
+                    "type": "Number"
+                },
+                {
+                    "name": "deltaPhi",
+                    "description": "vertical angle in degrees to be rotated",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "rotatedPoint",
+                "type": "THREE.Vector3"
+            },
+            "class": "GIScene.Utils",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Utils.js",
+            "line": 1044,
+            "description": "sets the position property of an object to its boundingBoxCenter\nand changes vertex coordinates accordingly",
+            "itemtype": "method",
+            "name": "translatePositionToBBoxCenter",
+            "params": [
+                {
+                    "name": "object",
+                    "description": "",
+                    "type": "THREE.Object3D"
+                }
+            ],
+            "class": "GIScene.Utils",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Utils.js",
+            "line": 1061,
+            "description": "function to sort objects by object.renderDepth property.\nCalculates distance from camera to object.position and subtracts the boundingSphere.radius.\nHelps to obtain a better sorting of small objects inside bigger ones.",
+            "itemtype": "method",
+            "name": "calcRenderDepthMinusBSphereRadius",
+            "params": [
+                {
+                    "name": "object",
+                    "description": "",
+                    "type": "THREE.Object3D"
+                },
+                {
+                    "name": "camera",
+                    "description": "",
+                    "type": "THREE.Camera"
+                }
+            ],
+            "return": {
+                "description": "distance",
+                "type": "Number"
+            },
+            "class": "GIScene.Utils",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Utils.js",
+            "line": 1084,
+            "description": "function to calculate parameter for orthographic cameras based on params from a perspective camera and a distance at which the visible size of an object should be maintained",
+            "itemtype": "method",
+            "name": "getOrthoParamsFromPerspectiveCam",
+            "params": [
+                {
+                    "name": "canvas",
+                    "description": "",
+                    "type": "HTMLCanvasElement"
+                },
+                {
+                    "name": "perspectiveCam",
+                    "description": "",
+                    "type": "THREE.PerspectiveCamera"
+                },
+                {
+                    "name": "focusDistance",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "parameters for THREE.OrthographicCamera",
+                "type": "Object"
+            },
+            "class": "GIScene.Utils",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Utils.js",
+            "line": 1108,
+            "description": "function to calculate the size parameters for an orthographic camera",
+            "itemtype": "method",
+            "name": "getOrthoSizeFromFovDistanceAspect",
+            "params": [
+                {
+                    "name": "fov",
+                    "description": "in degrees",
+                    "type": "Number"
+                },
+                {
+                    "name": "distance",
+                    "description": "at which size is to be computed according to fov",
+                    "type": "Number"
+                },
+                {
+                    "name": "aspect",
+                    "description": "ratio of canvas with / height",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "orthosize Object which contains (top, bottom, left, right)-values for orthographic Cameras",
+                "type": "Object"
+            },
+            "class": "GIScene.Utils",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Utils.js",
+            "line": 1133,
+            "description": "function to calculate the distance a perspective camera needs from a target to maintain the visual size of objects",
+            "itemtype": "method",
+            "name": "getPerspectiveDistanceFromFovHalfHeight",
+            "params": [
+                {
+                    "name": "fov",
+                    "description": "field of view in degrees",
+                    "type": "Number"
+                },
+                {
+                    "name": "halfHeight",
+                    "description": "half of the orthographic camera height or height at distance to be visible in camera in scene units",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "distance a perspective camera with the given field of view (fov) should be placed from a target to completly see the given (half-)height",
+                "type": "Number"
+            },
+            "class": "GIScene.Utils",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Utils.js",
+            "line": 1148,
+            "description": "check for item in array",
+            "itemtype": "method",
+            "name": "arrayContains",
+            "params": [
+                {
+                    "name": "array",
+                    "description": "",
+                    "type": "Array"
+                },
+                {
+                    "name": "item",
+                    "description": "item to check for in array",
+                    "type": "Item"
+                }
+            ],
+            "class": "GIScene.Utils",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Utils.js",
+            "line": 1163,
+            "description": "Removes duplicates from an array, even different objects with equal properties",
+            "itemtype": "method",
+            "name": "removeDuplicatesFromArray",
+            "params": [
+                {
+                    "name": "array",
+                    "description": "",
+                    "type": "Array"
+                }
+            ],
+            "return": {
+                "description": "filteredArray new filtered array",
+                "type": "Array"
+            },
+            "class": "GIScene.Utils",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Utils.js",
+            "line": 1178,
+            "description": "Flatten 3D Vectors horizontally to 2D\nRemoves y from vector3 and puts z as y of vector2.",
+            "itemtype": "method",
+            "name": "vector3ToVector2",
+            "params": [
+                {
+                    "name": "v3",
+                    "description": "",
+                    "type": "THREE.Vector3"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "THREE.Vector2"
+            },
+            "class": "GIScene.Utils",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Utils.js",
+            "line": 1192,
+            "description": "Transform a Vector2 to Vector3 by adding a y component",
+            "itemtype": "method",
+            "name": "vector2ToVector3",
+            "params": [
+                {
+                    "name": "v2",
+                    "description": "represents horizontal points",
+                    "type": "THREE.Vector2"
+                },
+                {
+                    "name": "y",
+                    "description": "height to add to horizontal point",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "THREE.Vector3"
+            },
+            "class": "GIScene.Utils",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Utils.js",
+            "line": 1204,
+            "description": "Delete an object properly",
+            "itemtype": "method",
+            "name": "disposeObject",
+            "params": [
+                {
+                    "name": "object",
+                    "description": "the object to be disposed",
+                    "type": "THREE.Object3D"
+                },
+                {
+                    "name": "deleteGeometry",
+                    "description": "should the geometry of the object be disposed",
+                    "type": "Boolean"
+                },
+                {
+                    "name": "deleteMaterial",
+                    "description": "should the material of the object be disposed also? Set to false if material is shared by other objects",
+                    "type": "Boolean"
+                },
+                {
+                    "name": "deleteTextures",
+                    "description": "should the textures of the object be disposed also? Set to false if textures are shared by other objects",
+                    "type": "Boolean"
+                },
+                {
+                    "name": "recursive",
+                    "description": "should all descendants of the object be disposed by the same criteria aswell?",
+                    "type": "Boolean"
+                }
+            ],
+            "class": "GIScene.Utils",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Utils.js",
+            "line": 1283,
+            "description": "isTypeOrClass",
+            "itemtype": "method",
+            "name": "isTypeOrClass",
+            "params": [
+                {
+                    "name": "typeOrClassName",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "class": "GIScene.Utils",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene\\Utils.js",
+            "line": 1309,
+            "description": "get Objects by recursively calling a callback function which should return true or false to all children",
+            "itemtype": "method",
+            "name": "getObjectsBy",
+            "params": [
+                {
+                    "name": "rootObject",
+                    "description": "",
+                    "type": "THREE.Object3D"
+                },
+                {
+                    "name": "callback",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "GIScene.Utils",
+            "namespace": "GIScene"
+        },
+        {
+            "file": "GIScene.js",
+            "line": 15,
+            "itemtype": "property",
+            "name": "VERSION",
+            "type": "String",
+            "final": 1,
+            "access": "public",
+            "tagname": "",
+            "class": "GIScene",
+            "module": "GIScene"
+        },
+        {
+            "file": "GIScene.js",
+            "line": 26,
+            "description": "The Path to where this file is stored",
+            "itemtype": "property",
+            "name": "LIBRARYPATH",
+            "type": "String",
+            "final": 1,
+            "access": "public",
+            "tagname": "",
+            "class": "GIScene",
+            "module": "GIScene"
+        },
+        {
+            "file": "GIScene.js",
+            "line": 36,
+            "description": "Constants for setting bitmask flags on working material to indicate that it is still in use by some control",
+            "itemtype": "property",
+            "name": "WORKINGMATERIALFLAGS",
+            "type": "Object",
+            "final": 1,
+            "access": "public",
+            "tagname": "",
+            "example": [
+                "\n\t\tWORKINGMATERIALFLAGS:{\n\t\t\t\tSELECT:1,\t//material is highlighted by GIScene.Control.Select\n\t\t\t\tWIRE:2,\t\t//wireframe state has been changed\n\t\t\t\tSHADING:4,\t//shading mode ( smooth | flat ) has been changed\n\t\t\t\tSIDE:8,\t\t//face culling has been changed ( front | back | double )\n\t\t\t\tMAP:16,\t\t//texture has been turned off\n\t\t\t\tOPACITY:32, //opacity value has been changed\n\t\t\t\tVERTEXCOLORS:64, //vertexColors ( noColors | faceColors | vertexColors )\n\t\t\t\tDIFFUSE:128, //diffuseColor ( THREE.Color )\n\t\t\t\tAMBIENT:256 //ambientColor ( THREE.Color )\n\t\t\t}"
+            ],
+            "class": "GIScene",
+            "module": "GIScene"
+        },
+        {
+            "file": "GIScene.js",
+            "line": 70,
+            "description": "For internal use only.",
+            "itemtype": "property",
+            "name": "idCounter",
+            "type": "Number",
+            "class": "GIScene",
+            "module": "GIScene"
+        },
+        {
+            "file": "GIScene.js",
+            "line": 85,
+            "description": "The relative path from the script folder (where GIScene_x.x.x.js is stored) to the \"resources\" folder",
+            "itemtype": "property",
+            "name": "RESOURCESPATH",
+            "type": "String",
+            "final": 1,
+            "access": "public",
+            "tagname": "",
+            "class": "GIScene",
+            "module": "GIScene"
+        }
+    ],
+    "warnings": []
+}
