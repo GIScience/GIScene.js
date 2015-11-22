@@ -26,6 +26,8 @@ The result will be stored in GIScene/builds folder!
 
 To create the docs:
 
+Install yuidoc: npm -g install yuidocjs
+
 0. Change the version in yuidoc.json
 1. Go to /lib
 2. Run: yuidoc . in the command line
