@@ -1,5 +1,7 @@
 header {
 	background-color: #dddddd;
+	margin-bottom: 1rem;
+	border-bottom: 1px solid;
 }
 
 header  h1 > a {
