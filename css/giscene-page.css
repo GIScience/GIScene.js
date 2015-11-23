@@ -17,3 +17,5 @@ header  h1 > a:hover, header > h1 > a:visited {
 #giscene-logo {
 	vertical-align: baseline;
 }
+
+.card:hover {background-color: #dddddd}

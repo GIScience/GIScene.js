@@ -29,7 +29,7 @@
 				offset : new GIScene.Coordinate3(962800,6348100,0),
 				overrideMaterial : new THREE.MeshLambertMaterial({color: 0x005500, ambient:0x003300, wireframe:true}),
 				//optional: automatic zoom depending on object size after layer has been loaded
-				listeners: [ { 'load' : function( event ){ var layer = event.content; scene.setCenter(event.content.boundingBox.center(), new THREE.Vector3(-10000, 10000, event.content.boundingBox.getBoundingSphere().radius*2)); } } ]
+				listeners: [ { 'load' : function( event ){ var layer = event.content; scene.setCenter(event.content.boundingBox.center(), new THREE.Vector3(-5000, 3000, 5000)); } } ]
 			};
 			
 			var layer = new GIScene.Layer.Fixed("Layername", layer_options);
@@ -38,10 +38,21 @@
 			
 			//create, add and activate a navigation control
 			var nav_ctrl = new GIScene.Control.PanOrbitZoomCenter(scene.camera, scene.containerDiv);
-			
 			scene.addControl(nav_ctrl);
-			
 			nav_ctrl.activate();
+			
+			//create, add and activate a compass control
+			var compass_ctrl = new GIScene.Control.Compass(scene.camera);
+			scene.addControl(compass_ctrl);
+			compass_ctrl.activate();
+			
+			//create, add and activate a position control
+			var position_ctrl = new GIScene.Control.ObjectPosition(scene.camera);
+			scene.addControl(position_ctrl);
+			position_ctrl.activate();
+			
+			//set the light to shine from south-west
+			scene.directionalLight.position.set(-1,1,1); //W-E, Down-Up, N-S
 			
 		</script>
 	</body>
