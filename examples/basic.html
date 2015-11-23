@@ -21,7 +21,7 @@
 				url : "models/stanford_bunny/bunny_brown.ctm",
 				format : GIScene.Format.CTM,
 				//optional: automatic zoom depending on object size after layer has been loaded
-				listeners: [ { 'load' : function( event ){ var layer = event.content; scene.setCenter(event.content.boundingBox.center(), new THREE.Vector3(0, 0, event.content.boundingBox.getBoundingSphere().radius*2)); } } ]
+				listeners: [ { 'load' : function( event ){ var layer = event.content; scene.setCenter(layer.boundingBox.center(), new THREE.Vector3(0, 0, layer.boundingBox.getBoundingSphere().radius*2),0); } } ]
 			};
 			
 			var layer = new GIScene.Layer.Fixed("Layername", layer_options);
@@ -34,6 +34,8 @@
 			scene.addControl(nav_ctrl);
 			
 			nav_ctrl.activate();
+			
+			
 			
 		</script>
 	</body>

@@ -7,6 +7,9 @@
 		<script src="js/GIScene/GIScene_min_1.0.1.js"></script>
 		<style>
 			body {font-family: sans-serif;}
+			#scene {
+				position: relative;
+			}
 		</style>
 	</head>
 	<body>
@@ -21,6 +24,11 @@
 			
 			var scene = new GIScene.Scene('scene', scene_options);
 			
+			//create, add and activate a loading indicator
+			var load_ctrl = new GIScene.Control.LoadIndicator();
+			scene.addControl(load_ctrl);
+			load_ctrl.activate();
+			
 			//add a layer
 			var layer_options = {
 				url : "models/dem/srtm-30m/04_3857_offset_962800_6348100_0.json",
@@ -28,7 +36,7 @@
 				verticalAxis : "Z",
 				offset : new GIScene.Coordinate3(962800,6348100,0),
 				overrideMaterial : new THREE.MeshLambertMaterial({color: 0x005500, ambient:0x003300, wireframe:true}),
-				//optional: automatic zoom depending on object size after layer has been loaded
+				//optional: automatic zoom after layer has been loaded
 				listeners: [ { 'load' : function( event ){ var layer = event.content; scene.setCenter(event.content.boundingBox.center(), new THREE.Vector3(-5000, 3000, 5000)); } } ]
 			};
 			
