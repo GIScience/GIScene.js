@@ -18,4 +18,8 @@ header  h1 > a:hover, header > h1 > a:visited {
 	vertical-align: baseline;
 }
 
+div[role=main] h2 {
+	margin-top: 3rem;
+}
+
 .card:hover {background-color: #dddddd}

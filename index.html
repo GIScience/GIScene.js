@@ -10,6 +10,7 @@
 
 		<link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
 		
+		<link rel="stylesheet" href="css/github-markdown.css" >
 		<link rel="stylesheet" href="css/giscene-page.css">
 		
 		<script>
@@ -41,6 +42,12 @@
 			
 		</header>
 		<div role="main" class="container">
+			<h2>GIScene.js</h2>
+			<p>A 3D WebGIS framework. Based on Three.js. Easy to learn and customize.</p>
+
+			<p>This project extends the fantastic capabilities of the 3D JavaScript library <a href="https://github.com/mrdoob/three.js/">three.js</a> by adding GIS concepts like Layers, Controls, Coordinates, Projections and more.
+			If you are familiar with the web mapping library <a href="http://openlayers.org/">OpenLayers</a> you will find this library easy to use.
+			You can use it for georeferenced 3D data, but it takes a lot of work from you no matter if your models are georeferenced or not.</p>
 			<h2>Features</h2>
 			<ul>
 				<li>GIScene.js is a spatially extended Three.js</li>
@@ -50,6 +57,74 @@
 				<li>Many handsome controls for Navigation and other tasks</li>
 				<li>...</li>
 			</ul>
+			<h2>Basic Usage</h2>
+			<div class="markdown-body">
+			<div class="highlight highlight-text-html-basic"><pre>&lt;!DOCTYPE html&gt;
+&lt;<span class="pl-ent">html</span>&gt;
+    &lt;<span class="pl-ent">head</span>&gt;
+        &lt;<span class="pl-ent">meta</span> <span class="pl-e">charset</span>=<span class="pl-s"><span class="pl-pds">"</span>UTF-8<span class="pl-pds">"</span></span>&gt;
+        &lt;<span class="pl-ent">title</span>&gt;GIScene.js example - Basic Usage&lt;/<span class="pl-ent">title</span>&gt;
+<span class="pl-s1">        &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>js/THREE/r63/three.min.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</span>
+<span class="pl-s1">        &lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>js/GIScene/GIScene_min_1.0.1.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</span>
+    &lt;/<span class="pl-ent">head</span>&gt;
+    &lt;<span class="pl-ent">body</span>&gt;
+        &lt;<span class="pl-ent">h1</span>&gt;GIScene.js example - Basic Usage&lt;/<span class="pl-ent">h1</span>&gt;
+        &lt;<span class="pl-ent">div</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>scene<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">div</span>&gt;
+<span class="pl-s1">        &lt;<span class="pl-ent">script</span>&gt;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">            <span class="pl-c">//create a new scene</span></span>
+<span class="pl-s1">            <span class="pl-k">var</span> scene <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">GIScene.Scene</span>(<span class="pl-s"><span class="pl-pds">'</span>scene<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">            <span class="pl-c">//add a layer</span></span>
+<span class="pl-s1">            <span class="pl-k">var</span> layer_options <span class="pl-k">=</span> {</span>
+<span class="pl-s1">                url <span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>models/stanford_bunny/bunny_brown.ctm<span class="pl-pds">"</span></span>,</span>
+<span class="pl-s1">                format <span class="pl-k">:</span> <span class="pl-smi">GIScene</span>.<span class="pl-c1">F</span>ormat.<span class="pl-c1">CTM</span>,</span>
+<span class="pl-s1">                <span class="pl-c">//optional: automatic zoom depending on object size after layer has been loaded</span></span>
+<span class="pl-s1">                listeners<span class="pl-k">:</span> [ { <span class="pl-s"><span class="pl-pds">'</span><span class="pl-en">load</span><span class="pl-pds">'</span></span> <span class="pl-k">:</span> <span class="pl-k">function</span>( <span class="pl-smi">event</span> ){ <span class="pl-k">var</span> layer <span class="pl-k">=</span> <span class="pl-smi">event</span>.<span class="pl-c1">content</span>; <span class="pl-smi">scene</span>.<span class="pl-en">setCenter</span>(<span class="pl-smi">event</span>.<span class="pl-c1">content</span>.<span class="pl-smi">boundingBox</span>.<span class="pl-en">center</span>(), <span class="pl-k">new</span> <span class="pl-en">THREE.Vector3</span>(<span class="pl-c1">0</span>, <span class="pl-c1">0</span>, <span class="pl-smi">event</span>.<span class="pl-c1">content</span>.<span class="pl-smi">boundingBox</span>.<span class="pl-en">getBoundingSphere</span>().<span class="pl-smi">radius</span><span class="pl-k">*</span><span class="pl-c1">2</span>)); } } ]</span>
+<span class="pl-s1">            };</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">            <span class="pl-k">var</span> layer <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">GIScene.Layer</span>.<span class="pl-en">Fixed</span>(<span class="pl-s"><span class="pl-pds">"</span>Layername<span class="pl-pds">"</span></span>, layer_options);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">            <span class="pl-smi">scene</span>.<span class="pl-en">addLayer</span>(layer);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">            <span class="pl-c">//create, add and activate a navigation control</span></span>
+<span class="pl-s1">            <span class="pl-k">var</span> nav_ctrl <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">GIScene.Control</span>.<span class="pl-en">PanOrbitZoomCenter</span>(<span class="pl-smi">scene</span>.<span class="pl-smi">camera</span>);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">            <span class="pl-smi">scene</span>.<span class="pl-en">addControl</span>(nav_ctrl);</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">            <span class="pl-smi">nav_ctrl</span>.<span class="pl-en">activate</span>();</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">        &lt;/<span class="pl-ent">script</span>&gt;</span>
+    &lt;/<span class="pl-ent">body</span>&gt;
+&lt;/<span class="pl-ent">html</span>&gt;</pre></div>
+</div>
+		<h2>Acknowledgements</h2>
+		<p>GIScene has been developed by M.Auer during the research project <a href="http://www.mayaarch3d.org">MayaArch3D</a>. The <a href="http://www.mayaarch3d.org/language/en/research/tools-in-development/3d-object-viewer/temple-18-2/">MayaArch3D-SingleObjectViewer</a> was developed using the GIScene.js library.
+Between 2012 and 2015 the development of GIScene.js and the MayaArch3D project has been funded by the German Ministry of Education and Research (BMBF). </p>
+		<h2>License</h2>
+		<pre>
+The MIT License (MIT)
+
+Copyright (c) 2015 Michael Auer <auer@uni-heidelberg.de>, GIScience Research Group
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+</pre>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 		<script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
