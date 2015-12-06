@@ -5,6 +5,22 @@
 		<title>GIScene.js example - DEM SRTM-30m</title>
 		<script src="js/THREE/r63/three.min.js"></script>
 		<script src="js/GIScene/GIScene_min_1.0.1.js"></script>
+		<style>
+			body {font-family: sans-serif;}
+			#scene {
+				position: relative;
+			}
+		</style>
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		  ga('create', 'UA-70640742-1', 'auto');
+		  ga('send', 'pageview');
+		
+		</script>
 	</head>
 	<body>
 		<h1>GIScene.js example - DEM SRTM-30m</h1>
@@ -13,10 +29,15 @@
 			//create a new scene
 			var scene_options =  {
 				near : 1,
-				far  : 20000
+				far  : 30000
 			};
 			
 			var scene = new GIScene.Scene('scene', scene_options);
+			
+			//create, add and activate a loading indicator
+			var load_ctrl = new GIScene.Control.LoadIndicator();
+			scene.addControl(load_ctrl);
+			load_ctrl.activate();
 			
 			//add a layer
 			var layer_options = {
@@ -24,9 +45,9 @@
 				format : GIScene.Format.JSON,
 				verticalAxis : "Z",
 				offset : new GIScene.Coordinate3(962800,6348100,0),
-				overrideMaterial : new THREE.MeshLambertMaterial({color: 0x005500, ambient:0x003300}),
-				//optional: automatic zoom depending on object size after layer has been loaded
-				listeners: [ { 'load' : function( event ){ var layer = event.content; scene.setCenter(event.content.boundingBox.center(), new THREE.Vector3(0, 0, event.content.boundingBox.getBoundingSphere().radius*2)); } } ]
+				overrideMaterial : new THREE.MeshLambertMaterial({color: 0x005500, ambient:0x003300, wireframe:true}),
+				//optional: automatic zoom after layer has been loaded
+				listeners: [ { 'load' : function( event ){ var layer = event.content; scene.setCenter(layer.boundingBox.center(), new THREE.Vector3(-5000, 3000, 5000)); } } ]
 			};
 			
 			var layer = new GIScene.Layer.Fixed("Layername", layer_options);
@@ -34,11 +55,22 @@
 			scene.addLayer(layer);
 			
 			//create, add and activate a navigation control
-			var nav_ctrl = new GIScene.Control.PanOrbitZoomCenter(scene.camera);
-			
+			var nav_ctrl = new GIScene.Control.PanOrbitZoomCenter(scene.camera, scene.containerDiv);
 			scene.addControl(nav_ctrl);
-			
 			nav_ctrl.activate();
+			
+			//create, add and activate a compass control
+			var compass_ctrl = new GIScene.Control.Compass(scene.camera);
+			scene.addControl(compass_ctrl);
+			compass_ctrl.activate();
+			
+			//create, add and activate a position control
+			var position_ctrl = new GIScene.Control.ObjectPosition(scene.camera);
+			scene.addControl(position_ctrl);
+			position_ctrl.activate();
+			
+			//set the light to shine from south-west
+			scene.directionalLight.position.set(-1,1,1); //W-E, Down-Up, N-S
 			
 		</script>
 	</body>

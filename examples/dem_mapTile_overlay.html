@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>GIScene.js example - DEM SRTM-30m with raster overlay from tileserver</title>
+		<script src="js/THREE/r63/three.min.js"></script>
+		<script src="js/GIScene/GIScene_1.0.1.js"></script>
+		<style>
+			body {font-family: sans-serif;}
+			#scene {
+				position: relative;
+			}
+		</style>
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments);},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m);
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		  ga('create', 'UA-70640742-1', 'auto');
+		  ga('send', 'pageview');
+		</script>
+	</head>
+	<body>
+		<h1>GIScene.js example - DEM SRTM-30m with raster overlay from tileserver</h1>
+		<div id="scene"></div>
+		<div id="attribution">
+		  <h2>Data Sources:</h2>
+		  <ul>
+		  	<li>Terrain: SRTM-1 data available from the U.S. Geological Survey.</li>
+		  	<li>Map overlay: OpenMapSurfer Roads. &copy; by OSM conttibutors. Available at <a href="http://korona.geog.uni-heidelberg.de/">http://korona.geog.uni-heidelberg.de/</a></li>
+		  </ul>
+		</div>
+		<script>
+			var onLoad = function(event) {
+				var layer = event.content;
+				//optional: automatic zoom depending on object size after layer has been loaded
+				scene.setCenter(layer.boundingBox.center(), new THREE.Vector3(-5000, 3000, 5000));
+				// scene.setCenter(layer.boundingBox.center(), new THREE.Vector3(0, 10000, layer.boundingBox.getBoundingSphere().radius * 2));
+				
+				// get OSM tiles for texture
+
+				function getZoomLevelByTileSize(tileSize) {
+
+					var Z0 = 40075016.686; //WGS84 perimeter at equator
+
+					var zoomLevel = Math.log(tileSize / Z0) / Math.log(0.5);
+
+					return zoomLevel;
+				}
+				
+				function getTileSizeByZoomLevel (z) {
+				
+					var Z0 = 40075016.686;
+					
+					var tileSize = Z0 * Math.pow(0.5, z);
+					
+					return tileSize;
+				}
+				
+				var size = Math.max(layer.boundingBox.size().x, layer.boundingBox.size().z);
+				var zoomlevel = Math.floor( getZoomLevelByTileSize( size ) ); //11
+				var zoomlevel_1024 = Math.min( zoomlevel + 2, 19 ); //13
+				
+				//find topleft tile of 4 x 4 covering the extent
+				var n_tiles  =  1 << zoomlevel_1024;
+				var box_left =  layer.boundingBox.min.x;
+				var box_top  = -layer.boundingBox.min.z;
+				var left_tileIdx = Math.floor(n_tiles * (  (box_left + (40075016.686/2)) / 40075016.686 ));
+				var top_tileIdx  = Math.floor(n_tiles * (1-(box_top  + (40075016.686/2)) / 40075016.686 ));
+				
+				//empty canvas to join 16 osm tiles
+				var canvas = document.createElement( 'canvas' );
+				canvas.width = canvas.height = 1024;
+				var ctx = canvas.getContext("2d");
+				
+				var texture = new THREE.Texture(canvas);
+				// texture.needsUpdate = true;
+				
+				//getBBOX Coords of canvas
+				
+				var left_canvas = ((left_tileIdx * 40075016.686) / n_tiles)-(40075016.686/2);
+				
+				var top_canvas = (( 1 - (top_tileIdx / n_tiles) ) * 40075016.686) - (40075016.686/2);
+				
+				console.log(left_canvas, top_canvas);
+				
+				var tileSize_1024 = getTileSizeByZoomLevel(zoomlevel_1024);
+				
+				var right_canvas = left_canvas + (4 * tileSize_1024);
+				
+				var bottom_canvas = top_canvas - (4 * tileSize_1024);
+				
+				var osmMaterial = new GIScene.RasterOverlayMaterial({
+					texture : texture,
+					//url: "http://korona.geog.uni-heidelberg.de/tiles/roads/x=4292&y=2798&z=13",
+					//crossOrigin: 'anonymous',
+					lowerLeft:  new GIScene.Coordinate2(left_canvas, bottom_canvas), //the lower left coordinate of the image boundingBox
+            		upperRight: new GIScene.Coordinate2(right_canvas, top_canvas), //the upper right coordinate of the image boundingBox
+            		isShared : false
+				});
+				
+				for (var y = 0; y < 4; y++) {
+					for (var x = 0; x < 4; x++) {
+						var url = "http://korona.geog.uni-heidelberg.de/tiles/roads/x="+ (left_tileIdx+x) +"&y="+ (top_tileIdx+y) +"&z="+zoomlevel_1024;
+						//console.log(url);
+						
+						function loadImg(x,y,ctx,texture){
+							
+							var onImgLoad = function(image) {
+							//console.log(image);
+							
+							var offset_x = x * 256;
+							var offset_y = y * 256;
+							console.log(x,y);
+							ctx.drawImage(image,offset_x,offset_y);
+							// texture.needsUpdate = true;
+							osmMaterial.uniforms.tOverlay.value.needsUpdate=true;
+							};
+							
+							var loader = new THREE.ImageLoader();
+							loader.setCrossOrigin('anonymous');
+							loader.load(url, onImgLoad);
+							
+						}
+						
+						loadImg(x,y,ctx,texture);
+						
+						
+						
+						
+					}
+				};
+				console.log(canvas);
+				
+				
+			
+				//set overridematerial
+				
+				
+				
+				
+				layer.setOverrideMaterial(layer.root, osmMaterial);
+				
+				// layer.config.overrideMaterial.uniforms.tOverlay.value.needsUpdate=true;
+			};
+
+			//create a new scene
+			var scene_options =  {
+				near : 1,
+				far  : 30000,
+				skyColor : new THREE.Color().setStyle('black')
+			};
+			
+			var scene = new GIScene.Scene('scene', scene_options);
+			
+			//create, add and activate a loading indicator
+			var load_ctrl = new GIScene.Control.LoadIndicator();
+			scene.addControl(load_ctrl);
+			load_ctrl.activate();
+			
+			//light adjustment
+			scene.directionalLight.position.set(-1,1,-1); //light from northwest
+			scene.ambientLight.color.setRGB(0.2,0.2,0.2);
+			
+			//add a layer
+			var layer_options = {
+				url : "models/dem/srtm-30m/04_3857_offset_962800_6348100_0.json",
+				format : GIScene.Format.JSON,
+				verticalAxis : "Z",
+				offset : new GIScene.Coordinate3(962800,6348100,0),
+				overrideMaterial : new THREE.MeshLambertMaterial({color: 0x005500, ambient:0x003300}),
+				
+				listeners: [ { 'load' : onLoad } ]
+			};
+			
+			var layer = new GIScene.Layer.Fixed("Layername", layer_options);
+			
+			scene.addLayer(layer);
+			
+			//create, add and activate a navigation control
+			var nav_ctrl = new GIScene.Control.PanOrbitZoomCenter(scene.camera, scene.containerDiv);
+			
+			scene.addControl(nav_ctrl);
+			
+			nav_ctrl.activate();
+			
+			//camera position control
+			var pos_ctrl = new GIScene.Control.ObjectPosition(scene.camera, scene.containerDiv);
+			
+			scene.addControl(pos_ctrl);
+			
+			pos_ctrl.activate();
+			
+			//compass
+			var compass_ctrl = new GIScene.Control.Compass(scene.camera, scene.containerDiv);
+			
+			scene.addControl(compass_ctrl);
+			
+			compass_ctrl.activate();
+			
+			//prevent scrolling when mouse over scene
+			function preventDefault(e) {
+				console.log('preventDefault');
+			  	e = e || window.event;
+			  	if (e.preventDefault)
+			    	e.preventDefault();
+			  	e.returnValue = false;  
+			}
+			
+			var parentNoScroll = function () {
+				
+				window.addEventListener("DOMMouseScroll", preventDefault, false);
+	   			window.addEventListener("mousewheel", preventDefault, false);
+	   			
+			};
+			
+			var parentScroll = function () {
+				
+				window.removeEventListener("DOMMouseScroll", preventDefault, false);
+	   			window.removeEventListener("mousewheel", preventDefault, false);
+	   			
+			};
+			
+			scene.containerDiv.addEventListener("mouseenter", parentNoScroll, false);	
+	   		scene.containerDiv.addEventListener("mouseleave", parentScroll, false);
+		</script>
+				
+	</body>
+</html>
