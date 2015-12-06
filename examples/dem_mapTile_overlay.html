@@ -212,6 +212,7 @@
 				
 				window.addEventListener("DOMMouseScroll", preventDefault, false);
 	   			window.addEventListener("mousewheel", preventDefault, false);
+	   			window.addEventListener("MozMousePixelScroll", preventDefault, false);
 	   			
 			};
 			
@@ -219,6 +220,7 @@
 				
 				window.removeEventListener("DOMMouseScroll", preventDefault, false);
 	   			window.removeEventListener("mousewheel", preventDefault, false);
+	   			window.removeEventListener("MozMousePixelScroll", preventDefault, false);
 	   			
 			};
 			
