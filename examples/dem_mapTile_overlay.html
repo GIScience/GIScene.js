@@ -154,6 +154,11 @@
 			
 			var scene = new GIScene.Scene('scene', scene_options);
 			
+			//create, add and activate a loading indicator
+			var load_ctrl = new GIScene.Control.LoadIndicator();
+			scene.addControl(load_ctrl);
+			load_ctrl.activate();
+			
 			//light adjustment
 			scene.directionalLight.position.set(-1,1,-1); //light from northwest
 			scene.ambientLight.color.setRGB(0.2,0.2,0.2);
