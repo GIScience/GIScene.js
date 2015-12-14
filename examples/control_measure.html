@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 		<title>GIScene.js example - Control.Measure</title>
 		<script src="js/THREE/r63/three.min.js"></script>
-		<script src="js/GIScene/GIScene_1.0.1.js"></script>
+		<script src="js/GIScene/GIScene_min_1.0.1.js"></script>
 		<style>
 			body {
 				bottom: 0;
@@ -90,11 +90,11 @@
 			
 			//add a layer
 			var layer_options = {
-				url : "models/dem/srtm-30m/04_3857_offset_962800_6348100_0.json",
+				url : "models/dem/srtm-30m/simple_3857_offset_962800_6348100_0.json",
 				format : GIScene.Format.JSON,
 				verticalAxis : "Z",
 				offset : new GIScene.Coordinate3(962800,6348100,0),
-				overrideMaterial : new THREE.MeshLambertMaterial({color: 0x005500, ambient:0x003300, wireframe:true}),
+				overrideMaterial : new THREE.MeshLambertMaterial({color: 0x005500, ambient:0x003300, wireframe:false}),
 				//optional: automatic zoom after layer has been loaded
 				listeners: [ { 'load' : function( event ){ var layer = event.content; scene.setCenter(layer.boundingBox.center(), new THREE.Vector3(-5000, 3000, 5000)); } } ]
 			};
