@@ -5,20 +5,6 @@
 		<title>GIScene.js example - Basic Usage</title>
 		<script src="js/THREE/r63/three.min.js"></script>
 		<script src="js/GIScene/GIScene_min_1.0.1.js"></script>
-		<style>
-			body {font-family: sans-serif;}
-		</style>
-		
-		<script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-		
-		  ga('create', 'UA-70640742-1', 'auto');
-		  ga('send', 'pageview');
-		
-		</script>
 	</head>
 	<body>
 		<h1>GIScene.js example - Basic Usage</h1>
@@ -32,7 +18,7 @@
 				url : "models/stanford_bunny/bunny_brown.ctm",
 				format : GIScene.Format.CTM,
 				//optional: automatic zoom depending on object size after layer has been loaded
-				listeners: [ { 'load' : function( event ){ var layer = event.content; scene.setCenter(layer.boundingBox.center(), new THREE.Vector3(0, 0, layer.boundingBox.getBoundingSphere().radius*2),0); } } ]
+				listeners: [ { 'load' : function( event ){ var layer = event.content; scene.setCenter(event.content.boundingBox.center(), new THREE.Vector3(0, 0, event.content.boundingBox.getBoundingSphere().radius*2)); } } ]
 			};
 			
 			var layer = new GIScene.Layer.Fixed("Layername", layer_options);
@@ -40,13 +26,11 @@
 			scene.addLayer(layer);
 			
 			//create, add and activate a navigation control
-			var nav_ctrl = new GIScene.Control.PanOrbitZoomCenter(scene.camera, scene.containerDiv);
+			var nav_ctrl = new GIScene.Control.PanOrbitZoomCenter(scene.camera);
 			
 			scene.addControl(nav_ctrl);
 			
 			nav_ctrl.activate();
-			
-			
 			
 		</script>
 	</body>
