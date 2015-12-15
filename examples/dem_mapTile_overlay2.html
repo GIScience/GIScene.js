@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>GIScene.js example - DEM SRTM-30m with raster overlay from tileserver</title>
+		<script src="js/THREE/r63/three.min.js"></script>
+		<script src="js/GIScene/GIScene_1.0.1.js"></script>
+		<style>
+			body {
+				bottom: 0;
+			    font-family: sans-serif;
+			    left: 0;
+			    position: absolute;
+			    right: 0;
+			    top: 0;
+			}
+			
+			h1 {
+			    font-size: 2em;
+			    height: 2em;
+			    margin: 0;
+			}
+			
+			#container {
+				position: absolute;
+				top:0;
+				bottom:50%;
+				left:0;
+				right:0;
+				
+			}
+			
+			#scene {
+				bottom: 0;
+			    left: 0;
+			    position: absolute;
+			    right: 0;
+			    top: 0;
+				
+			}
+			div#controls {
+				background-color: rgba(255, 255, 255, 0.7);
+				position: absolute;
+				right: 50px;
+				top: 50px;
+				text-align: right;
+				padding: 5px;
+				text-align: left;
+			}
+			div#attribution {
+				position: absolute;
+				top:50%;
+			}
+		</style>
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments);},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m);
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		  ga('create', 'UA-70640742-1', 'auto');
+		  ga('send', 'pageview');
+		</script>
+	</head>
+	<body>
+		
+		<div id="container">
+			<div id="scene"></div>
+			<div id="controls">
+				<input type="radio" name="overlays" id="mapnik" value="1" checked="checked"/><label for="mapnik">OSM Mapnik</label>
+				<br>
+				<input type="radio" name="overlays" id="openmapsurfer" value="2" /><label for="openmapsurfer">OSM OpenMapSurfer</label>
+			</div>
+		</div>
+		<div id="attribution">
+		  <h1>GIScene.js example - DEM SRTM-30m (simplified) with raster overlay from tileserver</h1>
+		  <h2>Data Sources:</h2>
+		  <ul>
+		  	<li>Terrain: SRTM-1 data available from the U.S. Geological Survey.</li>
+		  	<li>Map overlays: 
+		  		<ul>
+		  		<li>OpenStreetMap Mapnik &copy; by OSM conttibutors. Available at <a href="http://www.openstreetmap.org/">http://www.openstreetmap.org/</a></li>
+		  		<li>OpenMapSurfer Roads. &copy; by OSM conttibutors. Available at <a href="http://korona.geog.uni-heidelberg.de/">http://korona.geog.uni-heidelberg.de/</a></li>
+		  		</ul>
+		  	</li>
+		  </ul>
+		</div>
+		<script>
+			var onLoad2 = function(event) {
+				
+				var layer = event.content;
+				
+				//set camera to focus object
+				scene.setCenter(layer.boundingBox.center(), new THREE.Vector3(-5000, 3000, 5000));
+				
+				var createMapTileTexture = function(urlPattern, object, textureSize, onTileLoad) {
+					
+					
+					var boundingBox = new THREE.Box3().setFromObject(object);
+					var textureSize = textureSize || 1024;
+					
+					function getZoomLevelByTileSize(tileSize) {
+	
+						var Z0 = 40075016.686; //WGS84 perimeter at equator
+	
+						var zoomLevel = Math.log(tileSize / Z0) / Math.log(0.5);
+	
+						return zoomLevel;
+					}
+					
+					function getTileSizeByZoomLevel (z) {
+					
+						var Z0 = 40075016.686;
+						
+						var tileSize = Z0 * Math.pow(0.5, z);
+						
+						return tileSize;
+					}
+					
+					var size = Math.max(boundingBox.size().x, boundingBox.size().z); //object coordinates are in EPSG:3857
+					var zoomlevel = Math.floor( getZoomLevelByTileSize( size ) ); //11 size of one tile (256px^2) fits the size of the object
+					var zoomlevelDiff = (Math.log(textureSize)/Math.LN2) - 8;
+					
+					var zoomlevel_higherRes = Math.min( zoomlevel + zoomlevelDiff, 19 ); //13		//get a higher resolution
+					
+					//find topleft tile of 4 x 4 covering the extent
+					var n_tiles  =  1 << zoomlevel_higherRes;
+					var box_left =  boundingBox.min.x;
+					var box_top  = -boundingBox.min.z;
+					var left_tileIdx = Math.floor(n_tiles * (  (box_left + (40075016.686/2)) / 40075016.686 ));
+					var top_tileIdx  = Math.floor(n_tiles * (1-(box_top  + (40075016.686/2)) / 40075016.686 ));
+					
+					//empty canvas to join osm tiles
+					var canvas = document.createElement( 'canvas' );
+					canvas.width = canvas.height = textureSize;
+					var ctx = canvas.getContext("2d");
+					
+					var texture = new THREE.Texture(canvas);
+					
+					//getBBOX Coords of canvas
+				
+					var left_canvas = ((left_tileIdx * 40075016.686) / n_tiles)-(40075016.686/2);
+					
+					var top_canvas = (( 1 - (top_tileIdx / n_tiles) ) * 40075016.686) - (40075016.686/2);
+					
+					var tileSize_higherRes = getTileSizeByZoomLevel(zoomlevel_higherRes);
+					
+					var numTilesRowCol = (textureSize/256);
+					
+					var right_canvas = left_canvas + (numTilesRowCol * tileSize_higherRes);
+					
+					var bottom_canvas = top_canvas - (numTilesRowCol * tileSize_higherRes);
+					
+					
+					for (var y = 0; y < numTilesRowCol; y++) {
+						for (var x = 0; x < numTilesRowCol; x++) {
+							
+							var urlX = left_tileIdx+x;
+							var urlY = top_tileIdx+y;
+							var urlZ = zoomlevel_higherRes;
+							
+							//var url = "http://korona.geog.uni-heidelberg.de/tiles/roads/x="+ (left_tileIdx+x) +"&y="+ (top_tileIdx+y) +"&z="+zoomlevel_1024;
+							
+							var url = urlPattern.replace("{x}", urlX).replace("{y}", urlY).replace("{-y}", (1<<zoomlevel_higherRes) - urlY - 1 ).replace("{z}", urlZ);
+							console.log(url);
+							
+							function loadImg(x,y,ctx,texture){
+								
+								var onImgLoad = function(image) {
+								//console.log(image);
+								
+								var offset_x = x * 256;
+								var offset_y = y * 256;
+								console.log(x,y);
+								ctx.drawImage(image,offset_x,offset_y);
+								//texture.needsUpdate = true;
+								//osmMaterial.uniforms.tOverlay.value.needsUpdate=true;
+								onTileLoad(texture);
+								};
+								
+								var loader = new THREE.ImageLoader();
+								loader.setCrossOrigin('anonymous');
+								loader.load(url, onImgLoad);
+								
+							}
+							
+							loadImg(x,y,ctx,texture);
+							
+							
+							
+							
+						}
+					};
+					
+					return {texture:texture, lowerLeft: new GIScene.Coordinate2(left_canvas, bottom_canvas), upperRight: new GIScene.Coordinate2(right_canvas, top_canvas)};
+						
+				};
+				
+				//create style
+				
+				var onTileLoad = function(texture) {
+					mapnikStyle.material.uniforms.tOverlay.value.needsUpdate = true;
+				};
+				
+				var mapnikTextureObject = createMapTileTexture("http://a.tile.openstreetmap.org/{z}/{x}/{y}.png", layer.root, 2048, onTileLoad);
+				
+				var mapnikStyle = new GIScene.Style({
+					title: "OSM Mapnik",
+					material: new GIScene.RasterOverlayMaterial(
+						mapnikTextureObject
+					)
+				});
+				
+				
+				
+				layer.addStyle(mapnikStyle);
+				layer.setActiveStyle(mapnikStyle);
+				
+				
+				var onTileLoad2 = function(texture) {
+					openmapsurferStyle.material.uniforms.tOverlay.value.needsUpdate = true;
+				};
+				
+				var openmapsurferTextureObject = createMapTileTexture("http://korona.geog.uni-heidelberg.de/tiles/roads/x={x}&y={y}&z={z}", layer.root, 2048, onTileLoad2);
+				
+				var openmapsurferStyle = new GIScene.Style({
+					title: "OSM OpenMapSurfer",
+					material: new GIScene.RasterOverlayMaterial(
+						openmapsurferTextureObject
+					)
+				});
+				
+				layer.addStyle(openmapsurferStyle);
+				
+				//overlay switcher
+				
+				var mapnik_option = document.getElementById("mapnik");
+				var openmapsurfer_option = document.getElementById("openmapsurfer");
+				
+				mapnik_option.checked = true;
+				
+				var onSwitch = function(event) {
+					if (event.target.checked){
+						layer.setActiveStyle(layer.styles[event.target.value]);
+					}
+				};
+				
+				mapnik_option.addEventListener("change", onSwitch, false);
+				openmapsurfer_option.addEventListener("change", onSwitch, false);
+				
+				
+			};
+		
+		
+
+
+			//create a new scene
+			var scene_options =  {
+				near : 1,
+				far  : 30000,
+				skyColor : new THREE.Color().setStyle('black')
+			};
+			
+			var scene = new GIScene.Scene('scene', scene_options);
+			
+			//create, add and activate a loading indicator
+			var load_ctrl = new GIScene.Control.LoadIndicator();
+			scene.addControl(load_ctrl);
+			load_ctrl.activate();
+			
+			//light adjustment
+			scene.directionalLight.position.set(-1,1,-1); //light from northwest
+			scene.ambientLight.color.setRGB(0.2,0.2,0.2);
+			
+			//add a layer
+			var layer_options = {
+				url : "models/dem/srtm-30m/simple_3857_offset_962800_6348100_0.json",
+				format : GIScene.Format.JSON,
+				verticalAxis : "Z",
+				offset : new GIScene.Coordinate3(962800,6348100,0),
+				overrideMaterial : new THREE.MeshLambertMaterial({color: 0x005500, ambient:0x003300}),
+				
+				listeners: [ { 'load' : onLoad2 } ]
+			};
+			
+			var layer = new GIScene.Layer.Fixed("Layername", layer_options);
+			
+			scene.addLayer(layer);
+			
+			//create, add and activate a navigation control
+			var nav_ctrl = new GIScene.Control.PanOrbitZoomCenter(scene.camera, scene.containerDiv);
+			
+			scene.addControl(nav_ctrl);
+			
+			nav_ctrl.activate();
+			
+			//camera position control
+			var pos_ctrl = new GIScene.Control.ObjectPosition(scene.camera, scene.containerDiv);
+			
+			scene.addControl(pos_ctrl);
+			
+			pos_ctrl.activate();
+			
+			//compass
+			var compass_ctrl = new GIScene.Control.Compass(scene.camera, scene.containerDiv);
+			
+			scene.addControl(compass_ctrl);
+			
+			compass_ctrl.activate();
+			
+			//prevent scrolling when mouse over scene
+			function preventDefault(e) {
+				console.log('preventDefault');
+			  	e = e || window.event;
+			  	if (e.preventDefault)
+			    	e.preventDefault();
+			  	e.returnValue = false;  
+			}
+			
+			var parentNoScroll = function () {
+				
+				window.addEventListener("DOMMouseScroll", preventDefault, false);
+	   			window.addEventListener("mousewheel", preventDefault, false);
+	   			window.addEventListener("MozMousePixelScroll", preventDefault, false);
+	   			
+			};
+			
+			var parentScroll = function () {
+				
+				window.removeEventListener("DOMMouseScroll", preventDefault, false);
+	   			window.removeEventListener("mousewheel", preventDefault, false);
+	   			window.removeEventListener("MozMousePixelScroll", preventDefault, false);
+	   			
+			};
+			
+			scene.containerDiv.addEventListener("mouseenter", parentNoScroll, false);	
+	   		scene.containerDiv.addEventListener("mouseleave", parentScroll, false);
+		</script>
+				
+	</body>
+</html>
