@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>GIScene.js example - Control.CameraLight</title>
+		<script src="js/THREE/r63/three.min.js"></script>
+		<script src="js/GIScene/GIScene_min_1.0.1.js"></script>
+		<style>
+			body {
+				bottom: 0;
+			    font-family: sans-serif;
+			    left: 0;
+			    position: absolute;
+			    right: 0;
+			    top: 0;
+			}
+			
+			h1 {
+			    font-size: 2em;
+			    height: 2em;
+			    margin: 0;
+			}
+			
+			#container {
+				position: absolute;
+				top:3em;
+				bottom:0;
+				left:0;
+				right:0;
+			}
+			
+			#scene {
+				bottom: 0;
+			    left: 0;
+			    position: absolute;
+			    right: 0;
+			    top: 0;
+				
+			}
+			div#controls {
+				background-color: rgba(255, 255, 255, 0.7);
+				position: absolute;
+				right: 50px;
+				top: 50px;
+				text-align: right;
+				padding: 5px;
+			}
+		</style>
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments);},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m);
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		  ga('create', 'UA-70640742-1', 'auto');
+		  ga('send', 'pageview');
+		
+		</script>
+	</head>
+	<body>
+		<h1>GIScene.js example - Control.CameraLight</h1>
+		<div id="container">
+			<div id="scene"></div>
+			<div id="controls">
+				<div>
+					<input type="checkbox" id="camLight_toggle" />
+					<label for="camLight_toggle">Toggle Interactive Illumination</label>
+					<br>
+					Intensity: <input type="range" min="0" max="1" step="0.1" id="camLight_intensity">
+					
+				</div>
+			</div>
+		</div>
+		<script>
+			//create a new scene
+			var scene_options =  {
+				near : 1,
+				far  : 30000,
+				offset : new GIScene.Coordinate3(962800,6348100,0),
+				
+				projection: "EPSG:3857",
+				units : "m"
+			};
+			
+			var scene = new GIScene.Scene('scene', scene_options);
+			
+			//create, add and activate a loading indicator
+			var load_ctrl = new GIScene.Control.LoadIndicator();
+			scene.addControl(load_ctrl);
+			load_ctrl.activate();
+			
+			//add a layer
+			var layer_options = {
+				url : "models/dem/srtm-30m/simple_3857_offset_962800_6348100_0.json",
+				format : GIScene.Format.JSON,
+				verticalAxis : "Z",
+				offset : new GIScene.Coordinate3(962800,6348100,0),
+				overrideMaterial : new THREE.MeshLambertMaterial({color: 0x00DD00, ambient:0x003300, wireframe:false}),
+				//optional: automatic zoom after layer has been loaded
+				listeners: [ { 'load' : function( event ){ var layer = event.content; scene.setCenter(layer.boundingBox.center(), new THREE.Vector3(-5000, 3000, 5000)); } } ]
+			};
+			
+			var layer = new GIScene.Layer.Fixed("Layername", layer_options);
+			
+			scene.addLayer(layer);
+			
+			//create, add and activate a navigation control
+			var nav_ctrl = new GIScene.Control.PanOrbitZoomCenter(scene.camera, scene.containerDiv);
+			scene.addControl(nav_ctrl);
+			nav_ctrl.activate();
+			
+			//create, add and activate a compass control
+			var compass_ctrl = new GIScene.Control.Compass(scene.camera);
+			scene.addControl(compass_ctrl);
+			compass_ctrl.activate();
+			
+			//create, add and activate a position control
+			var position_ctrl = new GIScene.Control.ObjectPosition(scene.camera);
+			scene.addControl(position_ctrl);
+			position_ctrl.activate();
+			
+			//set the light to shine from south-west
+			scene.directionalLight.position.set(-1,1,1); //W-E, Down-Up, N-S
+			
+			//create, add a cameralight control
+			var camLight_ctrl = new GIScene.Control.CameraLight(scene.camera, scene.directionalLight);
+			scene.addControl(camLight_ctrl);
+			camLight_ctrl.addEventListener("panstart", function(){nav_ctrl.deactivate();});
+			camLight_ctrl.addEventListener("panend",   function(){nav_ctrl.activate();});
+			
+			var onToggle = function(event) {
+				if(event.target.checked){
+					camLight_ctrl.activate();
+				}
+				else{
+					camLight_ctrl.deactivate();
+				}
+			};
+			document.getElementById("camLight_toggle").checked = false;
+			document.getElementById("camLight_toggle").addEventListener("change",onToggle,false);
+			
+			var onSliderChange = function(event) {
+				scene.directionalLight.intensity = event.target.value;
+			};
+			document.getElementById("camLight_intensity").value = scene.directionalLight.intensity;
+			document.getElementById("camLight_intensity").addEventListener("input",onSliderChange,false);
+			document.getElementById("camLight_intensity").addEventListener("change",onSliderChange,false);
+			
+			
+			
+		</script>
+	</body>
+</html>
