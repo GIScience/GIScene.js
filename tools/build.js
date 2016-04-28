@@ -40,7 +40,7 @@ function main(){
             if(file==0){
             var min = '';
             if(args.minify){min = '_min';}
-            output = output.replace('.js', min + "_" + buffer[file].match(/(VERSION\s*\:)(")(.*)(")(,)/)[3] + '.js');
+            output = output.replace('.js', min + "_" + buffer[file].match(/(VERSION\s*\:\s*)("|')(.*)("|')(,)/)[3] + '.js');
             
             //buffer[file].match(/(VERSION\s*\:)(")(.*)(")(,)/)[3] + "-" + output;
         	//console.log('VERSION:'+buffer[file].match(/(VERSION\s*\:)(")(.*)(")(,)/)[3]);

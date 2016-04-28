@@ -4,7 +4,7 @@ To generate single file builds of GIScene:
 
 To build a single file type in the command line:
 
-node build.js --sourcefiles ./build_GIScene.json //everything
+node build.js  //everything (defaultValue: --sourcefiles ./build_GIScene.json)
 
 OR
 
