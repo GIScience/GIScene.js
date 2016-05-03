@@ -140,7 +140,7 @@
 			var onChange = function(event) {
 				console.log(event);
 				if(event.target.checked){
-					measure_ctrl.measureables = layer.root.getDescendants();
+					measure_ctrl.measureables = GIScene.Utils.getDescendants(layer.root); //r76
 					measure_ctrl.activate();
 				}
 				else{
