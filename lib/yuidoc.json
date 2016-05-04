@@ -1,11 +1,11 @@
 {
     "name": "GIScene 3D WebGIS API.",
     "description": "GIScene 3D WebGIS API: a library based on THREE.js for visualization and analysis of geographic 3D content. It's easy to learn and customize.",
-    "version": "1.0.2",
+    "version": "2.0.0",
     "url": "http://giscience.uni-hd.de/",
     "logo":"http://giscience.github.io/GIScene.js/images/GIScene.js-logo.png",
     "options": {
-        "outdir": "../docs/v1.0.2",
+        "outdir": "../docs/v2.0.0",
         "nodeleteout" : true,
         "exclude":"THREE,Tween,JSTS",
         "paths":".",

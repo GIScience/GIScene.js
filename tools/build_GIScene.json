@@ -1,6 +1,6 @@
 [
 	"../lib/GIScene.js",
-	"../lib/THREE/loader/ctm/CTMLoader_Integrated.js",
+	"../lib/THREE/loader/ctm76/CTMLoader_Integrated.js",
 	"../lib/THREE/loader/SceneLoader_r63.js",
 	"../lib/THREE/loader/XHRLoader_r63.js",
 	"../lib/THREE/loader/BinaryLoader.js",
