@@ -1,8 +1,8 @@
 [
 	"../lib/GIScene.js",
-	"../lib/THREE/loader/ctm76/CTMLoader_Integrated.js",
+	"../lib/THREE/loader76/ctm/CTMLoader_Integrated.js",
 	"../lib/THREE/loader/SceneLoader_r63.js",
-	"../lib/THREE/loader/XHRLoader_r63.js",
+	"../lib/THREE/loader76/XHRLoader.js",
 	"../lib/THREE/loader/BinaryLoader.js",
 	"../lib/THREE/extras/cameras/CombinedCamera.js",
 	
