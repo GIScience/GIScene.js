@@ -3737,6 +3737,11 @@ THREE.CombinedCamera = function ( width, height, fov, near, far, orthoNear, orth
 	this.cameraP = new THREE.PerspectiveCamera( fov, width / height, near, far );
 
 	this.activeCam = this.cameraP;//+r76
+	
+	//maintain matrix and matrixWorld
+	this.add(this.cameraO);
+	this.add(this.cameraP);
+	
 
 	this.zoom = 1;
 
@@ -9518,7 +9523,8 @@ GIScene.Control.PanOrbitZoomCenter = function ( object, domElement ) {
 	var onDoubleClick = function( event ){
 		event.preventDefault();
 		//get mouse ScreenCoords
-		var viewPortCoords = GIScene.Utils.getViewportCoordsFromDOMEvent(this.domElement,event);
+		//var viewPortCoords = GIScene.Utils.getViewportCoordsFromDOMEvent(this.domElement,event); //-r76
+		var viewPortCoords = GIScene.Utils.getViewportCoordsFromDOMEvent(this.scene.containerDiv,event); //+r76
 		
 		//only set if down and up coords are the same	
 		mouse.set(viewPortCoords.x, viewPortCoords.y, 1);
