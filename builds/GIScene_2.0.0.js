@@ -3736,6 +3736,8 @@ THREE.CombinedCamera = function ( width, height, fov, near, far, orthoNear, orth
 	this.cameraO = new THREE.OrthographicCamera( width / - 2, width / 2, height / 2, height / - 2, 	orthoNear, orthoFar );
 	this.cameraP = new THREE.PerspectiveCamera( fov, width / height, near, far );
 
+	this.activeCam = this.cameraP;//+r76
+
 	this.zoom = 1;
 
 	this.toPerspective();
@@ -3765,6 +3767,7 @@ THREE.CombinedCamera.prototype.toPerspective = function () {
 	if(this.inOrthographicMode){
 		this.inPerspectiveMode = true;
 		this.inOrthographicMode = false;
+		this.activeCam = this.cameraP; //+r76
 		this.dispatchEvent(this.changedProjectionEvent);
 	}
 	
@@ -3818,6 +3821,7 @@ THREE.CombinedCamera.prototype.toOrthographic = function () {
 	if(this.inPerspectiveMode){
 		this.inPerspectiveMode = false;
 		this.inOrthographicMode = true;
+		this.activeCam = this.cameraO; //+r76
 		this.dispatchEvent(this.changedProjectionEvent);
 	}
 	
@@ -3861,9 +3865,7 @@ THREE.CombinedCamera.prototype.updateProjectionMatrix = function() {
 
 		this.toPerspective();
 
-	} 
-	else {
-	//if ( this.inOrthographicMode ) {
+	} else {
 		
 		this.toPerspective();
 		this.toOrthographic();
@@ -3877,16 +3879,20 @@ THREE.CombinedCamera.prototype.updateProjectionMatrix = function() {
 * 35mm (fullframe) camera is used if frame size is not specified;
 * Formula based on http://www.bobatkins.com/photography/technical/field_of_view.html
 */
-THREE.CombinedCamera.prototype.setLens = function ( focalLength, frameHeight ) {
+THREE.CombinedCamera.prototype.setLens = function ( focalLength, filmGauge ) {
 
-	if ( frameHeight === undefined ) frameHeight = 24;
+	if ( filmGauge === undefined ) filmGauge = 35;
 
-	var fov = 2 * THREE.Math.radToDeg( Math.atan( frameHeight / ( focalLength * 2 ) ) );
+	var vExtentSlope = 0.5 * filmGauge /
+			( focalLength * Math.max( this.cameraP.aspect, 1 ) );
+
+	var fov = THREE.Math.RAD2DEG * 2 * Math.atan( vExtentSlope );
 
 	this.setFov( fov );
 
 	return fov;
-};
+
+}; //function copied from r76
 
 
 THREE.CombinedCamera.prototype.setZoom = function( zoom ) {
@@ -6677,7 +6683,7 @@ GIScene.Utils = {
 
 		for ( var i = 0, l = object3d.children.length; i < l; i ++ ) {
 
-			object3d.children[ i ].getDescendants( array );
+			GIScene.Utils.getDescendants( object3d.children[ i ], array );
 
 		}
 
@@ -9170,7 +9176,7 @@ GIScene.Control.PanOrbitZoomCenter = function ( object, domElement ) {
 	GIScene.Control.call( this );
 
 	this.object = object;
-	this.domElement = ( domElement !== undefined ) ? domElement : document;
+	this.domElement = ( domElement !== undefined ) ? domElement : document.body;
 
 	// API
 
@@ -9517,9 +9523,10 @@ GIScene.Control.PanOrbitZoomCenter = function ( object, domElement ) {
 		//only set if down and up coords are the same	
 		mouse.set(viewPortCoords.x, viewPortCoords.y, 1);
 		// var ray = projector.pickingRay(mouse, this.object); //-r76
-		var ray = raycaster.setFromCamera(mouse, this.object); //+r76
+		var activeCam = (this.object instanceof THREE.CombinedCamera)? this.object.activeCam : this.object;
+		raycaster.setFromCamera(mouse, activeCam); //+r76
 		var pickables = GIScene.Utils.getDescendants(this.scene.root).filter(function (e,i,a){return e.geometry;}); //r76 //@TODO currently all scene objects are pickable 
-		var pickResults = ray.intersectObjects(pickables);
+		var pickResults = raycaster.intersectObjects(pickables);
 		
 		var pickResult;
 		for(var i=0; i < pickResults.length; i++){
@@ -9640,7 +9647,7 @@ GIScene.Control.Trackball = function ( object, domElement ) {
 	var STATE = { NONE: -1, ROTATE: 0, ZOOM: 1, PAN: 2, TOUCH_ROTATE: 3, TOUCH_ZOOM: 4, TOUCH_PAN: 5 };
 
 	this.object = object;
-	this.domElement = ( domElement !== undefined ) ? domElement : document;
+	this.domElement = ( domElement !== undefined ) ? domElement : document.body;
 
 	// API
 
@@ -14526,7 +14533,7 @@ GIScene.ModelLoader = function () {
 
 			//Mesh or Points (ParticleSystem)?
 			// var objectType = (geometry.faces.length == 0) ? "ParticleSystem" : "Mesh"; //-r76
-			var objectType = (geometry.faces.length == 0) ? "Points" : "Mesh"; //+r76		
+			var objectType = (geometry.index && geometry.index.count != 0) ? "Mesh" : "Points"; //+r76		
 			
 			//if material is defined use it else use default material
 			
@@ -14647,6 +14654,41 @@ GIScene.ModelLoader = function () {
 		if(usercallback)usercallback(result);
 	}.bind(this);
 	
+	var callbackCTM = function(geometry) { //BufferGeometry
+		
+		var material;
+		
+		//find out if has vertex colors
+		if ("color" in geometry.attributes){
+			material = new THREE.MeshLambertMaterial({
+							//shading : THREE.FlatShading,
+							vertexColors : THREE.VertexColors
+						});
+		} else { //@TODO check for faceColors
+			//default fallback material
+			material = new THREE.MeshLambertMaterial({
+			color : 0xD2B48C, //0xFFFF66(gelb),
+			ambient : 0x8B7355, //0x7B7B33,
+			emissive : 0x000000,
+			//shading : THREE.FlatShading
+		});
+		}
+		
+		var mesh = new THREE.Mesh(geometry, material); 
+
+		var result = new THREE.Scene();
+
+		result.add(mesh);
+		
+		/** The load event is triggered after a model/scene has been loaded from an asynchronous XmlHttpRequest.
+		 *	The returned event object has a content property with a THREE.Scene() Object containing the model as child.
+		 *  @event load 
+		 */
+		this.dispatchEvent( { type: 'load', content: result } );
+		if(usercallback)usercallback(result);
+		
+	}.bind(this);
+	
 	/**
 	 * load function to load Models from different formats. 
 	 * 
@@ -14692,7 +14734,7 @@ GIScene.ModelLoader = function () {
 				this.loader = new THREE.CTMLoader();
 				//loader.withCredentials = true;
 				// loader.crossOrigin = 'use-credentials';
-				this.loader.load(url, callback, {useWorker:true, useBuffers:false});
+				this.loader.load(url, callbackCTM, {useWorker:true, useBuffers:false});
 				break;
 			case GIScene.Format.Scene:
 				this.loader = new THREE.SceneLoader();
