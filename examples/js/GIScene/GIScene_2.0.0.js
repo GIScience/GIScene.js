@@ -2850,9 +2850,7 @@ THREE.SceneLoader.prototype = {
 THREE.XHRLoader = function ( manager ) {
 
 	this.manager = ( manager !== undefined ) ? manager : THREE.DefaultLoadingManager;
-	
-	//added by mca
-	this.request = new XMLHttpRequest();
+
 };
 
 THREE.XHRLoader.prototype = {
@@ -2861,22 +2859,66 @@ THREE.XHRLoader.prototype = {
 
 	load: function ( url, onLoad, onProgress, onError ) {
 
+		if ( this.path !== undefined ) url = this.path + url;
+
 		var scope = this;
-		// mca var request = new XMLHttpRequest();
-		var request = this.request;
-		
-		if ( onLoad !== undefined ) {
 
-			request.addEventListener( 'load', function ( event ) {
+		var cached = THREE.Cache.get( url );
 
-				onLoad( event.target.responseText );
-				scope.manager.itemEnd( url );
+		if ( cached !== undefined ) {
 
-			}, false );
+			if ( onLoad ) {
+
+				setTimeout( function () {
+
+					onLoad( cached );
+
+				}, 0 );
+
+			}
+
+			return cached;
 
 		}
 
-		if ( onProgress /*!== undefined*/ ) { //also don't go in if onProgress is null
+		var request = new XMLHttpRequest();
+		request.overrideMimeType( 'text/plain' );
+		request.open( 'GET', url, true );
+
+		request.addEventListener( 'load', function ( event ) {
+
+			var response = event.target.response;
+
+			THREE.Cache.add( url, response );
+
+			if ( this.status === 200 ) {
+
+				if ( onLoad ) onLoad( response );
+
+				scope.manager.itemEnd( url );
+
+			} else if ( this.status === 0 ) {
+
+				// Some browsers return HTTP Status 0 when using non-http protocol
+				// e.g. 'file://' or 'data://'. Handle as success.
+
+				console.warn( 'THREE.XHRLoader: HTTP Status 0 received.' );
+
+				if ( onLoad ) onLoad( response );
+
+				scope.manager.itemEnd( url );
+
+			} else {
+
+				if ( onError ) onError( event );
+
+				scope.manager.itemError( url );
+
+			}
+
+		}, false );
+
+		if ( onProgress !== undefined ) {
 
 			request.addEventListener( 'progress', function ( event ) {
 
@@ -2886,29 +2928,40 @@ THREE.XHRLoader.prototype = {
 
 		}
 
-		if ( onError !== undefined ) {
+		request.addEventListener( 'error', function ( event ) {
 
-			request.addEventListener( 'error', function ( event ) {
+			if ( onError ) onError( event );
 
-				onError( event );
+			scope.manager.itemError( url );
 
-			}, false );
+		}, false );
 
-		}
+		if ( this.responseType !== undefined ) request.responseType = this.responseType;
+		if ( this.withCredentials !== undefined ) request.withCredentials = this.withCredentials;
 
-		if ( this.crossOrigin !== undefined ) request.crossOrigin = this.crossOrigin;
-
-		request.open( 'GET', url, true );
-		// request.withCredentials = true; //mca
 		request.send( null );
 
 		scope.manager.itemStart( url );
 
+		return request;
+
 	},
 
-	setCrossOrigin: function ( value ) {
+	setPath: function ( value ) {
 
-		this.crossOrigin = value;
+		this.path = value;
+
+	},
+
+	setResponseType: function ( value ) {
+
+		this.responseType = value;
+
+	},
+
+	setWithCredentials: function ( value ) {
+
+		this.withCredentials = value;
 
 	}
 
@@ -9529,7 +9582,7 @@ GIScene.Control.PanOrbitZoomCenter = function ( object, domElement ) {
 		//only set if down and up coords are the same	
 		mouse.set(viewPortCoords.x, viewPortCoords.y, 1);
 		// var ray = projector.pickingRay(mouse, this.object); //-r76
-		var activeCam = (this.object instanceof THREE.CombinedCamera)? this.object.activeCam : this.object;
+		var activeCam = (this.object instanceof THREE.CombinedCamera)? this.object.activeCam : this.object; //+r76
 		raycaster.setFromCamera(mouse, activeCam); //+r76
 		var pickables = GIScene.Utils.getDescendants(this.scene.root).filter(function (e,i,a){return e.geometry;}); //r76 //@TODO currently all scene objects are pickable 
 		var pickResults = raycaster.intersectObjects(pickables);
@@ -11701,19 +11754,12 @@ GIScene.Control.Measure = function(camera, config){
 	var mouse = new THREE.Vector3(0,0,1);
 	// var projector = new THREE.Projector(); //-r76
 	var raycaster = new THREE.Raycaster(); //+r76
-	var pickSymbol = null;
+	var textureLoader = new THREE.TextureLoader(); //+r76
+	var pickSymbol = null; 
 	var resultsLayer = null;
 	var pickedPointMaterial = null;
 	var measureLineMaterial = null;
-	// var measureLineHiddenMaterial = null;
-	// var foregroundScene = new THREE.Scene();
 	
-	// var onBeforeRender = function() {this.scene.renderer.clear();}.bind(this);
-// 	
-	// var onAfterRender = function() {
-		// this.scene.renderer.clear( false, true, false );
-		// this.scene.renderer.render( foregroundScene, this.camera );
-	// }.bind(this);
 	
 	var onMouseDown = function(event) {
 		var viewPortCoords = GIScene.Utils.getViewportCoordsFromDOMEvent(this.domElement,event);
@@ -11728,8 +11774,9 @@ GIScene.Control.Measure = function(camera, config){
 		if(mouse.equals(new THREE.Vector3().set(viewPortCoords.x, viewPortCoords.y, 1)) ){
 			mouse.set(viewPortCoords.x, viewPortCoords.y, 1);
 			// var ray = projector.pickingRay(mouse, this.camera); //-r76
-			var ray = raycaster.setFromCamera(mouse, this.camera); //+r76
-			var pickResults = ray.intersectObjects(this.measureables);
+			var activeCam = (this.camera instanceof THREE.CombinedCamera)? this.camera.activeCam : this.camera;
+			raycaster.setFromCamera(mouse, activeCam); //+r76
+			var pickResults = raycaster.intersectObjects(this.measureables); //+r76
 			var pickResult;
 			for(var i=0; i < pickResults.length; i++){
 				if(pickResults[i].object.geometry && pickResults[i].object.visible){
@@ -11831,14 +11878,26 @@ GIScene.Control.Measure = function(camera, config){
 		};
 		resultsLayer = new GIScene.Layer("Measurements", resulstLayerConfig);
 		this.scene.addLayer(resultsLayer);
-		pickSymbol = THREE.ImageUtils.loadTexture( GIScene.LIBRARYPATH + GIScene.RESOURCESPATH.replace(/([^\/])$/, "$1/") +"resources/images/particle_cross.png");
-		pickedPointMaterial = new THREE.PointsMaterial({  //new THREE.ParticleBasicMaterial({ //r76
-												color:this.config.color,
-												sizeAttenuation:false,
-												size:32,
-												map:pickSymbol,
-												alphaTest:0.5	
-											});
+		//pickSymbol = THREE.ImageUtils.loadTexture( GIScene.LIBRARYPATH + GIScene.RESOURCESPATH.replace(/([^\/])$/, "$1/") +"resources/images/particle_cross.png"); //-r76
+		var url = GIScene.LIBRARYPATH + GIScene.RESOURCESPATH.replace(/([^\/])$/, "$1/") +"resources/images/particle_cross.png";
+		pickSymbol = textureLoader.load(url); 
+			
+  		pickedPointMaterial = new THREE.PointsMaterial({  
+										color:this.config.color,
+										sizeAttenuation:false,
+										size:32,
+										map:pickSymbol,
+										alphaTest:0.5	
+									});
+		
+		
+		// pickedPointMaterial = new THREE.PointsMaterial({  //new THREE.ParticleBasicMaterial({ //r76
+												// color:this.config.color,
+												// sizeAttenuation:false,
+												// size:32,
+												// map:pickSymbol,
+												// alphaTest:0.5	
+											// });
 		measureLineMaterial = new THREE.LineBasicMaterial({
 												color: this.config.color,
 												linewidth:1
@@ -14539,7 +14598,13 @@ GIScene.ModelLoader = function () {
 
 			//Mesh or Points (ParticleSystem)?
 			// var objectType = (geometry.faces.length == 0) ? "ParticleSystem" : "Mesh"; //-r76
-			var objectType = (geometry.index && geometry.index.count != 0) ? "Mesh" : "Points"; //+r76		
+			var objectType = (geometry instanceof THREE.Geometry)?  //+r76
+				//Geometry                                          //+r76
+				(geometry.faces.length == 0) ? "Points" : "Mesh"    //+r76
+				:                                                   //+r76
+				//BufferGeometry                                    //+r76
+				(geometry.index && geometry.index.count != 0) ? "Mesh" : "Points"; //+r76
+				;		
 			
 			//if material is defined use it else use default material
 			
