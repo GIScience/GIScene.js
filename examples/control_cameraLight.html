@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>GIScene.js example - Control.CameraLight</title>
-		<script src="js/THREE/r63/three.min.js"></script>
-		<script src="js/GIScene/GIScene_min_1.0.1.js"></script>
+		<script src="js/THREE/r76/three.js"></script>
+		<script src="js/GIScene/GIScene_2.0.0.js"></script>
 		<style>
 			body {
 				bottom: 0;
@@ -95,7 +95,7 @@
 				format : GIScene.Format.JSON,
 				verticalAxis : "Z",
 				offset : new GIScene.Coordinate3(962800,6348100,0),
-				overrideMaterial : new THREE.MeshLambertMaterial({color: 0x00DD00, ambient:0x003300, wireframe:false}),
+				overrideMaterial : new THREE.MeshLambertMaterial({color: 0x52c452,  wireframe:false}),
 				//optional: automatic zoom after layer has been loaded
 				listeners: [ { 'load' : function( event ){ var layer = event.content; scene.setCenter(layer.boundingBox.center(), new THREE.Vector3(-5000, 3000, 5000)); } } ]
 			};
