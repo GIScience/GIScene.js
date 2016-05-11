@@ -11809,6 +11809,7 @@ GIScene.Control.Measure = function(camera, config){
 			// set second point 
 			// var pickedPoint = new THREE.ParticleSystem(pickedPointGeom.clone(), pickedPointMaterial); //-r76
 			var pickedPoint = new THREE.Points(pickedPointGeom.clone(), pickedPointMaterial); //+r76
+			pickedPoint.renderOrder=-1;
 			resultsLayer.root.add(pickedPoint);
 			
 			//set measure Line
@@ -11820,6 +11821,7 @@ GIScene.Control.Measure = function(camera, config){
 			measureLineGeom.vertices.push(measurePoint2);
 			
 			var measureLine = new THREE.Line(measureLineGeom, measureLineMaterial);
+			measureLine.renderOrder = -1;
 			resultsLayer.root.add(measureLine);
 			
 			// //draw in foreground
@@ -11857,6 +11859,7 @@ GIScene.Control.Measure = function(camera, config){
 			// set first point
 			// var pickedPoint = new THREE.ParticleSystem(pickedPointGeom.clone(), pickedPointMaterial); //-r76
 			var pickedPoint = new THREE.Points(pickedPointGeom.clone(), pickedPointMaterial); //+r76
+			pickedPoint.renderOrder = -1;
 			resultsLayer.root.add(pickedPoint);
 		}
 		
@@ -11887,7 +11890,10 @@ GIScene.Control.Measure = function(camera, config){
 										sizeAttenuation:false,
 										size:32,
 										map:pickSymbol,
-										alphaTest:0.5	
+										alphaTest:0.5,
+										transparent:false
+										// depthTest:false,
+										// depthWrite:false
 									});
 		
 		

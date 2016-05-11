@@ -94,7 +94,7 @@
 				format : GIScene.Format.JSON,
 				verticalAxis : "Z",
 				offset : new GIScene.Coordinate3(962800,6348100,0),
-				overrideMaterial : new THREE.MeshLambertMaterial({color: 0x005500, ambient:0x003300, wireframe:false}),
+				overrideMaterial : new THREE.MeshLambertMaterial({color: 0x005500, wireframe:false}),
 				//optional: automatic zoom after layer has been loaded
 				listeners: [ { 'load' : function( event ){ var layer = event.content; scene.setCenter(layer.boundingBox.center(), new THREE.Vector3(-5000, 3000, 5000)); } } ]
 			};
