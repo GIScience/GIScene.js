@@ -7169,8 +7169,9 @@ GIScene.RasterOverlayMaterial = function(config) {
 		lowerLeft : new GIScene.Coordinate2(-100,-100), //GIScene.Coordinate2
 		upperRight: new GIScene.Coordinate2(100,100), //GIScene.Coordinate2
 		offset2: null,  //GIScene.Coordinate2
-		isShared:true,  //if object will be disosed do not dispose material and its textures
+		isShared:true,  //if object will be disposed do not dispose material and its textures
 		//standards
+		color: 0xacc485, // diffuse
 		emissive : new THREE.Color(0x000000)
 	};
 	
@@ -7204,9 +7205,18 @@ GIScene.RasterOverlayMaterial = function(config) {
 	    },
 	    set: function(value) {
 	      em = value;
-	      this.uniforms.emissive.value = value;
+	      this.uniforms.emissive.value = new THREE.Color(value);
 	    }
 	  });
+	
+	var color = this.config.color;
+	Object.defineProperty(this, 'color', {
+		get	  : function() {return color;},
+		set	  : function(newColor){
+			color = newColor;
+			this.uniforms.diffuse.value = new THREE.Color(newColor);
+		}	
+	});
 	
 	
 	if (this.url){
@@ -7225,7 +7235,9 @@ GIScene.RasterOverlayMaterial = function(config) {
 					  {
 					  	"tOverlay"   : { type: "t",  value : this.texture},
 						"lowerLeft"  : { type: "v2", value : this.lowerLeft},
-						"upperRight" : { type: "v2", value : this.upperRight}
+						"upperRight" : { type: "v2", value : this.upperRight},
+						"emissive" 	 : { type: "c", value: new THREE.Color(this.emissive)/*new THREE.Color( 0x000000 ) */},
+						"diffuse"    : { type: "c", value: new THREE.Color(this.color) },
 					  }
 				]),
 				// uniforms: THREE.UniformsUtils.merge( [
@@ -7626,20 +7638,28 @@ GIScene.RasterOverlayMaterial = function(config) {
 					 
 					"	// accumulation",
 					"	reflectedLight.indirectDiffuse = getAmbientLightIrradiance( ambientLightColor );",
+					
+					"   vec3 mca_indirectDiffuse = reflectedLight.indirectDiffuse;",//mca copy of line above
 					 
 					"	#include <lightmap_fragment>",
-					 
+					
+					"   mca_indirectDiffuse *= BRDF_Diffuse_Lambert( vec3(1.0) );",//mca white
+					
 					"	reflectedLight.indirectDiffuse *= BRDF_Diffuse_Lambert( diffuseColor.rgb );",
 					 
 					"	#ifdef DOUBLE_SIDED",
 					 
 					"		reflectedLight.directDiffuse = ( gl_FrontFacing ) ? vLightFront : vLightBack;",
-					 
+					
 					"	#else",
 					 
 					"		reflectedLight.directDiffuse = vLightFront;",
 					 
 					"	#endif",
+					 
+					"   vec3 mca_directDiffuse = reflectedLight.directDiffuse;", //mca copy of front or backside light
+					
+					"	mca_directDiffuse *= BRDF_Diffuse_Lambert( vec3(1.0) ) * getShadowMask();", //mca
 					 
 					"	reflectedLight.directDiffuse *= BRDF_Diffuse_Lambert( diffuseColor.rgb ) * getShadowMask();",
 					 
@@ -7647,6 +7667,8 @@ GIScene.RasterOverlayMaterial = function(config) {
 					"	#include <aomap_fragment>",
 					 
 					"	vec3 outgoingLight = reflectedLight.directDiffuse + reflectedLight.indirectDiffuse + totalEmissiveRadiance;",
+					
+					"   vec3 mca_outgoingLight = mca_directDiffuse + mca_indirectDiffuse + totalEmissiveRadiance;", //mca 
 					 
 					"	#include <envmap_fragment>",
 					 
@@ -7671,8 +7693,14 @@ GIScene.RasterOverlayMaterial = function(config) {
 								//"gl_FragColor =  mix(gl_FragColor,vec4(tColor.rgb* (((vLightFront-emissive-(ambient * ambientLightColor)))+emissive+ambientLightColor), opacity), tColor.a);",
 								//"gl_FragColor =  mix(gl_FragColor,vec4(tColor.rgb* (((vLightFront-emissive-(ambient * ambientLightColor)) / diffuse)+emissive+ambientLightColor), opacity), tColor.a);",
 								//"gl_FragColor =  mix(gl_FragColor,vec4(tColor.rgb * (vLightingOnly + ambientLightColor + emissive), opacity), tColor.a);",
-								// "gl_FragColor =  mix(gl_FragColor,vec4(tColor.rgb * (outgoingLight), opacity), tColor.a);",
-								"gl_FragColor =  tColor;",
+								// "gl_FragColor =  mix(gl_FragColor,vec4(tColor.rgb * (outgoingLight), opacity), tColor.a);", //everything green
+								// "gl_FragColor =  mix(gl_FragColor,vec4(tColor.rgb * (reflectedLight.directDiffuse), opacity), tColor.a);",
+								// "gl_FragColor =  vec4(reflectedLight.directDiffuse, 1);", //dark shades
+								//"gl_FragColor =  vec4(reflectedLight.indirectDiffuse, 1);",  //diffuse color dark without shades
+								//"gl_FragColor =  vec4(totalEmissiveRadiance, 1);",  // the emissive color
+								// "gl_FragColor =  vec4(( vLightFront ), opacity);",  //white shaded
+								"gl_FragColor =  mix(gl_FragColor,vec4(tColor.rgb * (mca_outgoingLight), opacity), tColor.a);", 
+								
 								  
 								
 							"}",
@@ -7790,7 +7818,7 @@ GIScene.RasterOverlayMaterial = function(config) {
 								//"gl_FragColor =  mix(gl_FragColor,vec4(tColor.rgb* (((vLightFront-emissive-(ambient * ambientLightColor)))+emissive+ambientLightColor), opacity), tColor.a);",
 								//"gl_FragColor =  mix(gl_FragColor,vec4(tColor.rgb* (((vLightFront-emissive-(ambient * ambientLightColor)) / diffuse)+emissive+ambientLightColor), opacity), tColor.a);",
 								"gl_FragColor =  mix(gl_FragColor,vec4(tColor.rgb * (vLightingOnly + ambientLightColor + emissive), opacity), tColor.a);",
-								  
+								
 								
 							"}",
 						
@@ -15650,7 +15678,8 @@ GIScene.Layer = function (name, config) {
 		translateLayer = (scene) ? this.offset.toVector3().sub(scene.config.offset.toVector3())
 								 : new THREE.Vector3();
 								 ;
-		this.root.position = translateLayer;
+		// this.root.position = translateLayer; //-r76
+		this.root.position.copy( translateLayer ); //+r76
 		this.root.updateMatrix();
 		this.root.updateMatrixWorld();
 		console.log("translateLayer: "+translateLayer.toArray());
@@ -18713,7 +18742,8 @@ GIScene.Scene = function(containerDivId, config) {
 		if (positionFromCenter) {
 			//translate and focus camera on center
 			// console.log(positionFromCenter.length());
-			this.camera.position = vector.clone().add(positionFromCenter);
+			// this.camera.position = vector.clone().add(positionFromCenter); //-r76
+			this.camera.position.copy( vector.clone().add(positionFromCenter) ); //+r76
 			this.camera.lookAt(this.center);
 			this.camera.target.position.setZ(-positionFromCenter.length());
 			

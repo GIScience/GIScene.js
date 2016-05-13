@@ -97,12 +97,14 @@
 					//crossOrigin: 'anonymous',
 					lowerLeft:  new GIScene.Coordinate2(left_canvas, bottom_canvas), //the lower left coordinate of the image boundingBox
             		upperRight: new GIScene.Coordinate2(right_canvas, top_canvas), //the upper right coordinate of the image boundingBox
-            		isShared : false
+            		isShared : false,
+            		color: 0xacc485
 				});
 				
 				for (var y = 0; y < 4; y++) {
 					for (var x = 0; x < 4; x++) {
-						var url = "http://korona.geog.uni-heidelberg.de/tiles/roads/x="+ (left_tileIdx+x) +"&y="+ (top_tileIdx+y) +"&z="+zoomlevel_1024;
+						var url = "http://korona.geog.uni-heidelberg.de/tiles/roads/x="+ (left_tileIdx+x) +"&y="+ (top_tileIdx+y) +"&z="+zoomlevel_1024; //
+						//var url = "http://korona.geog.uni-heidelberg.de/tiles/adminb/x="+ (left_tileIdx+x) +"&y="+ (top_tileIdx+y) +"&z="+zoomlevel_1024;
 						//console.log(url);
 						
 						function loadImg(x,y,ctx,texture){
@@ -161,15 +163,16 @@
 			
 			//light adjustment
 			scene.directionalLight.position.set(-1,1,-1); //light from northwest
-			scene.ambientLight.color.setRGB(0.2,0.2,0.2);
+			//scene.ambientLight.color.setRGB(0.2,0.2,0.2);
 			
 			//add a layer
 			var layer_options = {
-				url : "models/dem/srtm-30m/04_3857_offset_962800_6348100_0.json",
+				// url : "models/dem/srtm-30m/04_3857_offset_962800_6348100_0.json",
+				url : "models/dem/srtm-30m/simple_3857_offset_962800_6348100_0.json",
 				format : GIScene.Format.JSON,
 				verticalAxis : "Z",
 				offset : new GIScene.Coordinate3(962800,6348100,0),
-				overrideMaterial : new THREE.MeshLambertMaterial({color: 0x005500, ambient:0x003300}),
+				overrideMaterial : new THREE.MeshLambertMaterial({color: 0x52c452}),
 				
 				listeners: [ { 'load' : onLoad } ]
 			};

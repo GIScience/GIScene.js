@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>GIScene.js example - DEM SRTM-30m (simplified) with XYZ raster tile overlay switcher</title>
-		<script src="js/THREE/r63/three.min.js"></script>
-		<script src="js/GIScene/GIScene_1.0.1.js"></script>
+		<script src="js/THREE/r76/three.min.js"></script>
+		<script src="js/GIScene/GIScene_2.0.0.js"></script>
 		<style>
 			body {
 				bottom: 0;
@@ -64,6 +64,8 @@
 				<input type="radio" name="overlays" id="mapnik" value="1" checked="checked"/><label for="mapnik">OSM Mapnik</label>
 				<br>
 				<input type="radio" name="overlays" id="openmapsurfer" value="2" /><label for="openmapsurfer">OSM OpenMapSurfer</label>
+				<br>
+				<input type="radio" name="overlays" id="openmapsurfer-boundary" value="3" /><label for="openmapsurfer-boundary">OSM OpenMapSurfer Admin Boundaries</label>
 			</div>
 		</div>
 		<div id="attribution">
@@ -226,10 +228,29 @@
 				
 				layer.addStyle(openmapsurferStyle);
 				
+				var onTileLoad3 = function(texture) {
+					openmapsurferBoundaryStyle.material.uniforms.tOverlay.value.needsUpdate = true;
+				};
+				
+				//var openmapsurferBoundaryTextureObject = createMapTileTexture("http://korona.geog.uni-heidelberg.de/tiles/adminb/x={x}&y={y}&z={z}", layer.root, 2048, onTileLoad3);
+				var openmapsurferBoundaryTextureObject = createMapTileTexture("http://korona.geog.uni-heidelberg.de/tiles/adminb/x={x}&y={y}&z={z}", layer.root, 4096*4, onTileLoad3);
+				
+				openmapsurferBoundaryTextureObject.color = 0xacc485;
+				
+				var openmapsurferBoundaryStyle = new GIScene.Style({
+					title: "OSM OpenMapSurfer Admin Boundaries",
+					material: new GIScene.RasterOverlayMaterial(
+						openmapsurferBoundaryTextureObject
+					)
+				});
+				
+				layer.addStyle(openmapsurferBoundaryStyle);
+				
 				//overlay switcher
 				
 				var mapnik_option = document.getElementById("mapnik");
 				var openmapsurfer_option = document.getElementById("openmapsurfer");
+				var openmapsurferBoundary_option = document.getElementById("openmapsurfer-boundary");
 				
 				mapnik_option.checked = true;
 				
@@ -241,6 +262,7 @@
 				
 				mapnik_option.addEventListener("change", onSwitch, false);
 				openmapsurfer_option.addEventListener("change", onSwitch, false);
+				openmapsurferBoundary_option.addEventListener("change", onSwitch, false);
 				
 				
 			};
@@ -264,7 +286,7 @@
 			
 			//light adjustment
 			scene.directionalLight.position.set(-1,1,-1); //light from northwest
-			scene.ambientLight.color.setRGB(0.2,0.2,0.2);
+			//scene.ambientLight.color.setRGB(0.2,0.2,0.2);
 			
 			//add a layer
 			var layer_options = {
@@ -272,7 +294,7 @@
 				format : GIScene.Format.JSON,
 				verticalAxis : "Z",
 				offset : new GIScene.Coordinate3(962800,6348100,0),
-				overrideMaterial : new THREE.MeshLambertMaterial({color: 0x005500, ambient:0x003300}),
+				overrideMaterial : new THREE.MeshLambertMaterial({color: 0xacc485,}),
 				
 				listeners: [ { 'load' : onLoad2 } ]
 			};
