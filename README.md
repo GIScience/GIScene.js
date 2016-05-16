@@ -12,8 +12,8 @@ You can use it for georeferenced 3D data, but it takes a lot of work from you no
 	<head>
 		<meta charset="UTF-8">
 		<title>GIScene.js example - Basic Usage</title>
-		<script src="js/THREE/r63/three.min.js"></script>
-		<script src="js/GIScene/GIScene_min_1.0.1.js"></script>
+		<script src="js/THREE/r76/three.min.js"></script>
+		<script src="js/GIScene/GIScene_min_2.0.0.js"></script>
 	</head>
 	<body>
 		<h1>GIScene.js example - Basic Usage</h1>
@@ -36,7 +36,7 @@ You can use it for georeferenced 3D data, but it takes a lot of work from you no
 			scene.addLayer(layer);
 			
 			//create, add and activate a navigation control
-			var nav_ctrl = new GIScene.Control.PanOrbitZoomCenter(scene.camera);
+			var nav_ctrl = new GIScene.Control.PanOrbitZoomCenter(scene.camera, scene.containerDiv);
 			
 			scene.addControl(nav_ctrl);
 			
@@ -46,6 +46,10 @@ You can use it for georeferenced 3D data, but it takes a lot of work from you no
 	</body>
 </html>
 ```
+#New in Version 2.0.0
+upgraded to be used with Three.js r76
+added pointcloud support: new loaders, adapted Controls (Pick, Measure, Select, PanOrbitZoomCenter, Walk)
+
 #Acknowledgements
 GIScene has been developed by M.Auer during the research project [MayaArch3D](http://www.mayaarch3d.org). The [MayaArch3D-SingleObjectViewer](http://www.mayaarch3d.org/language/en/research/tools-in-development/3d-object-viewer/temple-18-2/) was developed using the GIScene.js library.
 Between 2012 and 2015 the development of GIScene.js and the MayaArch3D project has been funded by the German Ministry of Education and Research (BMBF). 

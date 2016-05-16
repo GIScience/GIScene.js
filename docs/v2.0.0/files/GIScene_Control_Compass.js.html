@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>GIScene\Control\Compass.js - GIScene 3D WebGIS API.</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="icon" href="../assets/favicon.ico">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><a href="http://giscience.github.io/GIScene.js/index.html"><img src="http://giscience.github.io/GIScene.js/images/GIScene.js-logo.png" title="GIScene 3D WebGIS API."></a></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 2.0.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                            <li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/GIScene.html">GIScene</a></li>
+                                <li><a href="../classes/GIScene.AspectMaterial.html">GIScene.AspectMaterial</a></li>
+                                <li><a href="../classes/GIScene.Control.html">GIScene.Control</a></li>
+                                <li><a href="../classes/GIScene.Control.AxisHelper.html">GIScene.Control.AxisHelper</a></li>
+                                <li><a href="../classes/GIScene.Control.CameraLight.html">GIScene.Control.CameraLight</a></li>
+                                <li><a href="../classes/GIScene.Control.Compass.html">GIScene.Control.Compass</a></li>
+                                <li><a href="../classes/GIScene.Control.EdgeDetectionFreiChen.html">GIScene.Control.EdgeDetectionFreiChen</a></li>
+                                <li><a href="../classes/GIScene.Control.Fly.html">GIScene.Control.Fly</a></li>
+                                <li><a href="../classes/GIScene.Control.LoadIndicator.html">GIScene.Control.LoadIndicator</a></li>
+                                <li><a href="../classes/GIScene.Control.Measure.html">GIScene.Control.Measure</a></li>
+                                <li><a href="../classes/GIScene.Control.ObjectPosition.html">GIScene.Control.ObjectPosition</a></li>
+                                <li><a href="../classes/GIScene.Control.OrbitZoomPan.html">GIScene.Control.OrbitZoomPan</a></li>
+                                <li><a href="../classes/GIScene.Control.Pan.html">GIScene.Control.Pan</a></li>
+                                <li><a href="../classes/GIScene.Control.PanOrbitZoomCenter.html">GIScene.Control.PanOrbitZoomCenter</a></li>
+                                <li><a href="../classes/GIScene.Control.Pick.html">GIScene.Control.Pick</a></li>
+                                <li><a href="../classes/GIScene.Control.Select.html">GIScene.Control.Select</a></li>
+                                <li><a href="../classes/GIScene.Control.SSAO.html">GIScene.Control.SSAO</a></li>
+                                <li><a href="../classes/GIScene.Control.TextPanel.html">GIScene.Control.TextPanel</a></li>
+                                <li><a href="../classes/GIScene.Control.Trackball.html">GIScene.Control.Trackball</a></li>
+                                <li><a href="../classes/GIScene.Control.Walk.html">GIScene.Control.Walk</a></li>
+                                <li><a href="../classes/GIscene.Coordinate2.html">GIscene.Coordinate2</a></li>
+                                <li><a href="../classes/GIscene.Coordinate3.html">GIscene.Coordinate3</a></li>
+                                <li><a href="../classes/GIScene.DirectionMaterial.html">GIScene.DirectionMaterial</a></li>
+                                <li><a href="../classes/GIScene.DistanceOpacityMaterial.html">GIScene.DistanceOpacityMaterial</a></li>
+                                <li><a href="../classes/GIScene.Extent2.html">GIScene.Extent2</a></li>
+                                <li><a href="../classes/GIScene.Format.html">GIScene.Format</a></li>
+                                <li><a href="../classes/GIScene.GeoJSONLoader.html">GIScene.GeoJSONLoader</a></li>
+                                <li><a href="../classes/GIScene.Grid.html">GIScene.Grid</a></li>
+                                <li><a href="../classes/GIScene.Grid.Index.html">GIScene.Grid.Index</a></li>
+                                <li><a href="../classes/GIScene.Layer.html">GIScene.Layer</a></li>
+                                <li><a href="../classes/GIScene.Layer.Fixed.html">GIScene.Layer.Fixed</a></li>
+                                <li><a href="../classes/GIScene.Layer.Grid.html">GIScene.Layer.Grid</a></li>
+                                <li><a href="../classes/GIScene.Layer.Helper.html">GIScene.Layer.Helper</a></li>
+                                <li><a href="../classes/GIScene.Layer.W3DS_0_4_0.html">GIScene.Layer.W3DS_0_4_0</a></li>
+                                <li><a href="../classes/GIScene.Layer.W3DS_0_4_1.html">GIScene.Layer.W3DS_0_4_1</a></li>
+                                <li><a href="../classes/GIScene.Line2.html">GIScene.Line2</a></li>
+                                <li><a href="../classes/GIScene.LocalFileLoader.html">GIScene.LocalFileLoader</a></li>
+                                <li><a href="../classes/GIScene.ModelLoader.html">GIScene.ModelLoader</a></li>
+                                <li><a href="../classes/GIScene.OverrideMaterialHandler.html">GIScene.OverrideMaterialHandler</a></li>
+                                <li><a href="../classes/GIScene.OverrideMaterialHandler.WMS.html">GIScene.OverrideMaterialHandler.WMS</a></li>
+                                <li><a href="../classes/GIScene.PointAlignmentMaterial.html">GIScene.PointAlignmentMaterial</a></li>
+                                <li><a href="../classes/GIScene.Process.html">GIScene.Process</a></li>
+                                <li><a href="../classes/GIScene.Process.Intervisibility.html">GIScene.Process.Intervisibility</a></li>
+                                <li><a href="../classes/GIScene.Process.LineOfSight.html">GIScene.Process.LineOfSight</a></li>
+                                <li><a href="../classes/GIScene.Process.LineOfSight_fastClient.html">GIScene.Process.LineOfSight_fastClient</a></li>
+                                <li><a href="../classes/GIScene.Process.LineOfSight_Layer.html">GIScene.Process.LineOfSight_Layer</a></li>
+                                <li><a href="../classes/GIScene.Process.LineOfSight_simpleClient.html">GIScene.Process.LineOfSight_simpleClient</a></li>
+                                <li><a href="../classes/GIScene.Process.LineOfSightNetwork_allToAll.html">GIScene.Process.LineOfSightNetwork_allToAll</a></li>
+                                <li><a href="../classes/GIScene.RasterOverlayMaterial.html">GIScene.RasterOverlayMaterial</a></li>
+                                <li><a href="../classes/GIScene.Scene.html">GIScene.Scene</a></li>
+                                <li><a href="../classes/GIScene.Service.html">GIScene.Service</a></li>
+                                <li><a href="../classes/GIScene.Service.W3DS_0_4_0.html">GIScene.Service.W3DS_0_4_0</a></li>
+                                <li><a href="../classes/GIScene.Service.W3DS_0_4_1.html">GIScene.Service.W3DS_0_4_1</a></li>
+                                <li><a href="../classes/GIScene.Style.html">GIScene.Style</a></li>
+                                <li><a href="../classes/GIScene.Utils.html">GIScene.Utils</a></li>
+                                <li><a href="../classes/GIScene.WMSOverlayMaterial.html">GIScene.WMSOverlayMaterial</a></li>
+                            </ul>
+                
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/GIScene.html">GIScene</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>
+            
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1 class="file-heading">File: GIScene\Control\Compass.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/**
+ * The Compass Control provides a graphical information on the current camera orientation, like a compass.
+ * 
+ * @namespace GIScene
+ * @class Control.Compass
+ * @constructor
+ * @extends GIScene.Control
+ * @param {THREE.Camera} camera 
+ */
+
+GIScene.Control.Compass = function(camera, config) {
+	
+	//make this a control
+	GIScene.Control.call(this);
+	
+	var defaults = {
+		//positioning in px from canvas border
+	};
+	
+	/**
+	 * The config which is used to initialize the Compass-Control. Merged from defaults and passed config Object.
+	 * 
+	 * @property config
+	 * @type Object
+	 */
+	this.config = GIScene.Utils.mergeObjects(defaults, config || {});
+	
+	
+	this.camera = camera;
+	
+	var compassDegrees = 0;
+	
+	var windroseDataURL = &quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAFeQAABXkBbEZlXgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAACAASURBVHic7V17fBNV2n7OTJImTdOkCbfS1rZAS6ECCojwoYDoKrgiArIguq7ralFua5FVuXWctly/lmLxK1Dcb10FvBR1RRRWlP3wwkUWkEtpudNCKVJya9PcJjPn+yNJLaWlV0gh+/x++SWZmfPOm8wzZ855b4dQShEMODBgAEcofQEAoYSsU7pcS3ofPer27//p3nt/y4riO5AkDwjZPGD//ukBVPemQRZoBW4WGErvTDx+PFrlcKAsKuq1y506dQUwFQBACGEHDFjf79AhHSUER++88+7AanvzwARagZsNQimiL1wIVTmdE/49aNBDALB7yBClzOMRZB5PoNW76Qg6AvjR4+RJAyuK7+0fOFALQMVIUnA8C+sgaAkgFwTEnjvXiZGk9xhJCmUkKdAqBQRBSwAA0JtMbJjNNoxQOg5BMhiui6AkgD00FB6Zd/wbf/asTi4IbyJI/4ugmQXUxsWuXc1WnY7te+hQuFwQkFxYqHeoVIFWKyAIStYTSj0CIf99unt3EwAo3G5ordZAqxUQBCcBAMoQss0eGvrNlQ4dhEDrE0gEJQFEhqGEUocgl79YGhNz2a1QBFqlgCE4CcCylACOe/fsqXSHhDxzMiHBFGidAoWgIwAlBG6FQk4BOwAM3r37/1xK5YfnY2KclJBAq3fTETSzAA8hF04kJv5CCZFLDJN7z08/XQIhfwQQrUxOTr3coQO50rHjk0SSJEpISaD1vVkgweINrBeE5AKIAqUTfN8ZUBpUJsGg6QEaQCKAzjXfguziA/8hwB0ANIFWIpAIdgJoA61AoBF0s4AaEMIAkAMgIKRDoNUJFIKXAEAX3zsL76MgKBHMBIiF9xEY6vsclAjmMUAsADUABYAeAdYlYAjmHqAXvBcfAJIDqUggEcwESKr1uXvAtAgwgpkA3Wp97howLQKMYCZAp1qflQHTIsAIZgKE1PrMgpDQgGkSQAQnAQjR1bM1KG0BwUkA7xSwtvM/BEFqCwgadzDP8+EAEgkhPeNPnRr5+/ffn4hfHUHi52PHfniof//tlNLjISEhx9944w1zANW9abhtCcDz/CAAkwD0B9ATQKR/H0MI1cpkVMUwEgC4JYmpEkWPS5JqBwdeAXAcQCGAzwB8w3HcbZc8eFsRICMjI1mSpKcAPIWrp3kAUAXvBS1SqVRJEydOvCc+Ph4AUFFRgffee++4zWb7Ht4YgZ6oHSfgRQWAjxmG2bBw4cLdN/SH3ETc8gQoKChgjx079iKAaQD61Np1GsBGQshOlmWL58+fX+bfkZOTs+O55557ICIiAgAgCAJWrVpVNHv27N7+Y5YtW6Z1u92JlNKRlNLJAO6qJfssgHcBrOA4znbjft2Nxy3tC0hPT/8NpTQHv5pyLwP4CMBGjuP2NNROkqSY8PDwmu9yuRwAwmsf8/rrr1sB7PO9lvE8nwRvzzIZ3l6CB/Ayz/PzAbzLcdwtGU10S/YAmZmZCaIoZgMY49t0AsBcAJub8pxesWJF2ezZs6+y/uXm5l42m81dOY4TG2ufkZExRJKkpQCG+Tb9TAiZnZaW9q/m/ZLA45bqAfLz8+Xl5eWLAfwZ3mAOM4D0yMjI/0lJSWlShg/P8wqDwXDN7w4PD5fMZnNXAOcbk+EbAwzneX48gGUA7qKU7uB5/h8KheKFuXPnGpvzuwKJW8YOwPO8vry8fDuAOfDO4d9WKBQJHMetbOrF9yFGq9Ve013r9Xo5mmkM4jjuUwDJhJDZ8JLxCbfb/VNmZmav5sgJJG4JAmRmZvYEsBfAcADnGIYZyHHczBbeabEGg+GaXDCDwaBGC4xBHMe509LScuD1Lv4AoJsoirvT09MfaYFuNx3tngDp6ekPiqK4B96gjR8UCsWghQsXHmqFyDsMBkNY3Y0RERFKpVKZ2FKhHMddBvAggL8D0FJKv+R5flYr9LwpaNcE4Hn+GUrpNgA6AH8D8ODcuXMrWiNTpVL1ioiIuKYH0Ol0UCgUvetr01RwHOfmOO45Qsgb8D6m3uJ5Pqc1Mm802i0BMjIyhgP435CQEFlISMgqjuOe5zjO3WjDRiCXy5O02mujwX3b6hqPWoS0tLRlcrl8VkhIiAfAKzzPv9IWcm8E2iUBeJ7vIUnSpwDkbrd7McMwz6xZs+bVtpBNKY2rjwBqtRqSJHVsi3Pk5eU9y7LsIkmSZgGQAGSnp6f/ti1ktzXaHQF4ntcB2AJAD+D9tLS0+aGhoU+FhobOW7du3Uc8z7c2mT9Cqaw//oNl2ZB6dzQRPM8z+fn5a8LCwt4KDw//87x581YDeB0AQyn9ICMjo09jMm422hUBeJ6XAdgEry1+l16vfxEAZsyY8U+73b5q0KBBj8XFxe3ieT66hfIJy7INEig0NBQ8z0e0RPbSpUsjoqOjd957773POZ3OD15++eW/AwDHcVnwmo01kiR9sXjx4ro+hoCiXREAQBq8I+lSAONmzpzp8u946aWX3ty3b98/H3/88f59+vT5bvXq1S3pUjup1eoGTZ8REREMWhAY8tZbb90bGxu7Z8KECfcdOHBgV3l5+Yw6h0yFd4oYKwjCX5sr/0ai3RCA5/k7APwF3mfmBN+06ipUVVU9vXXr1v1PPPFEfN++fd/Nz89f0szTxOr1erahnQaDQYVm2gLWrFmTmpyc/NnkyZMTt2/fXlhaWvpkXb8Ax3FuhUIxHoARwG95nn+4mXrfMLQbAsBrUlXC61j5d30HpKamOs6cOTN527Ztp4cOHdrhkUceeeWdd97ZmpWVpW7iOe7wXeR6odfr1XK5vEkzgfz8fPm6des+GDZsWPpDDz0UuXPnzguXLl16nuO4esvN+Kavab6vKwoKChok4s1EuyAAz/P/Ba+XzQZg/vWOXbBgwekzZ87MPXjwYEVsbKxy0qRJo7p06bJn5cqVjZpf5XJ5j/qMQH7odDqiUqnubIK+XeVy+a7x48f/rnfv3mHHjx+vPH78+PKZM2f+dL12vXv3XgtvgElyUVFRSmPnuRloDwQgAHIAgBCylOO4S401mDFjRsG+ffveKy8vd2k0GkyZMuXOxMTEf+bl5T13vXZKpbJXfVNAP7RaLQgh100Ty8vLG3XnnXd+/8wzzww0GAyM2WwWv//++39MnTp1VWN6T5w4USSEpAIApTR92bJlAU9PDzgB0tPTnwQwCECpRqNZ0dR2KSkpf9m6dev/ORwOMAyDRx99NGbIkCE5a9euzed5vt7fRQjpcT0ChIeHQ5KkBmcYa9euzejXr997EyZM6CaXyyEIAjZv3vyTJEkvNFXvtLS07QC+ANDB6XTOa2q7G4WAE4BS+jwAEELeTE1NdTSn6fnz53/3+eefH/bHNNx99926sWPH/jEmJmYnz/P6ug0kSYrUaBouCMKyLEg9+QE8z4euW7duy8MPPzxn6NChNcaiLVu2nDh37tz4ZnojAWCB7/25QI8FAkoAnuc7AXgIgD00NPTj5rbnOK6yvLz8mW+//bamqleXLl1kU6ZMua9nz567V65cOaT28QzDKEkjpeAUCgVb29i0YsWKxG7duu2ePHnyb+Pj42ssSLt27SovKyt7uSmPrHr0PgzgMIBOx44de7C57dsSASUAIWQSvEEpm+fMmVPdEhmpqalHTpw4kVFYWFgTxq1UKjFp0qTEPn36fLJ27do5AMDzvFqpVDb6e32PiBgAyMvLezoxMXH7lClT+tbuOc6dO1d95MiRvBkzZuxoic4+bPC9T2mFjFYjoASglD4NAISQja2RM23atL/++OOPBRUVFTXhYIQQPPjgg5HDhw/n3nnnnY8B9NDpdI3GvxkMBgUhJC4/P//tIUOG5D722GN3sOyvvXRlZSX95ptv/jl16tTM1ugsk8k+AEABjFu1alWrTNCtQcAIkJmZ2R3AvQBMXbp02dZaeREREdO+/PLLXS6X66rtSUlJYePHj5/QsWPHAr1e32j+n8Fg0Oh0uv95/PHHU+6+++6rxhGiKGLz5s0HysrKnm6tvvPnzz8P4HsA4SaTKWCOImb58uUanuen3GwbtSRJT/g+ftKCQdQ1mDhxolheXj5+8+bNxXX36fV6ZuDAgQkGg6HRknA6nY5NTk7u2aVLF3ndfV999dWZc+fOTeQ4ztlafYGrer4n20JeSyBjWfbz/v37D7506ZJtxYoVdgDfVlVVFQD4juM4+406MaXUH3zxXVvJnDt3rnHlypXP79y5s2D48OFRtffZbDbExsY2WgxYq9WiuPgaDmHfvn1XSktL5yxYsOBsW+lLKfUnmPRrK5nNhYwQ0mPMmDEqACqPx4PS0tLnT5w48eSpU6ccOTk5l91u93qn0/kxx3Hn2vjcPX3vJ9pS6CuvvLJ7zZo12ZGRkXxiYmLNHW+1WnE9G4AfWq0W1jqLR1y4cMF18ODBv02fPv2zttQV3t8uAehRUFDATpw4sdGQ9LYGyc7O3jhixIjx/fv3v2YgYrfbUVRU5Dl8+LDJZDJVS5L0idPp3Lhw4cKDrT0xz/MVADoolUqdLwmj1eB5Xg2vN++O8PDw9KSkpHucTiexWq2wWCyYPn26Pwnkunj77behVquh1WqhVqtRVFR0zGq1zgFQAqC0LbOBeJ4/DaAby7I9FixYcLoVcgbDGzrXJBBCRErpv8ibb76p0Gg038hkssTQ0FAmLi5OFRcXFxYTE4OQkF854Xa7cfLkSXrw4MErZWVlptdffz3pOvIbU1YPr2fsF47jujR2vK8NgTdf7w4AsXK5vLtSqexNCOkuSVIXlmWVISEhjE6ng8FgCNHr9RqdTifTarXQarVQNHNRCI/HA6vVCh95RKPRWGU0Gl1msxkul0sSRdHJMMwvAE47nc5Ct9t9Gj6CALjEcVyTMm54nv8SwKOEkEfT0tK2NkvJWsjOzj511113Nem/BACHwyGeOHHiiMwXZzcMAJYsWdLx4sWLw/bu3TtPkqS+/fr1Y0aNGsUoFAooFAokJyeT5OTkjm+99VaruiqGYXpK3nX6jvu38TyvhO/uJYTEqlSqXjKZrCelNBaALiIiQh4WFga9Xs8aDIZQvV6v9l/csLAwNGbgaS5kMhkMBgMMBgPgLSZ51d1FKYXNZou3Wq2DrVYrTCaT3Wg0VptMJtFms5EVK1a4AVgJIec8Hs9xh8NRRCktgZck52sNJIsAPEop7QmgxQQghDAPPvhgU72iAIDc3NzuMgBYtGhRjFwu/1NISMh4lUrVOTY2lklKSmITEhKITHZ1Es3Zs2clQRCa3WXzPG+A19ceK5PJHgkJCbGwLJuQnZ19mmVZZceOHWvuXt9UrMV3780AIQQajQYajQbR0dGAt+DkVdNMt9sdY7Va77RYLI9ZLBaP0WisNBqNbqvVSnJyckRKqUOj0YiCINgEQXiA5/lz+PUx06rsIpPJBL3+amv45cuXIZfL4U+KBUBkGRkZw7Va7Sf333+/tmfPnrLQ0Kunyg6HAyUlJbS4uNhYUlIiiKJ4uLq6+irrlc/50hW+C6xWq5NlMlkSpTQegJ5lWUV0dDSJiIhgO3TooNLr9WG+i6vTaDRtfve2FygUCnTs2BEdO3YEvBbPq66IJEmoqqryP2rGmEymkUaj0W4ymaTc3FyIougCYCKEnPV4PMV2u712L1LWUB7jp59+aj5z5kxZSEhIl+eff76DWq3Gzp07bfv27TsSFhaW+NJLLxkAby8mU6vVOc8++6xBp7t6/FBYWCjs2LHD6PF4fhFFcZvD4fhMkqR9HMdJ2dnZS3Jzc/uLohgriqK+Q4cOklarhV6vVxgMhrCIiAi5/+5tKADzPwAYhoH/f4LXLR7me9XA6XTGWq3Wu31jEcFoNNpMJpPbarUiKyuLYVnWzLLseQAGf5vS0tKqOXPm9Fm5cuU2u93+iFqtxsmTJ6urq6sfZxhmP6XUQAiBJEmQMQwjV9VZNFEURZw/f14QRZEQQkrsdvtOSukhf6iTzWY7oFKpBIVCUcmybLzL5epoNBoVdrvdXV1dba6urlY5HI4wh8NBtFotwsPDUduc+h80DlEUUVlZWTMQNZlM1Uaj0WE2m8Xq6moiiqKbZVkjIeSMy+U6zrJs31rNCQAwDOP2e0rtdjs4jruyYsUKj7/HpZRCJknStg8//DDygQceMERHR4NhGLAsi1GjRoWOGjUqtKys7PHDhw+POHHihDMnJ+e03W5/LzIy8q8pKSkFdZXmeV5XXl4eC+AOmUwWr1Kp7mQYpocoitEMw4TK5XKZTqejtXoKRbD2FA6Ho+4sw2YymVwWi4W43W6JUupgGKYMwCmHw1EoCELNLIPjuGuyo1asWDEJgN9VTQBAkqTOarV3XMgwDOF5ntFoNFfdibLZs2f/hef5zzdt2vSKJElDdDqdPCkpSZuQkKDo3LkzoqKiEBUVFT569Ohws9ncae/evXcdPXr0AXjr71wFjuMsACwA6s3d43lebjQaY06fPj0ZQKZCoShWqVTFlNI4SqmeZdkQtVpN9Xo9q9frQw0GQ81IX6PRgGECHr7QJNR5tsNkMjmNRmO12WwWq6qqGFEUBUKImRBS4na7w5xO5/0AvgKQDu8FbpUFlvqWvqGUqv09r0wmo2q1WkUpvZoAAMBx3A/whi2D5/mBZWVl83fs2DF20KBBdNSoUTX/ekREBEaNGqUqKip6qCWWK47jBABneJ7/CsAit9vtnjt37rjax/A836GsrOwOALEKhcI/1+8hSVIUwzAqhULBarVaGAwGhV6vD4uIiKiZLdS2W9xIuN1uWCwW/wWWjEajzWg0uiwWC1wulyRJkpNhmEsATrlcriKXy3USXvuA30ZQEzXM8/w7AO6H1/R+rQ26BaC+fl8QhE379+/vOXjwYJnH45ELgqAMCQmRJEmCbwxAZPn5+XKLxbJcLpcPkCQpvmvXrvIePXqo4+PjSVxc3DXD88uXL0MURdoas2V4ePjxyspKCiAB3u6qxmjCcdwVeCt0HaivLc/zIRUVFXecOnXqDoZhYkNDQ3uzLJtEKY2llOpkMpkiLCyMRkREyPV6vU6v1zM6nQ7+sUhTYLPZai6w2WymV65csZrNZndVVRXxeDwCACvDMKWSJJ202+1HRVE8B98F5jiuuXENfoNaqy9+WVkZKioq3JTSEwBAKc3Zs2dPv127dg1hWbYgLCzM5na7v/n000+fpJRSQsgGWVVVVfqAAQOmDhw4UFWfrbyyshKnT58Wi4uLTZcuXfIQQg47HI73WqNoamqqg+f5EgBxixYtumP+/PlNXqeP4zgXgJO+1zXgeZ6YzeYuLpdrS7du3frbbDaUlZXh2LFjmD59epN6ifz8fPTq1ctPGlJYWHjpypUroz0eT+kNqAXkj2ZuFQFEUcwpKCi4RxRF0WazTQdq6hzV7WHnFhYWbgAgCw8P/14G4I8jR45U+UeGTqcT586dQ3FxsamkpESglJ5zuVybBEH4csGCBUWtUbIOigDEeTyenvAObtoEHMfR/Px87oknnujbqdOv9aBdLhcsFgs6d76+17u6uhqdO3fG6NGja7bFxsb2/Oijj7JTUlImtJWegNfyCq9twNKS0LLa+Mtf/tJoVDJQU8egJpJJJoqicOjQIeny5cu2kydPOlwul1EUxS1Op/Mfvnn/jSqOWAxgNLxd4NdtJXT16tV/HDp06O86dep0lQnT7+VrjABWqxV1bSJarZY89NBDj+Tn589LSUlZ3Fa6ut3uNrn7WwOZIAj3bd269Wm3231ArVZ/39LYvBbgZ9/7owBy20JgVlbWnX369Hmzb9++1yR4KpVKajabgatrBF8Dq9UKuVwuoU60VLdu3dRJSUkzc3Nzd8+aNautqoGN9L1fN6HkRkLme/62GaubCqVS+bnT6XQBeHDJkiUdW1v5Y/ny5ZqoqKiNDz/88DXJnWfPnrXv3bv3cEJCQk8A183+tVgsniNHjuyKiorqm5ycfFVXMGzYsC4VFRVrFi9ePGzevHm/tEZfH6YAAMMwH7aBrBYhYBNr3wBlCwCZ2+2e2EpxRK/XF4wbN65PXb/CDz/8cGnbtm1ZFovlWZPJ5GqgfQ2uXLlSZbPZ5u3cufON7du3l9StozhmzJjEyMjIz3yp7C1GRkbGPfDOgs4FsvRsoMPC/aHRT7VGztq1a7NGjx49orYjSxAEbNq06eTBgwf/8PLLL3MASi0WS6NeJ5PJJAAonTZt2tojR46M27hx41GH49d8FYVCgbFjxw7q2rXr/7ZGZ0mS/IGlAbv7gQATICIi4it4LYdDfenhzUZeXt6TAwcO/H1UVFTN/M5kMonr16/fU1hYOGLmzJlfA97po9vtbnQKV1lZSQBcBIDZs2cfvHDhwn0bNmzYXlZWVtN76PV69v7773989erVM1uisy8baLLv6wctkdFWCCgBfAUgNsE7MGt2tmxmZmb3mJiYZQMGDKhJ1yoqKrJ+/PHHHwqCMIzjuIu1j6eUOkTx+vYrj8fjru1mff31160vvPDCI1u2bFm9f//+mnFKUlKSNjEx8bXs7Ox7mqv3sWPHxsEb3XTMlyUUMATcuM4wzBp4LYGzFy1aFNPUdjk5Oaq4uLiPHn300W6A17P1zTffnN+xY0faSy+99Ex9oeYMw5yvrKxsUKYgCIA3Rb0u6NSpU1N37949/YsvvjjjJ9HIkSOjo6Oj3126dGmTy8r40s6W+r42ae5+IxFwAixcuHA/gPXwRiUvbex4P8LCwjaOHTu2P8uycDgc+OCDD44dOnRowvTp0xucUlJKT9eN+K0Nq9UKhmEaNErNmDGjoLCw8JH169cfqKyspIQQjB07tnfHjh0/bSgjuS4IITPhXafwaO/evdc1pc2NRMAJ4MMbAKoBPOWLbr0u1qxZwz388MO/0Wg0pLy83L1hw4YdpaWl97366qv7rtfO4XAUWq3WBoM1rVYrJEmq18Rco+gbb5wymUz3ffjhh5+fPXu2WqlU4rHHHhsaGRn5dmN68zzfgVLqzwxODUQYeF20CwJwHHeRELIMvxaLaHC0vmrVqof79u07NTY2Vn3gwIErmzdvXltWVvabpqzx4/F4zhiNxgZDui0WC7Xb7Ucbk5OamupISUkZt3Xr1v/+/vvvyzt37iy/9957J+Xl5T3bSNM34Q0u3cxx3DeNnedmoF0QAAA0Gk0WvB61wenp6fUWXOB5vmt0dPSqwYMHR27ZsuXsjz/+OGvq1KmzmuGgKTUajQ2mdZlMJpvH42ly5s+0adP4gwcP/r6goOBEr1699PHx8enZ2dn1lpvleX4gvNXC3CzLzmnqOW402g0BfMUh/gwAlNK3eZ6/r/Z+nucVsbGxn4wYMSJh/fr1B48cOTJq5syZzZ1ClZjN5gbJ4iNHsxxTs2bN+vbkyZMj1q9fv3vgwIHRXbp02bh8+fKrchAXLVoUBeBzeOMvshYsWHDdx8zNRLshAABwHPcPABnwrur9Kc/zcf59kZGRf+vXr1+fTZs2fXH27Nn75s6d2+yUMo7jjNXV1Q0+Xny+gtLmyp03b165x+MZ/tlnn21MSEiI1+v1NcUueJ4P9Xg8m+GNmv6qd+/eaQ1LuvloVwQAAI7jOAAfwxvftnn58uWa1atXzw4JCXlkz5492S+++OLY1oRMiaLYYCayy+USWyo7JSVFSElJefbf//73fJZlB+bl5WXBO5Z5H96l646qVKrJ7WHgVxvtjgAAaHh4+HPwLtbURxCErVVVVfMrKyun+Ey6rQLLsperq691eFJKIUlSq9O+p02b9nZFRcVom832h2XLlhUAGA/vYlZjXnvttarWym9rtEcCIDU11SGXy8cCuMAwzFCHw3HIbrfvbSPxZ+uzBVRVVYFhmPK2OEF8fPxBp9O5SRTFCQBcAMbdgOzqNkG7JADgfa4CeMTtdpcAeMDpdO7hef66NfyaAkEQii0WyzXbfaRocXauH8uWLdMeO3ZsC6X0JUEQqgkhkziO29VauTcK7ZYAAMBx3DF4awjugjdy6Kf09PRWVdVyOBzFZrP5moUnfBG9ha2RnZmZ2d3pdO4GMAre1cfuS0tL+7w1Mm802jUBAG8Mm16vHwnvYCqCUrotPT399fz8/MYT/etHaX3GILPZ7HQ6nS0uVpGenj5aFMW98AZ57pHL5fdwHPdzY+0CjXZPAMDrNeQ47ll4F4dkKaVLy8vLC3mef7wF4kpNJtM1cY5Go7EaLQhO5Xk+ief5LZTSr+DNz3tfr9ePaKOIoRuOW2rhSI7jlqanp++jlL4F73Kxn/M8/y2A2c1wq16orKy8hvgmk0lEM2wAviIXbwJ4Gd7/8QqAhRzHrWmqjPaAW3LpWN+C0VPhTaUyABABvMswzLqFCxc2OlvIzs4uf/XVV6+qppGbm3t51qxZjVZKy8zM7C6K4tMAXoE3vtANr1s305cad0vhluoB/PAZU/J4nt8IgAMwHcCfJEn6E8/zZwB8wDDMBwsXLmxoUGdzu91XFZ7w5eLXi8WLF0d6PJ7fUUqnwDso9eMTAK9xHHemtb8pULglCeCH745LzczMzBNF8U/whll1AzBfkqT5PM8fAbCNEFJECCmWy+XFb7zxhplhmBKr1drDV7gBTqcThBAzAGRlZamrq6sTCCE9ASRSSocDeAC/jpcsAD5lGOadQAZzthVuyUfAdUAyMjL+S5KkpwD8Dr+mS9fGZaVSKU6YMCGyRw+vWeHSpUvYsGHDZZvN5gYQhWvd0XYAWwghGyMiIrbVXsvoVsct3QPUA7pw4cIfAfzoW6xxGCGkH6W0F7x2hCQAndxut8NisVD4LrTVaoUgCHIAneC92McBFBNCiiilhQC+bsvScO0JtxsBauBLaduBWnlwALBkyRKD2+1+ymQyLQagAQCLxSK63e4cAH/nOO48amUr3+64JewAbQnfiuM7aweGmEymKkrpdxzHlSKILj4QhATwocTn+wcAGI1GN9owQ/lWQlASgOO4SqfzV8+vzxF0IWAK2JAQhQAAA05JREFUBRBBSQAAoJQ6fdVKIQiCcAPT4Ns1gpYALMterKqqgiRJoJTerJT4doegJQCAM1arFZWVlWAYJii7f+A2ngY2BrfbfcxisfhDwU4FWp9AIWgJ4HA4jpvNZhcAhcPhaDQZ5HZF0BIAQInRaKyWJMktCMIt68xpLYKaACaTSaSUehCkNgAgiAeBHMf9Ul1dDZPJJKEFySC3C4K5B4AoioLD4aAcxzVcNOA2R9D2AADAMIxREIR2lalzsxHUPYCvGESnRg+8jRHUBBBF8TQh5Lb08zcVt1tEUKPgeb5HeHh4FoCBKpUq1OFwEELIUZfLtd3pdL7rcwkHDYKKAIsXLx6t0WjeHzNmjCEuLq5mu8ViQUlJCf3Xv/512WazTVmwYEFrloW/pRA0BFi8eHGkWq3+eerUqZ38y9M4HA7UXi+puroa+fn5vwiCkNAeM3lvBIJmDEAImTR06FCdUqnElStXsH79eqMkSb8QQiI6dOggnzhxYge1Wo37778/YseOHa/AW6jitkfQTANDQkIGd+7cWQEAhw4dctnt9s9iYmL6pqamdi0tLZ319ddfmwGgc+fOCplM1uv60m4fBE0PYLfbt5eVlY2LiYlRDB8+PIRl2af279//aE5Ozh5RFDcVFxeLLMuazWYzRFG82LjE2wNBMwZYtGhRrEaj2fOHP/yhi39pHEopLl68iOLiYtvPP//scblc+0RRnOsrXhkUCBoCAEBGRsbdYWFhWwcPHqxNTk5W1l1E6quvvrIUFRVtfPXVV6cHSMWbjqAhwPLlyzUymew9QRCGCIIQwbKsJTw8XEpOTtZ0795dHRPjLVOcm5t7KTIyMrq9FXO6UQiaQaDT6RyZkJDwm9dee63zlClTFAqFYld1dXXizp07n/3444/P+OsGRUVFKYqLiwc1Iu62QdAMAimlhyoqKqoIIer4+Hj06NFjxNmzZ4sUCoUol8vD/MvJmc1mMahiBCmlQfPKysraWVpaShtCeXk5zcrKOhhoPW/mK2geAQDgdDqf/eijj0599913rgsXLsDj8aYCCIKAI0eOiBs2bDhns9lau37RLYWgGQT6kZWVpXY4HE+HhYX9hlJ6N8MwYZTSKkrpLkEQZvkWswoa/D+QO0vV58ak0AAAAABJRU5ErkJggg==&quot;;
+	
+	
+	var spriteTexture = new THREE.Texture(null);
+	var windroseImg = new Image();
+		windroseImg.onload = function() {
+			spriteTexture.image = windroseImg;
+			spriteTexture.needsUpdate = true;
+		};
+		windroseImg.src = windroseDataURL;
+	
+	// var spriteTexture = THREE.ImageUtils.loadTexture( GIScene.LIBRARYPATH + GIScene.RESOURCESPATH.replace(/([^\/])$/, &quot;$1/&quot;) +&quot;resources/images/windrose3.png&quot; );
+
+	var spriteMaterial = new THREE.SpriteMaterial({ map : spriteTexture, /*useScreenCoordinates:true,*/ opacity:1  });
+	this.sprite = new THREE.Sprite(spriteMaterial);
+	this.sprite.scale.set( 100, 100, 1 );
+	// this.sprite.position.set(60,60,0);
+	
+	
+	this.update = function() {
+		//calc angle
+		
+		var ctp = this.camera.localToWorld(this.camera.target.position.clone());
+		var cp = this.camera.position;
+		var dir = ctp.sub(cp);
+		var up = new THREE.Vector3(0,1,0);
+		var north = new THREE.Vector3(0,0,-1);
+		var dirOnPlane = dir.projectOnPlane(up);
+		var isEastside = (dirOnPlane.clone().cross(up).angleTo(north) &gt; Math.PI/2) ? true : false;
+		var angleToNorth = dirOnPlane.angleTo(north);
+		var compassAngle = (isEastside) ? angleToNorth : Math.PI*2 - angleToNorth;
+		compassDegrees = THREE.Math.radToDeg(compassAngle);
+		this.sprite.material.rotation = compassAngle;
+		
+	}.bind(this);
+	
+	/**
+	 * Get Compass direction in degrees
+	 * 
+	 * @method getCompassDegrees 
+	 * @return {Number} heading of compass in degrees
+	 */
+	
+	this.getCompassDegrees = function() {
+		return compassDegrees;
+	};
+	
+	var onResize = function() {
+		this.sprite.position.set((-this.scene.canvas.width/2)+60,(this.scene.canvas.height/2)-60,0);
+	}.bind(this);
+	
+	
+	/**
+	 * Activates this Control
+	 * 
+	 * @method activate
+	 *  
+	 */
+	this.activate = function(){
+		if(this.isActive) return;
+		
+		this.scene.spriteRoot.add(this.sprite);
+		this.sprite.position.set((-this.scene.canvas.width/2)+60,(this.scene.canvas.height/2)-60,0);
+		this.update();
+		
+		//eventListeners
+		//hang in render loop
+		this.scene.addEventListener(&quot;cameraChange&quot;, this.update);
+		window.addEventListener(&#x27;resize&#x27;, onResize, false);
+		
+		//call super class method
+		GIScene.Control.prototype.activate.call(this);
+	};
+	
+	/**
+	 * Deactivates this Control
+	 * 
+	 * @method deactivate
+	 *  
+	 */
+	this.deactivate = function(){
+		if(!this.isActive) return;
+		
+		this.scene.spriteRoot.remove(this.sprite);
+		//remove from render loop
+		this.scene.removeEventListener(&quot;cameraChange&quot;, this.update);
+		window.removeEventListener(&#x27;resize&#x27;, onResize, false);
+		
+		//call super class method
+		GIScene.Control.prototype.deactivate.call(this);
+	};
+	
+
+};
+//Inherit from GIScene.Control
+GIScene.Control.Compass.prototype = Object.create( GIScene.Control.prototype );
+
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>
