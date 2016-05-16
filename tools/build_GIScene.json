@@ -4,6 +4,7 @@
 	"../lib/THREE/loader76/SceneLoader.js",
 	"../lib/THREE/loader76/XHRLoader.js",
 	"../lib/THREE/loader/BinaryLoader.js",
+	"../lib/THREE/loader76/PCDLoader.js",
 	"../lib/THREE/extras/cameras/CombinedCamera.js",
 	
 	"../lib/THREE/examples/js_r63/shaders/CopyShader.js",
