@@ -3606,6 +3606,257 @@ THREE.BinaryLoader.prototype.createBinModel = function ( data, callback, texture
 	callback( geometry, materials );
 
 };
+/**
+ * @author Filipe Caixeta / http://filipecaixeta.com.br
+ *
+ * Description: A THREE loader for PCD ascii and binary files.
+ *
+ * Limitations: Compressed binary files are not supported.
+ *
+ */
+
+THREE.PCDLoader = function( manager ) {
+
+	this.manager = ( manager !== undefined ) ? manager : THREE.DefaultLoadingManager;
+	this.littleEndian = true;
+
+};
+THREE.PCDLoader.prototype = {
+
+	constructor: THREE.PCDLoader,
+
+	load: function( url, onLoad, onProgress, onError ) {
+
+		var scope = this;
+
+		var loader = new THREE.XHRLoader( scope.manager );
+		loader.setResponseType( 'arraybuffer' );
+		loader.load( url, function( data ) {
+
+			onLoad( scope.parse( data, url ) );
+
+		}, onProgress, onError );
+
+	},
+
+	binarryToStr: function( data ) {
+
+		var text = "";
+		var charArray = new Uint8Array( data );
+		for ( var i = 0; i < data.byteLength; i ++ ) {
+
+			text += String.fromCharCode( charArray[ i ] );
+
+		}
+		return text;
+
+	},
+
+	parseHeader: function( data ) {
+
+		var PCDheader = {};
+		var result1 = data.search( /[\r\n]DATA\s(\S*)\s/i );
+		var result2 = /[\r\n]DATA\s(\S*)\s/i.exec( data.substr( result1 - 1 ) );
+		PCDheader.data = result2[ 1 ];
+		PCDheader.headerLen = result2[ 0 ].length + result1;
+		PCDheader.str = data.substr( 0, PCDheader.headerLen );
+		// Remove comments
+		PCDheader.str = PCDheader.str.replace( /\#.*/gi, "" );
+		PCDheader.version = /VERSION (.*)/i.exec( PCDheader.str );
+		if ( PCDheader.version != null )
+		PCDheader.version = parseFloat( PCDheader.version[ 1 ] );
+		PCDheader.fields = /FIELDS (.*)/i.exec( PCDheader.str );
+		if ( PCDheader.fields != null )
+		PCDheader.fields = PCDheader.fields[ 1 ].split( " " );
+		PCDheader.size = /SIZE (.*)/i.exec( PCDheader.str );
+		if ( PCDheader.size != null )
+			PCDheader.size = PCDheader.size[ 1 ].split( " " ).map( function( x ) {
+
+				return parseInt( x, 10 );
+
+			} );
+		PCDheader.type = /TYPE (.*)/i.exec( PCDheader.str );
+		if ( PCDheader.type != null )
+		PCDheader.type = PCDheader.type[ 1 ].split( " " );
+		PCDheader.count = /COUNT (.*)/i.exec( PCDheader.str );
+		if ( PCDheader.count != null )
+			PCDheader.count = PCDheader.count[ 1 ].split( " " ).map( function( x ) {
+
+				return parseInt( x, 10 );
+
+			} );
+		PCDheader.width = /WIDTH (.*)/i.exec( PCDheader.str );
+		if ( PCDheader.width != null )
+		PCDheader.width = parseInt( PCDheader.width[ 1 ] );
+		PCDheader.height = /HEIGHT (.*)/i.exec( PCDheader.str );
+		if ( PCDheader.height != null )
+		PCDheader.height = parseInt( PCDheader.height[ 1 ] );
+		PCDheader.viewpoint = /VIEWPOINT (.*)/i.exec( PCDheader.str );
+		if ( PCDheader.viewpoint != null )
+		PCDheader.viewpoint = PCDheader.viewpoint[ 1 ];
+		PCDheader.points = /POINTS (.*)/i.exec( PCDheader.str );
+		if ( PCDheader.points != null )
+		PCDheader.points = parseInt( PCDheader.points[ 1 ], 10 );
+		if ( PCDheader.points == null )
+		PCDheader.points = PCDheader.width * PCDheader.height;
+
+		if ( PCDheader.count == null ) {
+
+			PCDheader.count = [];
+			for ( var i = 0; i < PCDheader.fields; i ++ )
+			PCDheader.count.push( 1 );
+
+		}
+
+		PCDheader.offset = {}
+		var sizeSum = 0;
+		for ( var i = 0; i < PCDheader.fields.length; i ++ ) {
+
+			if ( PCDheader.data == "ascii" ) {
+
+				PCDheader.offset[ PCDheader.fields[ i ]] = i;
+
+			} else {
+
+				PCDheader.offset[ PCDheader.fields[ i ]] = sizeSum;
+				sizeSum += PCDheader.size[ i ];
+
+			}
+
+		}
+		// For binary only
+		PCDheader.rowSize = sizeSum;
+
+		return PCDheader;
+
+	},
+
+	parse: function( data, url ) {
+
+		var textData = this.binarryToStr( data );
+
+		// Parse the header
+		// Header is always ascii format
+		var PCDheader = this.parseHeader( textData );
+
+		// Parse the data
+		var position = false;
+		if ( PCDheader.offset.x != undefined )
+		position = new Float32Array( PCDheader.points * 3 );
+		var color = false;
+		if ( PCDheader.offset.rgb != undefined)
+		color = new Float32Array( PCDheader.points * 3 );
+		var normal = false;
+		if ( PCDheader.offset.normal_x != undefined )
+		normal = new Float32Array( PCDheader.points * 3 );
+
+		if ( PCDheader.data == "ascii" ) {
+
+			var offset = PCDheader.offset;
+			var pcdData = textData.substr( PCDheader.headerLen );
+			var lines = pcdData.split( '\n' );
+			var i3 = 0;
+			for ( var i = 0; i < lines.length; i ++, i3 += 3 ) {
+
+				var line = lines[ i ].split( " " );
+				if ( offset.x != undefined ) {
+
+					position[ i3 + 0 ] = parseFloat( line[ offset.x ] );
+					position[ i3 + 1 ] = parseFloat( line[ offset.y ] );
+					position[ i3 + 2 ] = parseFloat( line[ offset.z ] );
+
+				}
+				if ( offset.rgb != undefined ) {
+
+					var c = new Float32Array([parseFloat( line[ offset.rgb ] )]);
+					var dataview = new DataView( c.buffer, 0 );
+					color[ i3 + 0 ] = dataview.getUint8(0)/255.0;
+					color[ i3 + 1 ] = dataview.getUint8(1)/255.0;
+					color[ i3 + 2 ] = dataview.getUint8(2)/255.0;
+
+				}
+				if ( offset.normal_x != undefined ) {
+
+					normal[ i3 + 0 ] = parseFloat( line[ offset.normal_x ] );
+					normal[ i3 + 1 ] = parseFloat( line[ offset.normal_y ] );
+					normal[ i3 + 2 ] = parseFloat( line[ offset.normal_z ] );
+
+				}
+
+			}
+
+		}
+
+		if ( PCDheader.data == "binary_compressed" ) {
+
+			console.error( 'THREE.PCDLoader: binary_compressed files are not supported' );
+			return;
+
+		}
+
+		if ( PCDheader.data == "binary" ) {
+
+			var row = 0;
+			var dataview = new DataView( data, PCDheader.headerLen );
+			var i = 0;
+			var offset = PCDheader.offset;
+			for ( var i3 = 0; i < PCDheader.points; i3 += 3, row += PCDheader.rowSize, i ++ ) {
+
+				if ( offset.x != undefined ) {
+
+					position[ i3 + 0 ] = dataview.getFloat32( row + offset.x, this.littleEndian );
+					position[ i3 + 1 ] = dataview.getFloat32( row + offset.y, this.littleEndian );
+					position[ i3 + 2 ] = dataview.getFloat32( row + offset.z, this.littleEndian );
+
+				}
+				if ( offset.rgb != undefined ) {
+
+					color[ i3 + 0 ] = dataview.getUint8( row + offset.rgb + 0 ) / 255.0;
+					color[ i3 + 1 ] = dataview.getUint8( row + offset.rgb + 1 ) / 255.0;
+					color[ i3 + 2 ] = dataview.getUint8( row + offset.rgb + 2 ) / 255.0;
+
+				}
+				if ( offset.normal_x != undefined ) {
+
+					normal[ i3 + 0 ] = dataview.getFloat32( row + offset.normal_x, this.littleEndian );
+					normal[ i3 + 1 ] = dataview.getFloat32( row + offset.normal_y, this.littleEndian );
+					normal[ i3 + 2 ] = dataview.getFloat32( row + offset.normal_z, this.littleEndian );
+
+				}
+
+			}
+
+		}
+
+		var geometry = new THREE.BufferGeometry();
+		if ( position != false )
+		geometry.addAttribute( 'position', new THREE.BufferAttribute( position, 3 ) );
+		if ( color != false )
+		geometry.addAttribute( 'color', new THREE.BufferAttribute( color, 3 ) );
+		if ( normal != false )
+		geometry.addAttribute( 'normal', new THREE.BufferAttribute( normal, 3 ) );
+
+		geometry.computeBoundingSphere();
+
+		var material = new THREE.PointsMaterial( { size: 1, //size: 0.005,
+		vertexColors: !(color == false) } );
+		if ( color == false )
+			material.color.setHex( Math.random() * 0xffffff );
+		
+		var mesh = new THREE.Points( geometry, material );
+		var name = url.split( '' ).reverse().join( '' );
+		name = /([^\/]*)/.exec( name );
+		name = name[ 1 ].split( '' ).reverse().join( '' );
+		mesh.name = name;
+		mesh.PCDheader = PCDheader;
+
+		return mesh;
+
+	},
+
+};
+
+THREE.EventDispatcher.prototype.apply( THREE.PCDLoader.prototype );
 /*
  *	@author zz85 / http://twitter.com/blurspline / http://www.lab4games.net/zz85/blog
  *
@@ -5841,7 +6092,7 @@ GIScene.Utils = {
 		
 		setDiffuseColor : function(object, diffuseColor) { //{String} 'default' | {THREE.Color}
 			
-			if (object.material && !((object instanceof THREE.Sprite)||(object instanceof THREE.Points))) {
+			if (object.material && !((object instanceof THREE.Sprite)/*||(object instanceof THREE.Points)*/)) {
 				if(!object.userData.originalMaterial){
 					// if no working material exists create one 
 					object.userData.originalMaterial = object.material;
@@ -6035,6 +6286,15 @@ GIScene.Utils = {
 						delete object.userData.originalMaterial;
 				}
 				
+			}
+			else if (object instanceof THREE.Points){
+				
+				if(selectColor == 'default'){
+					GIScene.Utils.WorkingMaterial.setDiffuseColor(object, 'default');
+				}
+				else{
+					GIScene.Utils.WorkingMaterial.setDiffuseColor(object, selectColor);
+				}
 			}			
 			
 		},		
@@ -7880,6 +8140,18 @@ GIScene.Control.Select = function (selectables, camera, config) {
 	
 	// var projector = new THREE.Projector(); -r76
 	var raycaster = new THREE.Raycaster(); // +r76
+	/**
+	 * Used for Raycaster when selecting on a THREE.Points object
+	 * @property clickPointThreshold
+	 * @type Number 
+	 */
+	Object.defineProperty(this,'clickPointThreshold',{
+		get: function() {return raycaster.params.Points.threshold;},
+		set: function(value) {raycaster.params.Points.threshold = value;}
+	});
+	//default 
+	this.clickPointThreshold = 50;
+	
 	var mouse = new THREE.Vector3(0,0,1); //warum z =1 und nicht 0?
 	var isDblClick = false;
 	
@@ -8924,6 +9196,15 @@ GIScene.Control.PanOrbitZoomCenter = function ( object, domElement ) {
 	// mca
 	this.userPan = true;
 	this.userPanSpeed = 0.825;
+	/**
+	 * Used for Raycaster when doubleclicking to center on a new target
+	 * @property clickPointThreshold
+	 * @type Number 
+	 */
+	Object.defineProperty(this,'clickPointThreshold',{
+		get: function() {return raycaster.params.Points.threshold;},
+		set: function(value) {raycaster.params.Points.threshold = value;}
+	});
 
 	
 	// internals
@@ -8948,6 +9229,7 @@ GIScene.Control.PanOrbitZoomCenter = function ( object, domElement ) {
 	mouse 		= new THREE.Vector3(),
 	// projector 	= new THREE.Projector(); //-r76
 	raycaster = new THREE.Raycaster(); //+r76
+	raycaster.params.Points.threshold = 10;
 
 	//mca end
 	var phiDelta = 0;
@@ -13943,7 +14225,16 @@ GIScene.Format = {
 	 * @static
 	 * @final 
 	 */
-	XYZ:6
+	XYZ:6,
+	/**
+	 * PointCloudFormat of the PoincCloudLibrary PCL see: http://pointclouds.org/ . 
+	 * You can create .xyz files e.g. with CloudCompare 
+	 * @property XYZ
+	 * @type Number
+	 * @static
+	 * @final 
+	 */
+	PCD:7
 	
 };
 /**
@@ -14435,9 +14726,24 @@ GIScene.ModelLoader = function () {
 		
 		var mesh = new THREE.Mesh(geometry, material); 
 
-		var result = new THREE.Scene();
+		var result = new THREE.Group();
 
 		result.add(mesh);
+		
+		/** The load event is triggered after a model/scene has been loaded from an asynchronous XmlHttpRequest.
+		 *	The returned event object has a content property with a THREE.Scene() Object containing the model as child.
+		 *  @event load 
+		 */
+		this.dispatchEvent( { type: 'load', content: result } );
+		if(usercallback)usercallback(result);
+		
+	}.bind(this);
+	
+	var callbackPCD = function(pointdObject) {
+		
+		var result = new THREE.Group();
+
+		result.add(pointdObject);
 		
 		/** The load event is triggered after a model/scene has been loaded from an asynchronous XmlHttpRequest.
 		 *	The returned event object has a content property with a THREE.Scene() Object containing the model as child.
@@ -14495,6 +14801,10 @@ GIScene.ModelLoader = function () {
 				// loader.crossOrigin = 'use-credentials';
 				this.loader.load(url, callbackCTM, {useWorker:true, useBuffers:false});
 				break;
+			case GIScene.Format.PCD:
+				this.loader = new THREE.PCDLoader();
+				this.loader.load(url, callbackPCD);
+				break;
 			case GIScene.Format.Scene:
 				this.loader = new THREE.SceneLoader();
 				
@@ -14517,6 +14827,7 @@ GIScene.ModelLoader = function () {
 				// this.loader.crossOrigin = 'use-credentials';
 				this.loader.load(url, callback, onProgress, onSceneError); //onError
 				break;
+				
 			default:
 				console.log('Unknown Format. - GIScene/ModelLoader.js');			
 		};
@@ -15155,7 +15466,7 @@ GIScene.Layer = function (name, config) {
 		
 		//configure select control
 		if(scene){
-			this.selectControl = new GIScene.Control.Select([],scene.camera,{multi:true, selectColor: 0xff8000});
+			this.selectControl = new GIScene.Control.Select([],scene.camera,{multi:true, selectColor: 0xffff00});
 			this.selectControl.selectables = GIScene.Utils.getDescendants(this.root); //r76	
 			scene.addControl(this.selectControl);
 			
