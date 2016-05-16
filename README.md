@@ -47,8 +47,8 @@ You can use it for georeferenced 3D data, but it takes a lot of work from you no
 </html>
 ```
 #New in Version 2.0.0
-upgraded to be used with Three.js r76
-added pointcloud support: new loaders, adapted Controls (Pick, Measure, Select, PanOrbitZoomCenter, Walk)
+ - upgraded to be used with Three.js r76
+ - added pointcloud support: new loaders, adapted Controls (Pick, Measure, Select, PanOrbitZoomCenter, Walk)
 
 #Acknowledgements
 GIScene has been developed by M.Auer during the research project [MayaArch3D](http://www.mayaarch3d.org). The [MayaArch3D-SingleObjectViewer](http://www.mayaarch3d.org/language/en/research/tools-in-development/3d-object-viewer/temple-18-2/) was developed using the GIScene.js library.
