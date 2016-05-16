@@ -10709,6 +10709,17 @@ GIScene.Control.Walk = function ( object, domElement ) {
 	var mouse = new THREE.Vector3();
 	// var projector 	= new THREE.Projector(); //-r76
 	var raycaster = new THREE.Raycaster(); //+r76
+	/**
+	 * Used for Raycaster when picking on a THREE.Points object
+	 * @property clickPointThreshold
+	 * @type Number 
+	 */
+	Object.defineProperty(this,'clickPointThreshold',{
+		get: function() {return raycaster.params.Points.threshold;},
+		set: function(value) {raycaster.params.Points.threshold = value;}
+	});
+	//default 
+	this.clickPointThreshold = 50;
 	
 	this.mouseStart = new THREE.Vector2();
 	this.mouseEnd = new THREE.Vector2();
@@ -11546,6 +11557,18 @@ GIScene.Control.Pick = function(camera, config){
 	var mouse = new THREE.Vector3(0,0,1);
 	// var projector = new THREE.Projector(); //-r76
 	var raycaster = new THREE.Raycaster(); //+r76
+	/**
+	 * Used for Raycaster when picking on a THREE.Points object
+	 * @property clickPointThreshold
+	 * @type Number 
+	 */
+	Object.defineProperty(this,'clickPointThreshold',{
+		get: function() {return raycaster.params.Points.threshold;},
+		set: function(value) {raycaster.params.Points.threshold = value;}
+	});
+	//default 
+	this.clickPointThreshold = 50;
+	
 	var pickSymbol = THREE.ImageUtils.loadTexture( GIScene.LIBRARYPATH + GIScene.RESOURCESPATH.replace(/([^\/])$/, "$1/") +"resources/images/particle_cross.png");
 	var resultsLayerConfig = {
 		"layerGroup" : "User-generated"
@@ -11709,6 +11732,18 @@ GIScene.Control.Measure = function(camera, config){
 	var mouse = new THREE.Vector3(0,0,1);
 	// var projector = new THREE.Projector(); //-r76
 	var raycaster = new THREE.Raycaster(); //+r76
+	/**
+	 * Used for Raycaster when selecting on a THREE.Points object
+	 * @property clickPointThreshold
+	 * @type Number 
+	 */
+	Object.defineProperty(this,'clickPointThreshold',{
+		get: function() {return raycaster.params.Points.threshold;},
+		set: function(value) {raycaster.params.Points.threshold = value;}
+	});
+	//default 
+	this.clickPointThreshold = 50;
+	
 	var textureLoader = new THREE.TextureLoader(); //+r76
 	var pickSymbol = null; 
 	var resultsLayer = null;
@@ -14227,9 +14262,8 @@ GIScene.Format = {
 	 */
 	XYZ:6,
 	/**
-	 * PointCloudFormat of the PoincCloudLibrary PCL see: http://pointclouds.org/ . 
-	 * You can create .xyz files e.g. with CloudCompare 
-	 * @property XYZ
+	 * PointCloudFormat of the PoincCloudLibrary PCL see: http://pointclouds.org/ .  
+	 * @property PCD
 	 * @type Number
 	 * @static
 	 * @final 

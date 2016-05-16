@@ -3644,9 +3644,9 @@
         {
             "file": "GIScene\\Format.js",
             "line": 69,
-            "description": "PointCloudFormat of the PoincCloudLibrary PCL see: http://pointclouds.org/ . \nYou can create .xyz files e.g. with CloudCompare",
+            "description": "PointCloudFormat of the PoincCloudLibrary PCL see: http://pointclouds.org/ .",
             "itemtype": "property",
-            "name": "XYZ",
+            "name": "PCD",
             "type": "Number",
             "static": 1,
             "final": 1,
