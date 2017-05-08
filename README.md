@@ -5,7 +5,7 @@ This project extends the fantastic capabilities of the 3D JavaScript library [th
 If you are familiar with the web mapping library [OpenLayers](http://openlayers.org/) you will find this library easy to use.
 You can use it for georeferenced 3D data, but it takes a lot of work from you no matter if your models are georeferenced or not.
 
-##Basic Usage
+## Basic Usage
 ```html
 <!DOCTYPE html>
 <html>
@@ -46,6 +46,6 @@ You can use it for georeferenced 3D data, but it takes a lot of work from you no
 	</body>
 </html>
 ```
-#Acknowledgements
+## Acknowledgements
 GIScene has been developed by M.Auer during the research project [MayaArch3D](http://www.mayaarch3d.org). The [MayaArch3D-SingleObjectViewer](http://www.mayaarch3d.org/language/en/research/tools-in-development/3d-object-viewer/temple-18-2/) was developed using the GIScene.js library.
 Between 2012 and 2015 the development of GIScene.js and the MayaArch3D project has been funded by the German Ministry of Education and Research (BMBF). 
