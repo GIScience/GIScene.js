@@ -14347,13 +14347,39 @@ GIScene.GeoJSONLoader.prototype = {
 	
 	constructor : GIScene.GeoJSONLoader,
 	
-	load: function(url, onLoad, onProgress, onError, heightAttribute) {
+	load: function(url, onLoad, onProgress, onError, /*heightAttribute,*/ heightOptions, materialOptions) {
+		/**
+		 *heightOptions = {
+		 * 	heightAttribute {String},    -- name of property with predefined height (extrusion) value
+		 *  [heightOffsetAttribute]	{String},    -- name of property with predefined base height offset value.
+ 		 * 	[heightOffsetFunction] {Function},      -- function which has access to the features geometry and attributes and this heightOptions-Object. Should return a height offset value
+		 *  [heightFunction] {Function}, -- function which has access to the features geometry and attributes and this heightOptions-Object. Should return a height value for extrusion
+		 *  [extrusionOptions] {Object}  -- set extrusion options for THREE.ExtrusionGeometry. default is {bevelEnabled:false}
+		 *  [heightScale] {Number} -- Default 1.
+		 * }
+		 * 
+		 * materialOptions = {
+		 * 	colorAttribute {String}
+		 * 	colorFunction {Function}
+		 * } 
+		 */
+		
+		var heightOptions = heightOptions || {};
+		var materialOptions = materialOptions || {};
+		
+		//for convenience if heightOptions is not an object but a String use this as heightAttribute
+		if (typeof heightOptions == 'string'){
+			heightOptions = {
+				heightAttribute : heightOptions
+			};
+		}
+		
 		
 		var loader = this.loader;
-		loader.setCrossOrigin( this.crossOrigin );
+		//loader.setCrossOrigin( this.crossOrigin );
 		loader.load( url, function ( text ) {
 			try{
-				this.parse( JSON.parse( text ), onLoad, heightAttribute );
+				this.parse( JSON.parse( text ), onLoad, heightOptions,materialOptions /*heightAttribute*/ );
 			}
 			catch(e){
 				console.log("GeoJsonLoader");
@@ -14383,9 +14409,9 @@ GIScene.GeoJSONLoader.prototype = {
 		this.crossOrigin = value;
 	},
 	
-	parse: function(json, callback, heightAttribute) {
+	parse: function(json, callback, heightOptions, materialOptions /*heightAttribute*/) {
 		
-		var result = new THREE.Scene();
+		var result = new THREE.Group();
 		var type = json.type;
 		callback = callback || function(){};
 		
@@ -14401,11 +14427,67 @@ GIScene.GeoJSONLoader.prototype = {
 			return new THREE.Vector3(coord3[0], coord3[2], -coord3[1]);
 		};
 		
-		var parseGeometry = function(geometry, height) {
+		/**
+		 * @method parsePolygonCoords
+		 * @private
+ 		 * @param {Array>} polygonCoords Array of one outer and zero or more inner rings
+ 		 * [[outer],[inner],...,[inner]] with [outer/inner] := [[x,y],...,[x,y]]
+		 */
+		var parsePolygonCoords = function(polygonCoords) {
+
+			var ringCoords;
+			var ringCoordsV2 = [];
+			var polygonShape;
+			
+			//polygon coords to shape
+			for (var i = 0,
+			    j = polygonCoords.length; i < j; i++) {
+
+				ringCoords = polygonCoords[i];
+				ringCoords.forEach(function(e) {
+					ringCoordsV2.push(new THREE.Vector2(e[0], e[1]));
+				});
+
+				//outer
+				if (i == 0) {
+					polygonShape = new THREE.Shape(ringCoordsV2);
+				}
+				//inner
+				else {
+					polygonShape.holes.push(new THREE.Shape(ringCoordsV2));
+				}
+			};
+
+			return polygonShape;
+
+		}; 
+
+	
+		
+		var parseGeometryPolygon = function(coords, height) {
+		
+			// get rings
+			//var polygonRings = parsePolygonCoords(geometry.coordinates);
+			//get outer ring
+
+			//var polygonShape = new THREE.Shape(polygonRings.outer);
+			var polygonShape = parsePolygonCoords(coords);
+			var polygonGeometry = (height != null) ? new THREE.ExtrudeGeometry(polygonShape, {
+				amount : 1, //parseFloat(height),
+				bevelEnabled : false 
+			}) : new THREE.ShapeGeometry(polygonShape);
+			
+			
+			return polygonGeometry;
+	
+		};
+		
+		var parseGeometry = function(geometry, height, objectColor) {
 			var type = geometry.type;
 			var geom3;
 			var material;
 			var object;
+			objectColor = (typeof objectColor != 'number')? 0x00AA00 : objectColor; 
 			
 			switch (type){
 				
@@ -14424,7 +14506,57 @@ GIScene.GeoJSONLoader.prototype = {
 					// object = new THREE.ParticleSystem(geom3, material); //-r76
 					object = new THREE.Points(geom3, material); //+r76
 					break;
+				case "Polygon" :
 					
+					var polygonGeometry = parseGeometryPolygon(geometry.coordinates,height);
+					
+					object = new THREE.Mesh( polygonGeometry, new THREE.MeshPhongMaterial( { color: objectColor, side: THREE.FrontSide } ) );
+					
+					
+					
+					//object.applyMatrix( new THREE.Matrix4().makeRotationX( -Math.PI/2 ) );
+					object.geometry.applyMatrix( new THREE.Matrix4().makeRotationX( -Math.PI/2 ) );
+					
+					object.geometry.computeBoundingSphere();
+					var center = object.geometry.boundingSphere.center.clone();
+					object.geometry.translate(-center.x,0,-center.z);
+					object.position.setX(center.x);
+					object.position.setZ(center.z);
+					
+					
+					
+					//individual height scale for feature
+					if (height != null){
+				 		object.scale.setY(height);
+					}
+					break;
+				case "MultiPolygon" :
+					var multiPolygonGeometry = new THREE.Geometry();
+					//getpolygons
+					var polygons = geometry.coordinates;
+					//merge multi geometries
+					polygons.forEach( function(e,a,i) {
+				    	multiPolygonGeometry.merge(parseGeometryPolygon(e,height));
+				    } );
+				    
+				    object = new THREE.Mesh( multiPolygonGeometry, new THREE.MeshPhongMaterial( { color: objectColor, side: THREE.FrontSide } ) );
+					
+					object.geometry.applyMatrix( new THREE.Matrix4().makeRotationX( -Math.PI/2 ) );
+					
+					object.geometry.computeBoundingSphere();
+					var center = object.geometry.boundingSphere.center.clone();
+					object.geometry.translate(-center.x,0,-center.z);
+					object.position.setX(center.x);
+					object.position.setZ(center.z);
+					
+					//individual height scale for feature
+					if (height != null){
+				 		object.scale.setY(height);
+					}
+				    
+					
+					
+					break;
 				default :
 					console.error(type,"Not supported by GeoJSONLoader");
 					
@@ -14433,16 +14565,30 @@ GIScene.GeoJSONLoader.prototype = {
 			return object;
 		}.bind(this);
 		
-		// var parseProperties = function(properties) {
-// 			
-		// };
 		
-		var parseFeature = function(feature, heightAttribute) {
+		var parseFeature = function(feature, heightOptions, materialOptions/*heightAttribute*/) {
+			var height;
+			var objectColor;
+			//if heightAttribute available, go with it
+			if (heightOptions.heightAttribute){
+				
+				height = parseFloat(feature.properties[heightOptions.heightAttribute]);
+				if (isNaN(height)) {console.log("Attribute " + heightOptions.heightAttribute + "does not contain a number or number string.");}
+				if (height == 0) {height = 0.01;} //always extrude //use ShapeGeometry instead of ExtrudeGeometry
+			}
+			else if (heightOptions.heightFunction && typeof heightOptions.heightFunction == 'function' ){
+				height = heightOptions.heightFunction(feature,heightOptions);
+			}
 			
-			var height = parseFloat(feature.properties[heightAttribute]) || null;
+			//compute color
+			if (materialOptions.colorFunction && materialOptions.colorAttribute){
+				objectColor = materialOptions.colorFunction(parseFloat(feature.properties[materialOptions.colorAttribute]));
+			}
 			
-			var object = parseGeometry(feature.geometry, height);
+			
+			var object = parseGeometry(feature.geometry, height, objectColor);
 			object.userData.gisceneAttributes = feature.properties;
+			
 			return object;
 		};
 		
@@ -14454,19 +14600,23 @@ GIScene.GeoJSONLoader.prototype = {
 		switch (type) {
 			
 			case "Feature": 
-					result.add( parseFeature( json, heightAttribute ) );
+					result.add( parseFeature( json, heightOptions,materialOptions ) );
 					break;
 					
 			case "FeatureCollection":
 					var features = json.features;
 					for(var i=0,j=features.length; i<j; i++){
-						result.add( parseFeature( features[i], heightAttribute ) );
+						result.add( parseFeature( features[i], heightOptions,materialOptions ) );
 					};
 					break;
 					
 			default: console.log(type, "GeoJson type not supported by GeoJSONLoader");
 		}
 		
+		//global scale for result
+		if (heightOptions.heightScale){
+				result.scale.setY(heightOptions.heightScale);
+			}
 		callback(result);
 		return result;
 	},
@@ -14603,10 +14753,12 @@ GIScene.ModelLoader = function () {
 		
 		// console.log("ModelLoader:callback()");
 		
-		if(this.format == GIScene.Format.Scene){
+		if ( this.format == GIScene.Format.Scene ){
 			var result = geometry.scene; //SceneLoader returns a result object not geometry
-		}
-		
+		} else
+		if ( this.format == GIScene.Format.GeoJSON ){
+			var result = geometry; //THREE.Scene not geometry
+		}		
 		else {//callback for other formats than GIScene.Format.Scene
 
 			//Mesh or Points (ParticleSystem)?
@@ -14794,6 +14946,10 @@ GIScene.ModelLoader = function () {
 	 * @method load
 	 * @param {String} url
 	 * @param {Integer} format use constants defined in GIScene.Format
+	 * @param {Function} onSuccess <- THREE.Group or THREE.Scene
+	 * @param {Function} onProgress not yet in use
+	 * @param {Function} onError not yet in use
+	 * @param {Object} formatOptions extra params, e.g. for GeoJSON (heightOptions, materialOptions)
 	 * 
 	 * 
 	 * To get the resulting THREE.Scene() Object add an event listener on 'load':
@@ -14804,7 +14960,7 @@ GIScene.ModelLoader = function () {
 	 * 
 	 */
 	
-	this.load = function(url, format, onSuccess, onProgress, onError){
+	this.load = function(url, format, onSuccess, onProgress, onError, formatOptions){
 		var retries = 5;
 		usercallback = onSuccess;
 		/** The load event is triggered before a model/scene will be loaded
@@ -14861,7 +15017,15 @@ GIScene.ModelLoader = function () {
 				// this.loader.crossOrigin = 'use-credentials';
 				this.loader.load(url, callback, onProgress, onSceneError); //onError
 				break;
+			case GIScene.Format.GeoJSON:
+				if (formatOptions){
+					var heightOptions = formatOptions.heightOptions;
+					var materialOptions = formatOptions.materialOptions;
+				}
 				
+				this.loader = new GIScene.GeoJSONLoader();
+				this.loader.load(url, callback, onProgress, onError, heightOptions, materialOptions);
+				break;
 			default:
 				console.log('Unknown Format. - GIScene/ModelLoader.js');			
 		};
@@ -15870,6 +16034,7 @@ GIScene.Layer.Fixed = function(name, config){
 	
 	this.url = null;
 	this.format = null;
+	this.formatOptions = null;
 	this.boundingBox = null;
 	this.verticalAxis = null;
 	this.listeners = null;
@@ -15905,6 +16070,7 @@ GIScene.Layer.Fixed = function(name, config){
 	  if(this.config.url && "format" in this.config){
 	  	this.url = this.config.url;
 	  	this.format = this.config.format;
+	  	this.formatOptions = this.config.formatOptions;
 	  	this.verticalAxis = this.config.verticalAxis || "Y";
 	  	this.boundingBox = new THREE.Box3();
 	  	this.listeners = this.config.listeners;
@@ -15914,7 +16080,7 @@ GIScene.Layer.Fixed = function(name, config){
 		  };
 	  	
 	  	this.loader.addEventListener('load', onload);
-	  	this.loader.load(this.url, this.format);
+	  	this.loader.load(this.url, this.format, null, null, null, this.formatOptions);
 	  }
 	  else {console.error('url or format missing in layer config!');}
 	};
@@ -16534,7 +16700,7 @@ GIScene.Layer.Grid = function(name, config){
 		origin: new GIScene.Coordinate2(0,0),
 		tileSizes: [1024], 
 		
-		terrainHeight:71,
+		terrainHeight: 0, //71,
 		maxNumTiles:25,
 		maxDistance:10000,
 		computeTileIndicesHandler:'default', //function to determine the tiles to be loaded, can differ from default for analysis reasons
@@ -18219,7 +18385,174 @@ GIScene.Layer.W3DS_0_4_1 = function(name, config) {
 };
 
 GIScene.Layer.W3DS_0_4_1.prototype = Object.create(GIScene.Layer.Grid.prototype);
-/**
+
+GIScene.Layer.XYZFlatTiles = function( name, config ) {
+	//overwrite defaults of parent
+	var defaults = {
+			zoomlevels: 19,
+			tileSizes :[], // [20037508.3427892*2,20037508.3427892],//, 20037508.3427892/2], //20037508.3427892 -> zommlevel 1
+			
+			terrainHeight :0,
+			origin: new GIScene.Coordinate2(-20037508.3427892,20037508.3427892),
+			//extent a little bit smaller than tiles
+			maxExtent : new GIScene.Extent2(new GIScene.Coordinate2(-20037508,-20037508),new GIScene.Coordinate2(20037508,20037508))
+		};
+
+	this.config = GIScene.Utils.mergeObjects(defaults, config || {}); //overwrite XYZ with user config
+	
+	//create tileSizes
+	const earthRadius = 40075016.6855784;
+	for (var i = 0; i < this.config.zoomlevels; i++) {
+		
+		this.config.tileSizes.push(earthRadius / Math.pow(2,i) );
+		
+	}
+	
+	GIScene.Layer.Grid.apply(this, [name, this.config]); //create a GridLayer with xyz config
+	
+	/**
+	 * Loads a tile by specifiying a GIScene.Grid.Index
+	 * 
+	 * @method loadTile
+	 * @param {GIScene.Grid.Index} gridIndex
+	 */	
+	this.loadTile = function(gridIndex) {  //GIScene.Grid.Index
+		if(!gridIndex)return;
+		// console.log("loadTile",gridIndex);
+		//get from cache
+		var tileFromCache = this.cache.getTile(gridIndex); //object3d or false
+		
+		if(tileFromCache){
+			console.log("XYZ: get Tile from cache");
+			//check material 
+			
+			var material = null;
+			tileFromCache.traverse(function(object){
+				if(!material){
+					if(object.material){material = object.material;}
+				}
+			});
+			
+			var hasUnsharedWmsTextureLoaded = false;
+			if(material && material.waitForTexture){
+				hasUnsharedWmsTextureLoaded = material.unsharedWmsTextureLoaded;
+			}
+			
+			if(hasUnsharedWmsTextureLoaded || !material || !material.waitForTexture){
+			// this.loading.remove(gridIndex);//mca2
+			this.root.add(tileFromCache);
+			
+			this.cache.remove(gridIndex);
+			this.loaded.add(gridIndex, tileFromCache);
+			
+			//update selectables
+			if(this.selectControl){
+				this.selectControl.selectables = GIScene.Utils.getDescendants(this.root); //r76
+			}
+			
+			//ontileadd event
+			/**
+			 *Fires after a tile is added to the scene. A reference to the tile can be found at event.content.tile 
+			 *
+			 *@event tileadd
+			 *  
+			 */
+			this.dispatchEvent({type:'tileadd', content:{tile:tileFromCache}});
+			
+			//add to oldTiles because all have been removed before (loaded and loading). Keep oldTiles updated.
+			this.oldTiles.push(gridIndex);
+			}
+			
+			
+		}else{
+			//create tile
+			console.log("XYZ: create Tile");
+			
+			//get boundingbox from grid
+			var centroid = this.grid.getCentroidFromIndex(gridIndex); //GIScene.Coordinate2
+			centroid = new THREE.Vector3(centroid.x,this.terrainHeight, centroid.y);
+			
+			
+			var zoomlevel = this.getZoomlevelFromTileSize(gridIndex.tileSize);
+			var url = this.url.replace("{z}", zoomlevel);
+			url = url.replace("{x}", gridIndex.x);
+			url = url.replace("{y}", Math.max(Math.abs(gridIndex.y)-1,0));
+			
+			var texLoader = new THREE.TextureLoader();
+			texLoader.setCrossOrigin("anonymous");
+			var colorMap = texLoader.load(url);
+			
+			// create geometry and Mesh
+			var geometry = new THREE.PlaneGeometry( gridIndex.tileSize, gridIndex.tileSize );
+			
+			//var material = new THREE.MeshBasicMaterial( {color: 0xffff00, side: THREE.DoubleSide} );
+			var material = new THREE.MeshLambertMaterial( {map: colorMap, depthTest:false} );
+			
+			var result = new THREE.Mesh( geometry, material );
+			result.renderOrder = -1;
+			
+			//rotate model if z is up
+			//if(this.verticalAxis.toUpperCase() == "Z" ){
+				result.applyMatrix( new THREE.Matrix4().makeRotationX( -Math.PI/2 ) );
+			//}
+			
+			result.position.copy(centroid);
+			this.cache.add(gridIndex,result);
+			
+			//setOverrideMaterial
+			this.setOverrideMaterial(result, this.config.overrideMaterial);
+			
+			
+			//onload event
+			/**
+			 *Fires after a tile is loaded. A reference to the tile can be found at event.content.tile 
+			 *
+			 *@event tileload
+			 *  
+			 */
+			this.dispatchEvent({type:'tileload', content:{tile:result}});
+			
+		}
+	};
+
+	var onCameraChange = function(event) {
+		var scene = event.target;
+		var cam = scene.camera;
+		
+		var camHeight = cam.position.clone().add(scene.config.offset.toVector3()).y;
+		
+		var near = Math.max(1, camHeight * 0.7 );
+		var far  = Math.max(5000, camHeight * 10);
+		
+		cam.activeCam.near = near;
+		cam.activeCam.far = far;
+		cam.activeCam.updateProjectionMatrix();
+		console.log(camHeight,near,far, (far-near));
+	};
+	
+	var onSetScene = function(event) {
+		console.log("onSetScene:XYZFlatTiles");
+		
+		(this.scene)? 
+			this.scene.addEventListener("cameraChange", onCameraChange)
+		:
+			null
+		;
+		
+	}.bind(this);
+	this.addEventListener('setScene', onSetScene);
+
+};
+
+GIScene.Layer.XYZFlatTiles.prototype = Object.create(GIScene.Layer.Grid.prototype);
+
+
+
+GIScene.Layer.XYZFlatTiles.prototype.getZoomlevelFromTileSize = function(tileSize) {
+	
+	var zoomlevel = this.tileSizes.indexOf(parseFloat(tileSize));
+	return zoomlevel;
+}/**
  * The Scene Object
  *
  * @namespace GIScene
@@ -18281,12 +18614,7 @@ GIScene.Scene = function(containerDivId, config) {
 		near : 0.1,
 		far : 1000,
 		fov : 45, //for perspective camera only
-		positionFromCenter : new THREE.Vector3(0, 0, 10),
-
-		//data options
-		// url : null,
-		// format : null,
-		// verticalAxis : "Y"
+		positionFromCenter : new THREE.Vector3(0, 0, 10)
 
 	};
 
@@ -18460,7 +18788,7 @@ GIScene.Scene = function(containerDivId, config) {
 		//setCenter
 		// this.camera.position.add(this.config.positionFromCenter);
 		// this.camera.target.position.setZ(-this.config.positionFromCenter.length());
-		this.setCenter(this.config.center, this.config.positionFromCenter);
+		this.setCenter(this.config.center, this.config.positionFromCenter,0);
 		
 		//add Logo
 		var gisceneLogoTexture = new THREE.Texture(null);

@@ -50,5 +50,6 @@
 	"../lib/GIScene/Layer/Grid.js",
 	"../lib/GIScene/Layer/Grid/W3DS_0_4_0.js",
 	"../lib/GIScene/Layer/Grid/W3DS_0_4_1.js",
+	"../lib/GIScene/Layer/Grid/XYZFlatTiles.js",
 	"../lib/GIScene/Scene.js"
 ]
